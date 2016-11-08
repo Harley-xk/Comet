@@ -1,0 +1,6 @@
+framework module Pods_Comet_Example {
+  umbrella header "Pods-Comet_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

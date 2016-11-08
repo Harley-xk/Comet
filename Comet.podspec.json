@@ -1,0 +1,38 @@
+{
+    "name": "Comet",
+    "version": "0.1.0",
+    "summary": "iOS 项目的 Swift 基础库，提供大量常用组件、便利方法等。",
+    "description": "基于 HKProjectBase 库，根据 Swift 的语法特性，重新实现了大部分的逻辑, 移除了部分不常用/不成熟的代码。",
+    "homepage": "https://github.com/Harley-xk/Comet",
+    "license": {
+        "type": "MIT",
+        "file": "LICENSE"
+    },
+    "authors": {
+        "Harley.xk": "harley.gb@foxmail.com"
+    },
+    "source": {
+        "git": "https://github.com/Harley-xk/Comet.git",
+        "tag": "0.1.0"
+    },
+    "platforms": {
+        "ios": "8.0"
+    },
+    "source_files": "Comet/Classes/*",
+    "subspecs": [
+        {
+            "name": "Core",
+            "source_files": "Comet/Classes/Core/**/*",
+            "ios": {
+                "frameworks": [
+                    "Foundation",
+                    "UIKit"
+                ]
+            }
+        },
+        {
+            "name": "Extensions",
+            "source_files": "Comet/Classes/Extensions/**/*"
+        }
+    ]
+}
