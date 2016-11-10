@@ -16,12 +16,12 @@ public class HairLine: UIView {
     /**
      *  分割线的粗细属性对应的约束，建议通过 IB 设置
      */
-    @IBOutlet var lineConstraint:NSLayoutConstraint?
+    @IBOutlet var lineConstraint: NSLayoutConstraint?
     
     /**
      *  分割线的实际粗细，建议通过 IB 设置，默认为 0.3
      */
-    @IBInspectable var constant:CGFloat = 0.3
+    @IBInspectable var constant: CGFloat = 0.3
     
     override public func layoutSubviews() {
         self.lineConstraint?.constant = self.constant

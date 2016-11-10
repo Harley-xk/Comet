@@ -17,7 +17,7 @@ public class PinyinIndexer<T: NSObject>: NSObject {
     
     /// 处理完毕的对象数组，按索引分组
     public var indexedObjects = [[T]]()
-    /// 处理完毕的索引数组
+    /// 处理完毕的索引数组（拼音首字母）
     public var indexedTitles = [String]()
     
     /// 创建索引器实例

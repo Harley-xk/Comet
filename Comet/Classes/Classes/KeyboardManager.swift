@@ -18,6 +18,35 @@ import UIKit
  *  3、创建 HKKeyboardManager，并关联对应的约束和视图
  */
 
+extension UIViewController {
+    
+    /// 初始化键盘UI管理器
+    ///
+    /// - Parameters:
+    ///   - constraint: 键盘UI变化时需要调整的约束
+    ///   - viewToAdjust: 键盘变化时需要调整的视图
+    func setupKeyboardManager(withPositionConstraint constraint:NSLayoutConstraint, viewToAdjust:UIView) {
+        let manager = KeyboardManager(withViewController: self, positionConstraint: constraint, viewToAdjust: viewToAdjust)
+        self.comet_KeyboardManager = manager;
+    }
+    
+    fileprivate struct AssociatedKeys {
+        static var KeyboardManagerKey = "KeyboardManagerKey"
+    }
+    
+    fileprivate var comet_KeyboardManager: KeyboardManager? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.KeyboardManagerKey) as? KeyboardManager
+        }
+        set {
+            if let newValue = newValue {
+                objc_setAssociatedObject(self, &AssociatedKeys.KeyboardManagerKey, newValue as KeyboardManager?, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
+        }
+    }
+}
+
+
 class KeyboardManager: NSObject {
 
     fileprivate var viewController:UIViewController
@@ -149,35 +178,5 @@ private extension Selector {
     static let keyboardDidShow = #selector(KeyboardManager.keyboardDidShow)
     static let keyboardWillChangeFrame = #selector(KeyboardManager.keyboardWillChangeFrame)
     static let keyboardWillHide = #selector(KeyboardManager.keyboardWillShow)
-}
-
-
-extension UIViewController {
-    
-    
-    /// 初始化键盘UI管理器
-    ///
-    /// - Parameters:
-    ///   - constraint: 键盘UI变化时需要调整的约束
-    ///   - viewToAdjust: 键盘变化时需要调整的视图
-    func setupKeyboardManager(withPositionConstraint constraint:NSLayoutConstraint, viewToAdjust:UIView) {
-        let manager = KeyboardManager(withViewController: self, positionConstraint: constraint, viewToAdjust: viewToAdjust)
-        self.comet_KeyboardManager = manager;
-    }
-    
-    fileprivate struct AssociatedKeys {
-        static var KeyboardManagerKey = "KeyboardManagerKey"
-    }
-    
-    fileprivate var comet_KeyboardManager: KeyboardManager? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.KeyboardManagerKey) as? KeyboardManager
-        }
-        set {
-            if let newValue = newValue {
-                objc_setAssociatedObject(self, &AssociatedKeys.KeyboardManagerKey, newValue as KeyboardManager?, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            }
-        }
-    }
 }
 
