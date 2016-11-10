@@ -21,22 +21,11 @@ public extension UIStoryboard {
         self.init(name: name, bundle: nil)
     }
     
-    /// 从 Main Storyboard 创建视图控制器
-    /// identifier 为空时默认使用类名
-    public class func create<T: UIViewController>(identifier: String? = nil) -> T {
-        return main.create()
-    }
-    
     /// 从 sb 创建视图控制器
     /// identifier 为空时默认使用类名
     public func create<T: UIViewController>(identifier: String? = nil) -> T {
         let id = identifier ?? T.classNameWithoutModule
         return self.instantiateViewController(withIdentifier: id) as! T
-    }
-    
-    /// 创建 MainStoryboard 入口视图控制器的实例
-    public class var initial: UIViewController? {
-        return main.initial
     }
     
     /// 创建当前 sb 入口视图控制器的实例

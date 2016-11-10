@@ -19,7 +19,7 @@ public extension String {
         case firstLetter    // 拼音首字母
     }
     
-    public func pinyin(_ type: PinyinType = .normal) -> String{
+    public func pinyin(_ type: PinyinType = .normal) -> String {
         switch type {
         case .normal:
             return normalPinyin()
@@ -118,13 +118,13 @@ public extension String {
 // MARK: - URL
 public extension String {
     
-    /// URL编码
+    /// URL 编码
     public var URLEncode: String? {
         let characterSet = CharacterSet(charactersIn: ":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`")
         return self.addingPercentEncoding(withAllowedCharacters: characterSet)
     }
     
-    /// URL解码
+    /// URL 解码
     public var URLDecode: String? {
         return self.removingPercentEncoding
     }
