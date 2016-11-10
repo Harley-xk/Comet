@@ -3,13 +3,13 @@
 //  Comet
 //
 //  Created by Harley.xk on 16/6/27.
-//  Copyright © 2016年 Harley-xk. All rights reserved.
+//
 //
 
 import Foundation
 import UIKit
 
-class Utils {
+public class Utils {
     
     /// 设备唯一标识号
     public class var deviceUUID: String {
@@ -28,7 +28,7 @@ class Utils {
     }
 
     /// App 版本号(含 build 号)
-    public class var appVersionLong: String {
+    public class var appBuild: String {
         let infoDictionary = Bundle.main.infoDictionary!
         return infoDictionary["CFBundleVersion"] as! String
     }
@@ -55,7 +55,7 @@ class Utils {
     ///   - phone: 被叫方的电话号码
     ///   - immediately: 是否跳过确认提示
     /// - Return: 不支持电话功能时返回 false
-    @discardableResult public class func call(phone: String, immediately: Bool = false) -> Bool {
+    @discardableResult open class func call(_ phone: String, immediately: Bool = false) -> Bool {
         let typeString = immediately ? "tel" : "telprompt"
         if let callURL = URL(string: typeString + "://" + phone),
             UIApplication.shared.canOpenURL(callURL) {

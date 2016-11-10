@@ -3,7 +3,7 @@
 //  Comet
 //
 //  Created by Harley.xk on 16/6/28.
-//  Copyright © 2016年 Harley-xk. All rights reserved.
+//
 //
 
 import Foundation
@@ -20,13 +20,13 @@ import UIKit
 
 class KeyboardManager: NSObject {
 
-    private var viewController:UIViewController
-    private var viewToAdjust:UIView
-    private var positionConstraint:NSLayoutConstraint
+    fileprivate var viewController:UIViewController
+    fileprivate var viewToAdjust:UIView
+    fileprivate var positionConstraint:NSLayoutConstraint
     
-    private var originalConstant:CGFloat
-    private var originalBottomSpace:CGFloat = 0
-    private var currentKeyboardHeight:CGFloat = 0
+    fileprivate var originalConstant:CGFloat
+    fileprivate var originalBottomSpace:CGFloat = 0
+    fileprivate var currentKeyboardHeight:CGFloat = 0
     /**
      *  创建键盘管理器
      *
@@ -60,18 +60,18 @@ class KeyboardManager: NSObject {
      */
     var animateAlongwithKeyboard = true
     
-    private let notificationCenter = NotificationCenter.default
+    fileprivate let notificationCenter = NotificationCenter.default
 
     
     // MARK: - Private Logics
-    private func registerKeyboardEvents()
+    fileprivate func registerKeyboardEvents()
     {
         notificationCenter.addObserver(self, selector: .keyboardWillShow, name: Notification.Name.UIKeyboardWillShow, object: nil)
         notificationCenter.addObserver(self, selector: .keyboardDidShow, name: Notification.Name.UIKeyboardDidShow, object: nil)
         notificationCenter.addObserver(self, selector: .keyboardWillHide, name: Notification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    private func viewBottomSpace() -> CGFloat
+    fileprivate func viewBottomSpace() -> CGFloat
     {
         var bottomOffSet:CGFloat = 0
         
@@ -84,22 +84,22 @@ class KeyboardManager: NSObject {
     }
 
     
-    @objc internal func keyboardWillShow(notification:NSNotification) {
+    @objc internal func keyboardWillShow(_ notification:Notification) {
         self.originalBottomSpace = viewBottomSpace();
         
         if (self.animateAlongwithKeyboard) {
             updateForKeyboard(withNotification: notification)
         }
-        notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self)
+        notificationCenter.removeObserver(self, name: Notification.Name.UIKeyboardWillShow, object: self)
     }
-    @objc internal func keyboardDidShow(notification:NSNotification) {
+    @objc internal func keyboardDidShow(_ notification:Notification) {
         updateForKeyboard(withNotification: notification)
-        notificationCenter.addObserver(self, selector: .keyboardWillChangeFrame, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        notificationCenter.addObserver(self, selector: .keyboardWillChangeFrame, name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
-    @objc internal func keyboardWillChangeFrame(notification:NSNotification) {
+    @objc internal func keyboardWillChangeFrame(_ notification:Notification) {
         updateForKeyboard(withNotification: notification)
     }
-    @objc internal func keyboardWillHide(notification:NSNotification) {
+    @objc internal func keyboardWillHide(_ notification:Notification) {
         if (enabled) {
             let userInfo = notification.userInfo!
             let timeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
@@ -113,10 +113,10 @@ class KeyboardManager: NSObject {
             })
             self.currentKeyboardHeight = 0;
         }
-        notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        notificationCenter.addObserver(self, selector: .keyboardWillShow, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.removeObserver(self, name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+        notificationCenter.addObserver(self, selector: .keyboardWillShow, name: Notification.Name.UIKeyboardWillShow, object: nil)
     }
-    private func updateForKeyboard(withNotification notification:NSNotification) {
+    fileprivate func updateForKeyboard(withNotification notification:Notification) {
         if (enabled) {
             let userInfo = notification.userInfo!
             let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSNumber).cgRectValue
@@ -154,17 +154,22 @@ private extension Selector {
 
 extension UIViewController {
     
+    
+    /// 初始化键盘UI管理器
+    ///
+    /// - Parameters:
+    ///   - constraint: 键盘UI变化时需要调整的约束
+    ///   - viewToAdjust: 键盘变化时需要调整的视图
     func setupKeyboardManager(withPositionConstraint constraint:NSLayoutConstraint, viewToAdjust:UIView) {
         let manager = KeyboardManager(withViewController: self, positionConstraint: constraint, viewToAdjust: viewToAdjust)
-        self.hk_KeyboardManager = manager;
+        self.comet_KeyboardManager = manager;
     }
     
-    
-    private struct AssociatedKeys {
+    fileprivate struct AssociatedKeys {
         static var KeyboardManagerKey = "KeyboardManagerKey"
     }
     
-    private var hk_KeyboardManager: KeyboardManager? {
+    fileprivate var comet_KeyboardManager: KeyboardManager? {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.KeyboardManagerKey) as? KeyboardManager
         }

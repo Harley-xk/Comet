@@ -11,13 +11,19 @@ import Comet
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var line: HairLine!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        let path = Path.applicationSupport().resource("data.Sqlite").string
-        print(path)
+        let date = Date(string: "2013-10-24 12:24:56")
         
+        _ = date?.add(2, .day)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,5 +31,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+class LoginViewController: UIViewController {
+    
 }
 

@@ -3,7 +3,7 @@
 //  Comet
 //
 //  Created by Harley.xk on 16/6/27.
-//  Copyright © 2016年 Harley-xk. All rights reserved.
+//
 //
 
 import Foundation
@@ -13,7 +13,7 @@ import MobileCoreServices
 
 public class Path {
 
-    /// 使用路径字符串构建
+    /// 使用路径字符串构建实例
     public init(_ path: String) {
         string = path
     }
@@ -186,14 +186,14 @@ public class Path {
     }
 }
 
-extension Bundle
+public extension Bundle
 {
     /// 获取应用程序资源包下的路径
     ///
     /// - Parameters:
     ///   - name: 资源名称
     /// - Returns: 返回资源路径
-    func resource(_ name: String) -> Path? {
+    public func resource(_ name: String) -> Path? {
         let path = name as NSString
         let pathExtension = path.pathExtension
         var nameWithoutExtension = name

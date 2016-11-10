@@ -21,8 +21,8 @@
     "source_files": "Comet/Classes/*",
     "subspecs": [
         {
-            "name": "Core",
-            "source_files": "Comet/Classes/Core/**/*",
+            "name": "Classes",
+            "source_files": "Comet/Classes/Classes/**/*",
             "ios": {
                 "frameworks": [
                     "Foundation",
