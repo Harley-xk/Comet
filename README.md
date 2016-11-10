@@ -1,12 +1,14 @@
-# ![](comet.png)Comet
+# ![](comet.png) Comet
 -
+
 iOS 项目的 Swift 基础库，提供大量常用组件、便利方法等。支持 **Swift 3.0 +**
 
 基于 HKProjectBase 库，根据 Swift 3 的语法特性，重新实现了大部分的逻辑, 移除了部分不常用／不成熟的代码。
 
 ### 安装
 支持 CocoaPods 安装：
-```
+
+```ruby
 pod 'Comet', :git => 'https://github.com/Harley-xk/Comet.git'
 ```
 
@@ -33,7 +35,7 @@ pod 'Comet', :git => 'https://github.com/Harley-xk/Comet.git'
 
 1. 根据业务需求设置 UI 界面元素的布局约束。
 2. 在视图控制器的 *viewDidLoad* 方法中初始化键盘控制器；
-3. *setupKeyboardManager* 初始化方法需要提供两个参数：
+3. 初始化方法 *setupKeyboardManager* 需要提供两个参数：
 
  - ***positionConstraint*** 表示需要调整的约束，键盘弹出后会根据键盘尺寸调整该约束的值，键盘隐藏后恢复原始值；
  - ***viewToAdjust*** 表示调整 UI 时参照的控件，调整约束值时会参考该控件在键盘弹出前距离视图底部的距离。
