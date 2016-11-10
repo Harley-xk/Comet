@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let _ = UIStoryboard().create() as ViewController
+        
+        setupKeyboardManager(withPositionConstraint: <#T##NSLayoutConstraint#>, viewToAdjust: <#T##UIView#>)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -18,14 +18,14 @@ import UIKit
  *  3、创建 HKKeyboardManager，并关联对应的约束和视图
  */
 
-extension UIViewController {
+public extension UIViewController {
     
     /// 初始化键盘UI管理器
     ///
     /// - Parameters:
     ///   - constraint: 键盘UI变化时需要调整的约束
     ///   - viewToAdjust: 键盘变化时需要调整的视图
-    func setupKeyboardManager(withPositionConstraint constraint:NSLayoutConstraint, viewToAdjust:UIView) {
+    public func setupKeyboardManager(withPositionConstraint constraint:NSLayoutConstraint, viewToAdjust:UIView) {
         let manager = KeyboardManager(withViewController: self, positionConstraint: constraint, viewToAdjust: viewToAdjust)
         self.comet_KeyboardManager = manager;
     }
