@@ -40,3 +40,19 @@ public extension UIView {
         }
     }
 }
+
+
+public extension Bundle {
+    
+    
+    /// 从 xib 文件创建视图
+    ///
+    /// - Parameter name: xib 文件名，默认为指定视图类名
+    public func createView<T: UIView>(_ name: String? = nil) -> T {
+        let nibName = name ?? T.classNameWithoutModule
+        let view = loadNibNamed(nibName, owner: nil, options: nil)![0] as! T
+        return view
+    }
+}
+
+
