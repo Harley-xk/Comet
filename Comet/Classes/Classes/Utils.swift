@@ -9,6 +9,13 @@
 import Foundation
 import UIKit
 
+/// 传入一个闭包，只有在 Debug 模式下才会执行，用于某些功能调试，日志打印等
+public func debug(_ closure: () -> ()) {
+    #if DEBUG
+        closure()
+    #endif
+}
+
 public class Utils {
     
     /// 设备唯一标识号
