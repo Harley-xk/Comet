@@ -16,6 +16,11 @@ public extension UIStoryboard {
         return UIStoryboard(name: "Main", bundle: nil)
     }
     
+    /// 根据名称从 MainBundle 中创建 Storyboard
+    public convenience init(_ name: String) {
+        self.init(name: name, bundle: nil)
+    }
+    
     /// 从 sb 创建视图控制器
     /// identifier 为空时默认使用类名
     public func create<T: UIViewController>(identifier: String? = nil) -> T {
