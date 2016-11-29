@@ -16,11 +16,6 @@ public extension UIStoryboard {
         return UIStoryboard(name: "Main", bundle: nil)
     }
     
-    /// 根据名称从 MainBundle 中创建 Storyboard
-    public convenience init(_ name: String = "Main") {
-        self.init(name: name, bundle: nil)
-    }
-    
     /// 从 sb 创建视图控制器
     /// identifier 为空时默认使用类名
     public func create<T: UIViewController>(identifier: String? = nil) -> T {
@@ -34,6 +29,23 @@ public extension UIStoryboard {
     }
 }
 
+public extension UIViewController {
+    
+    /// 从 Storyboard 实例化视图控制器
+    ///
+    /// - Parameters:
+    ///   - name: Storyboard 名称，不传默认为Main
+    ///   - bunlde: Storyboard 所在的 Bundle 不传默认为 main bundle
+    ///   - id: 视图控制器在 Storyboard 中的id，不传默认为类名
+    class func fromSB(_ name: String? = nil, bunlde: Bundle? = nil, id: String? = nil) -> Self {
+        let bundle = bunlde ?? Bundle.main
+        let sbName = name ?? "Main"
+        let sb = UIStoryboard(name: sbName, bundle: bundle)
+        let identifier = id ?? classNameWithoutModule
+        return sb.create(identifier: identifier)
+    }
+}
+
 
 public extension UIViewController {
     
@@ -42,7 +54,10 @@ public extension UIViewController {
         let name = nibName ?? classNameWithoutModule
         self.init(nibName: name, bundle: bundle)        
     }
-    
+}
+
+public extension UIViewController {
+
     /**
      *  设置当前视图的导航条返回按钮标题
      *  @attention 只有使用默认返回按钮时有效

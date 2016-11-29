@@ -19,7 +19,10 @@ class ViewController: UIViewController {
         
         let _ = UIStoryboard().create() as ViewController
         
-        setupKeyboardManager(withPositionConstraint: <#T##NSLayoutConstraint#>, viewToAdjust: <#T##UIView#>)
+        let vc = ViewController.fromSB()
+        print(vc)
+        
+//        setupKeyboardManager(withPositionConstraint: <#T##NSLayoutConstraint#>, viewToAdjust: <#T##UIView#>)
     }
     
     override func viewDidAppear(_ animated: Bool) {
