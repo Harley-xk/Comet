@@ -36,7 +36,7 @@ public extension Date {
     }
     
     /// 将日期转换为指定格式的字符串
-    public func string(format: String = "yyyy-MM-dd HH:mm:ss", local: Locale = Locale.current) -> String {
+    open func string(format: String = "yyyy-MM-dd HH:mm:ss", local: Locale = Locale.current) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         formatter.locale = local
@@ -45,7 +45,7 @@ public extension Date {
 
     /// 日期计算，返回当前日期加上指定单位值之后的日期，会自动进位或减位
     /// 返回计算后的新日期
-    public func add(_ value: Int, _ unit: DateUnit) -> Date {
+    open func add(_ value: Int, _ unit: DateUnit) -> Date {
         
         let component = unit.componentValue()
         let calendar = Calendar.current
@@ -61,7 +61,7 @@ public extension Date {
     
     /// 将指定单位设置为指定的值，返回修改后的新日期
     /// 如果设置的值大于当前单位的最大值或者小于最小值，会自动进位或减位
-    public func set(_ unit: DateUnit, to value: Int) -> Date {
+    open func set(_ unit: DateUnit, to value: Int) -> Date {
         let component = unit.componentValue()
         let calendar = Calendar.current
         var components = calendar.dateComponents(DateUnit.all(), from: self)
@@ -73,7 +73,7 @@ public extension Date {
     }
     
     /// 忽略精确时间（时／分／秒）的日期
-    public var withoutTime: Date {
+    open var withoutTime: Date {
         let calendar = Calendar.current
         var components = calendar.dateComponents([.year, .month, .day], from: self)
         components.timeZone = TimeZone.current
@@ -83,7 +83,7 @@ public extension Date {
     }
 
     /// 某个单位的值
-    public func unit(_ unit: DateUnit) -> Int {
+    open func unit(_ unit: DateUnit) -> Int {
         let component = unit.componentValue()
         let calendar = Calendar.current
         var components = calendar.dateComponents([component], from: self)
@@ -92,7 +92,7 @@ public extension Date {
     }
     
     /// 周几，周日为0
-    public var weekday: Int {
+    open var weekday: Int {
         let calendar = Calendar.current
         var components = calendar.dateComponents([.weekday], from: self)
         components.timeZone = TimeZone.current
@@ -100,15 +100,15 @@ public extension Date {
     }
 }
 
-extension Locale {
+public extension Locale {
     
     /// 中国地区
-    public static var china: Locale {
+    open static var china: Locale {
         return Locale(identifier: "zh_Hans_CN")
     }
     
     /// 美国地区
-    public static var usa: Locale {
+    open static var usa: Locale {
         return Locale(identifier: "es_US")
     }
 }
@@ -116,7 +116,7 @@ extension Locale {
 public extension TimeZone {
     
     /// 中国时区(东8区)
-    public static var china: TimeZone {
+    open static var china: TimeZone {
         return TimeZone(identifier: "Asia/Shanghai")!
     }
     

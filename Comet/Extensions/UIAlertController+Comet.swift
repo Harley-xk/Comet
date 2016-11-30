@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIAlertController {
     
-    public func addAction(title: String?, style: UIAlertActionStyle, handler:@escaping ((UIAlertAction)->())) {
+    open func addAction(title: String?, style: UIAlertActionStyle, handler:@escaping ((UIAlertAction)->())) {
         let action = UIAlertAction(title: title, style: style, handler: handler)
         self.addAction(action)
     }

@@ -17,7 +17,7 @@ public extension UIColor {
      *
      *  @return 返回创建的UIColor对象
      */
-    public convenience init?(hex: String, alpha: CGFloat = 1) {
+    open convenience init?(hex: String, alpha: CGFloat = 1) {
         
         let characterSet = CharacterSet.whitespacesAndNewlines
         var string = hex.trimmingCharacters(in: characterSet).uppercased()

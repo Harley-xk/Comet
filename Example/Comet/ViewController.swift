@@ -17,11 +17,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let _ = UIStoryboard().create() as ViewController
+        let _ = UIStoryboard.main.create() as ViewController
         
         let vc = ViewController.fromSB()
         print(vc)
-        
+                
 //        setupKeyboardManager(withPositionConstraint: <#T##NSLayoutConstraint#>, viewToAdjust: <#T##UIView#>)
     }
     

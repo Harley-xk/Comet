@@ -12,24 +12,24 @@ import UIKit
 public extension UIStoryboard {
     
     /// 获取 Main Storyboard
-    public class var main: UIStoryboard {
+    open class var main: UIStoryboard {
         return UIStoryboard(name: "Main", bundle: nil)
     }
     
     /// 根据名称从 MainBundle 中创建 Storyboard
-    public convenience init(_ name: String) {
+    open convenience init(_ name: String) {
         self.init(name: name, bundle: nil)
     }
     
     /// 从 sb 创建视图控制器
     /// identifier 为空时默认使用类名
-    public func create<T: UIViewController>(identifier: String? = nil) -> T {
+    open func create<T: UIViewController>(identifier: String? = nil) -> T {
         let id = identifier ?? T.classNameWithoutModule
         return self.instantiateViewController(withIdentifier: id) as! T
     }
     
     /// 创建当前 sb 入口视图控制器的实例
-    public var initial: UIViewController? {
+    open var initial: UIViewController? {
         return instantiateInitialViewController()
     }
 }
@@ -42,7 +42,7 @@ public extension UIViewController {
     ///   - name: Storyboard 名称，不传默认为Main
     ///   - bunlde: Storyboard 所在的 Bundle 不传默认为 main bundle
     ///   - id: 视图控制器在 Storyboard 中的id，不传默认为类名
-    class func fromSB(_ name: String? = nil, bunlde: Bundle? = nil, id: String? = nil) -> Self {
+    open class func fromSB(_ name: String? = nil, bunlde: Bundle? = nil, id: String? = nil) -> Self {
         let bundle = bunlde ?? Bundle.main
         let sbName = name ?? "Main"
         let sb = UIStoryboard(name: sbName, bundle: bundle)
@@ -55,7 +55,7 @@ public extension UIViewController {
 public extension UIViewController {
     
     /// 从 Xib 文件创建视图控制器，nibName 为空时默认使用类名
-    public class func fromXib(_ nibName: String? = nil, bundle: Bundle? = nil) {
+    open class func fromXib(_ nibName: String? = nil, bundle: Bundle? = nil) {
         let name = nibName ?? classNameWithoutModule
         self.init(nibName: name, bundle: bundle)        
     }
@@ -67,7 +67,7 @@ public extension UIViewController {
      *  设置当前视图的导航条返回按钮标题
      *  @attention 只有使用默认返回按钮时有效
      */
-    public var navigationBackTitle: String? {
+    open var navigationBackTitle: String? {
         get {
             if let previous = self.previousNavigationContent {
                 return previous.navigationItem.backBarButtonItem?.title
@@ -82,7 +82,7 @@ public extension UIViewController {
     }
     
     /// 获取导航控制器栈中前一个视图控制器，不存在时返回空
-    public var previousNavigationContent: UIViewController? {
+    open var previousNavigationContent: UIViewController? {
         if let viewControllers = self.navigationController?.viewControllers,
             viewControllers.count > 2 {
             let index = viewControllers.count - 2
@@ -95,7 +95,7 @@ public extension UIViewController {
      *  设置导航控制器栈中下一个视图的返回按钮标题
      *  @attention 不会改变当前返回按钮的标题
      */
-    public var nextNavigationBackTitle: String? {
+    open var nextNavigationBackTitle: String? {
         get {
             return self.navigationItem.backBarButtonItem?.title
         }

@@ -25,7 +25,7 @@ public extension UIViewController {
     /// - Parameters:
     ///   - constraint: 键盘UI变化时需要调整的约束
     ///   - viewToAdjust: 键盘变化时需要调整的视图
-    public func setupKeyboardManager(withPositionConstraint constraint:NSLayoutConstraint, viewToAdjust:UIView) {
+    open func setupKeyboardManager(withPositionConstraint constraint:NSLayoutConstraint, viewToAdjust:UIView) {
         let manager = KeyboardManager(withViewController: self, positionConstraint: constraint, viewToAdjust: viewToAdjust)
         self.comet_KeyboardManager = manager;
     }

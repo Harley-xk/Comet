@@ -10,15 +10,15 @@ import UIKit
 
 
 /// 拼音索引器，将指定的对象数组按照指定属性进行拼音首字母排序并创建索引
-public class PinyinIndexer<T: NSObject>: NSObject {
+open class PinyinIndexer<T: NSObject>: NSObject {
 
     private var objectList: [T]
     private var propertyName: String
     
     /// 处理完毕的对象数组，按索引分组
-    public var indexedObjects = [[T]]()
+    open var indexedObjects = [[T]]()
     /// 处理完毕的索引数组（拼音首字母）
-    public var indexedTitles = [String]()
+    open var indexedTitles = [String]()
     
     /// 创建索引器实例
     ///

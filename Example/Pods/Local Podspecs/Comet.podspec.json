@@ -18,21 +18,5 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "Comet/Classes/*",
-  "subspecs": [
-    {
-      "name": "Core",
-      "source_files": "Comet/Classes/Core/**/*",
-      "ios": {
-        "frameworks": [
-          "Foundation",
-          "UIKit"
-        ]
-      }
-    },
-    {
-      "name": "Extensions",
-      "source_files": "Comet/Classes/Extensions/**/*"
-    }
-  ]
+  "source_files": "Comet/**/*"
 }

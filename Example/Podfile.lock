@@ -1,9 +1,5 @@
 PODS:
-  - Comet (0.1.0):
-    - Comet/Core (= 0.1.0)
-    - Comet/Extensions (= 0.1.0)
-  - Comet/Core (0.1.0)
-  - Comet/Extensions (0.1.0)
+  - Comet (0.1.0)
 
 DEPENDENCIES:
   - Comet (from `../`)
@@ -13,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Comet: 6851da9b8a62aa3069cb17f9cb0adb73117bd807
+  Comet: d0cd7a48848ae34ff71942dfed185b61f55ee66c
 
 PODFILE CHECKSUM: 3b39828ed5dc212344e3a11d86a1aa5cb071e1bc
 
