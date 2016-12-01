@@ -148,7 +148,7 @@ class KeyboardManager: NSObject {
     fileprivate func updateForKeyboard(withNotification notification:Notification) {
         if (enabled) {
             let userInfo = notification.userInfo!
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSNumber).cgRectValue
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
             let frameInView = self.viewController.view.convert(endFrame, from: viewController.view.window)
             var keyBoardHeight = self.viewController.view.frame.size.height - frameInView.origin.y
             keyBoardHeight = max(0, keyBoardHeight)
