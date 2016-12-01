@@ -11,7 +11,7 @@ import Foundation
 public extension UIResponder {
     
     /// 解除任何可能存在的第一响应者
-    open func resignAnyFirstResponder() {
+    open class func resignAnyFirstResponder() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
     

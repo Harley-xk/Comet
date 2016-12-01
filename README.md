@@ -222,7 +222,7 @@ App 的基本功能就是执行各种任务，比如网络任务。正常情况�
 1. **解除任何第一响应者**
 
 	```swift
-   public func resignAnyFirstResponder()
+   public class func resignAnyFirstResponder()
 	```
 	通过该方法可以不需要指定任何对象，直接将当前任何处于第一响应者状态的控件解除该状态
 		
