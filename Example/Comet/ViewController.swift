@@ -21,8 +21,14 @@ class ViewController: UIViewController {
         
         let vc = ViewController.fromSB()
         print(vc)
-                
-//        setupKeyboardManager(withPositionConstraint: <#T##NSLayoutConstraint#>, viewToAdjust: <#T##UIView#>)
+        
+        DispatchQueue.global().asyncAfter(delay: 2, execute:{
+            print("延迟两秒执行")
+        })
+        
+        DispatchQueue.global().asyncAfter(delay: .nanoseconds(10)) {
+            print("延迟两纳秒执行")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

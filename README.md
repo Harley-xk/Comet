@@ -288,8 +288,32 @@ App 的基本功能就是执行各种任务，比如网络任务。正常情况�
 	```
 	每个 Storyboard 文件都可以设置一个入口视图控制器，该方法可以创建当前 Storyboard 文件的入口视图控制器实例
 	
+##### 7. GCD 扩展
+扩展几个 GCD 方法以更方便地调用 GCD 的延迟函数
+
+```swift
+public func asyncAfter(delay: DispatchTimeInterval, execute work: @escaping @convention(block) () -> Swift.Void)
+    
+public func asyncAfter(delay seconds: TimeInterval, execute work: @escaping @convention(block) () -> Swift.Void)
+
+public func asyncAfter(delay: DispatchTimeInterval, execute: DispatchWorkItem)
+  
+public func asyncAfter(delay seconds: TimeInterval, execute: DispatchWorkItem)
+```
+
+示例：
+
+```swift
+DispatchQueue.global().asyncAfter(delay: 2) {
+	print("延迟两秒执行")
+}
+        
+DispatchQueue.global().asyncAfter(delay: .nanoseconds(2)) {
+	print("延迟两纳秒执行")
+}
+```
+
 
 ### 移除
 1. 移除 MD5 编码、RC4 加密等相关内容。推荐使用 [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift)， 更加成熟的加密框架，支持更广泛的加密协议。
-2. 移除 GCD Short Cut 便利方法。Swift 3 对 GCD 进行了大规模的重构，现在的 API 简洁又优雅，不再需要便利方法了。
-3. 移除 HKUserDefaults。RC4 属于已过时的加密方式，随着 RC4 加密的移除将 KUserDefaults 一并移除了，有加密需求推荐使用更成熟的第三方加密框架。
+2. 移除 HKUserDefaults。RC4 属于已过时的加密方式，随着 RC4 加密的移除将 KUserDefaults 一并移除了，有加密需求推荐使用更成熟的第三方加密框架。
