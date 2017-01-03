@@ -29,8 +29,6 @@ public extension Date {
         if let date = formatter.date(from: string) {
             self = date
         }else {
-            
-            let unit: DateComponents
             return nil
         }
     }
