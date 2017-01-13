@@ -84,7 +84,7 @@ public extension UIViewController {
     /// 获取导航控制器栈中前一个视图控制器，不存在时返回空
     open var previousNavigationContent: UIViewController? {
         if let viewControllers = self.navigationController?.viewControllers,
-            viewControllers.count > 2 {
+            viewControllers.count >= 2 {
             let index = viewControllers.count - 2
             return viewControllers[index]
         }
