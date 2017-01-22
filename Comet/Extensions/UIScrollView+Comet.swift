@@ -15,8 +15,8 @@ public extension UIScrollView {
     ///
     /// - Parameter animated: 是否显示动画，默认显示
     public func scrollToTop(animated: Bool = true) {
-        let offset = contentOffset
-        let destination = CGRect(x: contentOffset.x, y: 0, width: 1, height: 1)
+        let x = contentOffset.x + contentInset.left + contentInset.right
+        let destination = CGRect(x: x, y: 0, width: 1, height: 1)
         scrollRectToVisible(destination, animated: animated)
     }
     
@@ -24,8 +24,8 @@ public extension UIScrollView {
     ///
     /// - Parameter animated: 是否显示动画，默认显示
     public func scrollToBottom(animated: Bool = true) {
-        let offset = contentOffset
-        let destination = CGRect(x: contentOffset.x, y: contentSize.height - 1, width: 1, height: 1)
+        let x = contentOffset.x + contentInset.left + contentInset.right
+        let destination = CGRect(x: x, y: contentSize.height - 1, width: 1, height: 1)
         scrollRectToVisible(destination, animated: animated)
     }
     
@@ -33,8 +33,8 @@ public extension UIScrollView {
     ///
     /// - Parameter animated: 是否显示动画，默认显示
     public func scrollToLeft(animated: Bool = true) {
-        let offset = contentOffset
-        let destination = CGRect(x: 0, y: contentOffset.y, width: 1, height: 1)
+        let y = contentOffset.y + contentInset.top + contentInset.bottom
+        let destination = CGRect(x: 0, y: y, width: 1, height: 1)
         scrollRectToVisible(destination, animated: animated)
     }
 
@@ -42,8 +42,8 @@ public extension UIScrollView {
     ///
     /// - Parameter animated: 是否显示动画，默认显示
     public func scrollToRight(animated: Bool = true) {
-        let offset = contentOffset
-        let destination = CGRect(x: contentSize.width - 1, y: contentOffset.y, width: 1, height: 1)
+        let y = contentOffset.y + contentInset.top + contentInset.bottom
+        let destination = CGRect(x: contentSize.width - 1, y: y, width: 1, height: 1)
         scrollRectToVisible(destination, animated: animated)
     }
 }
