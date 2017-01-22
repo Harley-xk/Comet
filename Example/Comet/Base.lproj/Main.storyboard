@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Samples-->
         <scene sceneID="QCu-Le-gwa">
             <objects>
                 <tableViewController id="0cQ-ga-amr" sceneMemberID="viewController">
@@ -92,13 +92,13 @@
                             <outlet property="delegate" destination="0cQ-ga-amr" id="vEI-gq-bdf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="S2W-BH-T48"/>
+                    <navigationItem key="navigationItem" title="Samples" id="S2W-BH-T48"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0D-uo-s0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="-44"/>
         </scene>
-        <!--Scroll View Extension-->
+        <!--ScrollView-->
         <scene sceneID="uB2-65-f4V">
             <objects>
                 <viewController id="kcl-uy-PQe" customClass="ScrollViewExtension" customModule="Comet_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -318,6 +318,7 @@
                             <constraint firstItem="5vi-Bd-2qH" firstAttribute="leading" secondItem="3fc-uQ-Ukk" secondAttribute="trailing" constant="8" id="rCc-17-E0t"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="ScrollView" id="fpr-zA-5va"/>
                     <connections>
                         <outlet property="scrollView" destination="LDX-84-7AZ" id="og0-Bc-kBl"/>
                     </connections>
