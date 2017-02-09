@@ -27,6 +27,7 @@
 		A9D99B3270D952FBD8786A402789AACF /* TaskRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF894820A0FEA898F5790C9CCFA9B67 /* TaskRecorder.swift */; };
 		AF461339BFCFA3C458046858F9E90BEA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDE70DBD2F8D8240F963C4738BB0C40 /* Utils.swift */; };
 		B21CC1E3DC4DEB3F0BA4892548E26F39 /* UIColor+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E8B2DCDBA0AAD547451B705E501C29 /* UIColor+Comet.swift */; };
+		B67D8C9D1E4C683200F3FDCC /* UINavigationController+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D8C9C1E4C683200F3FDCC /* UINavigationController+Comet.swift */; };
 		C0EB435367967B11031369B7421CA538 /* PinyinIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3911F3254EC8B0984F5B7F08ED98AD26 /* PinyinIndexer.swift */; };
 		D6D583DCF81B037F3F7EC13524BF4B49 /* UINavigationBar+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D432DE5D1861F38F142C6060FD6E53ED /* UINavigationBar+Comet.swift */; };
 		D78AA45C63EE84CBF8211EF394A6D35F /* HairLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE764858A0B0223CE7C9493D150935 /* HairLine.swift */; };
@@ -45,7 +46,7 @@
 /* Begin PBXFileReference section */
 		047D55583D53EDC30091921A4941D9E5 /* Pods-Comet_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Comet_Example-resources.sh"; sourceTree = "<group>"; };
 		0849F12EF2A1EF331B9AA7F7CC80601A /* Pods-Comet_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Comet_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		227CF6A18B23738436AA8AFE6D7ED36F /* Pods_Comet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Comet_Example.framework; path = "Pods-Comet_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		227CF6A18B23738436AA8AFE6D7ED36F /* Pods_Comet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25253E226FF365D221742800F205FE34 /* KeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		268AD759888C8A840D5A12568711AAB9 /* Comet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Comet-umbrella.h"; sourceTree = "<group>"; };
 		284FC7DC06446316C316E25B62959080 /* UIScrollView+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Comet.swift"; sourceTree = "<group>"; };
@@ -62,22 +63,23 @@
 		7577267B650BF419920434616D9E07AF /* Comet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Comet-prefix.pch"; sourceTree = "<group>"; };
 		7E389E3DD2A724AEDD756A35A2E5967E /* Pods-Comet_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Comet_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		870BF60E9166FDC0D83318D7757D6D5B /* UITextField+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITextField+Comet.swift"; sourceTree = "<group>"; };
-		92DA9AE9041669337ED747723CC5298F /* Comet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Comet.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		92DA9AE9041669337ED747723CC5298F /* Comet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Comet.modulemap; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DF3F071D32762C2ED5BC1715393A24F /* Comet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Comet-dummy.m"; sourceTree = "<group>"; };
 		A1FAF95DC046ADD9BA86B8A254080476 /* Pods-Comet_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Comet_Example-umbrella.h"; sourceTree = "<group>"; };
 		AA36F4E943FA04AABC8F1E1100D7D0AD /* Comet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Comet.xcconfig; sourceTree = "<group>"; };
 		AC936E4A19603D468CF1A742E0D9C82C /* UIViewController+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Comet.swift"; sourceTree = "<group>"; };
 		B670B86FF3550B5696568B117A9BEFE1 /* Dispatch+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dispatch+Comet.swift"; sourceTree = "<group>"; };
+		B67D8C9C1E4C683200F3FDCC /* UINavigationController+Comet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Comet.swift"; sourceTree = "<group>"; };
 		BAEE764858A0B0223CE7C9493D150935 /* HairLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HairLine.swift; sourceTree = "<group>"; };
 		C11BBF8DB74CAA961728D10CBC42ACF6 /* Pods-Comet_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Comet_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C8C1FAC8E44B08BB66944B287511E410 /* Path.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		C9EAE8B67C1710B721BC9FFFA5DB8ABE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CCF894820A0FEA898F5790C9CCFA9B67 /* TaskRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TaskRecorder.swift; sourceTree = "<group>"; };
-		CF88B3E6A3664F5A7FE87A44E6F4E34A /* Pods-Comet_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Comet_Example.modulemap"; sourceTree = "<group>"; };
+		CF88B3E6A3664F5A7FE87A44E6F4E34A /* Pods-Comet_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Comet_Example.modulemap"; sourceTree = "<group>"; };
 		D432DE5D1861F38F142C6060FD6E53ED /* UINavigationBar+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Comet.swift"; sourceTree = "<group>"; };
-		D86BD4AF56B2B75BD3CEC750DA924837 /* Comet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Comet.framework; path = Comet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D86BD4AF56B2B75BD3CEC750DA924837 /* Comet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Comet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83521FF86C3DC9F9CFB4C2EE0562115 /* Pods-Comet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Comet_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F71B0A32EEA205EB0D15988DE1881103 /* Date+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+Comet.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,7 +114,6 @@
 				CCF894820A0FEA898F5790C9CCFA9B67 /* TaskRecorder.swift */,
 				5FDE70DBD2F8D8240F963C4738BB0C40 /* Utils.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -224,8 +225,8 @@
 				870BF60E9166FDC0D83318D7757D6D5B /* UITextField+Comet.swift */,
 				31FE1DCA36A1A796D74FB5E70360AF92 /* UIVIew+Comet.swift */,
 				AC936E4A19603D468CF1A742E0D9C82C /* UIViewController+Comet.swift */,
+				B67D8C9C1E4C683200F3FDCC /* UINavigationController+Comet.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -235,7 +236,6 @@
 				2F961C81E6FF7E91A6FC9B0D04B5CCDC /* Classes */,
 				FA1E3FABDFB534439B8D2F80F3B88733 /* Extensions */,
 			);
-			name = Comet;
 			path = Comet;
 			sourceTree = "<group>";
 		};
@@ -354,6 +354,7 @@
 				9D6A41AD3395DC7A5CE543F6AC10179A /* UIVIew+Comet.swift in Sources */,
 				4C0D7835E2BAFC68E2AB8E9DF73EDE54 /* UIViewController+Comet.swift in Sources */,
 				AF461339BFCFA3C458046858F9E90BEA /* Utils.swift in Sources */,
+				B67D8C9D1E4C683200F3FDCC /* UINavigationController+Comet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
