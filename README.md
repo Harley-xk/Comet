@@ -252,7 +252,7 @@ App 的基本功能就是执行各种任务，比如网络任务。正常情况�
 1. **在 IB 中快速设置属性**
 
 	```swift
-   @IBInspectable var cornerRadius: CGFloat  // 边角弧度
+   @IBInspectable var cornerRadius: CGFloat  // 边角半径
    @IBInspectable var borderWidth: CGFloat   // 边框宽度
    @IBInspectable var borderColor: UIColor?  // 边框颜色
 	```

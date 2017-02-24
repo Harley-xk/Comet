@@ -20,11 +20,11 @@ public extension Date {
     }
     
     /// 从日期字符串创建日期对象
-    public init?(string: String, format: String = "yyyy-MM-dd HH:mm:ss", local: Locale = Locale.current) {
+    public init?(string: String, format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = TimeZone.current) {
         
         let formatter = DateFormatter()
         formatter.dateFormat = format
-        formatter.locale = local
+        formatter.timeZone = timeZone
         
         if let date = formatter.date(from: string) {
             self = date
@@ -34,10 +34,10 @@ public extension Date {
     }
     
     /// 将日期转换为指定格式的字符串
-    open func string(format: String = "yyyy-MM-dd HH:mm:ss", local: Locale = Locale.current) -> String {
+    open func string(format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = TimeZone.current) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
-        formatter.locale = local
+        formatter.timeZone = timeZone
         return formatter.string(from: self)
     }
 
@@ -98,24 +98,16 @@ public extension Date {
     }
 }
 
-public extension Locale {
-    
-    /// 中国地区
-    open static var china: Locale {
-        return Locale(identifier: "zh_Hans_CN")
-    }
-    
-    /// 美国地区
-    open static var usa: Locale {
-        return Locale(identifier: "es_US")
-    }
-}
-
 public extension TimeZone {
     
     /// 中国时区(东8区)
     open static var china: TimeZone {
         return TimeZone(identifier: "Asia/Shanghai")!
+    }
+    
+    // UTC 0 时区
+    open static var zero: TimeZone {
+        return TimeZone(abbreviation: "UTC")!
     }
     
 }
@@ -136,4 +128,23 @@ fileprivate extension Date.DateUnit {
         return [.year, .month, .day, .hour, . minute, .second]
     }
 }
+
+
+
+public extension Locale {
+    
+    /// 中国地区
+    open static var china: Locale {
+        return Locale(identifier: "zh_Hans_CN")
+    }
+    
+    /// 美国地区
+    open static var usa: Locale {
+        return Locale(identifier: "es_US")
+    }
+}
+
+
+
+
 
