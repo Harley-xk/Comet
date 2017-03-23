@@ -29,6 +29,7 @@
 		B21CC1E3DC4DEB3F0BA4892548E26F39 /* UIColor+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E8B2DCDBA0AAD547451B705E501C29 /* UIColor+Comet.swift */; };
 		B67D8C9D1E4C683200F3FDCC /* UINavigationController+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D8C9C1E4C683200F3FDCC /* UINavigationController+Comet.swift */; };
 		C0EB435367967B11031369B7421CA538 /* PinyinIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3911F3254EC8B0984F5B7F08ED98AD26 /* PinyinIndexer.swift */; };
+		C37D121C1E83C24D00D83B91 /* UIBarButtonItem+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D121B1E83C24D00D83B91 /* UIBarButtonItem+Closure.swift */; };
 		D6D583DCF81B037F3F7EC13524BF4B49 /* UINavigationBar+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D432DE5D1861F38F142C6060FD6E53ED /* UINavigationBar+Comet.swift */; };
 		D78AA45C63EE84CBF8211EF394A6D35F /* HairLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE764858A0B0223CE7C9493D150935 /* HairLine.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		B67D8C9C1E4C683200F3FDCC /* UINavigationController+Comet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Comet.swift"; sourceTree = "<group>"; };
 		BAEE764858A0B0223CE7C9493D150935 /* HairLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HairLine.swift; sourceTree = "<group>"; };
 		C11BBF8DB74CAA961728D10CBC42ACF6 /* Pods-Comet_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Comet_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C37D121B1E83C24D00D83B91 /* UIBarButtonItem+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Closure.swift"; sourceTree = "<group>"; };
 		C8C1FAC8E44B08BB66944B287511E410 /* Path.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		C9EAE8B67C1710B721BC9FFFA5DB8ABE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -220,6 +222,7 @@
 				6F1264045DEEEF9352464E7E7168D4EA /* UIAlertController+Comet.swift */,
 				55E8B2DCDBA0AAD547451B705E501C29 /* UIColor+Comet.swift */,
 				D432DE5D1861F38F142C6060FD6E53ED /* UINavigationBar+Comet.swift */,
+				C37D121B1E83C24D00D83B91 /* UIBarButtonItem+Closure.swift */,
 				5B3C676F6824F4979268348F96B15411 /* UIResponder+Comet.swift */,
 				284FC7DC06446316C316E25B62959080 /* UIScrollView+Comet.swift */,
 				870BF60E9166FDC0D83318D7757D6D5B /* UITextField+Comet.swift */,
@@ -338,6 +341,7 @@
 			files = (
 				A0ACDE045A398265C0DEBDCD923D7AF0 /* Comet-dummy.m in Sources */,
 				A78143800F05032D4BFA313643CC0D9D /* Date+Comet.swift in Sources */,
+				C37D121C1E83C24D00D83B91 /* UIBarButtonItem+Closure.swift in Sources */,
 				920B7C4D9AA1EFFEB13A2689C5D77EFA /* Dispatch+Comet.swift in Sources */,
 				D78AA45C63EE84CBF8211EF394A6D35F /* HairLine.swift in Sources */,
 				17A35EA00C34A6F7D349D5F2AD14258B /* KeyboardManager.swift in Sources */,
