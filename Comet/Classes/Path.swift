@@ -101,7 +101,7 @@ open class Path {
     
     /// 获取文件 mime type
     open var mimeType: String? {
-        if let ext = pathExtension as? NSString {
+        if let ext = pathExtension as NSString? {
             if let UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, ext, nil)?.takeUnretainedValue() {
                 if let MIMEType = UTTypeCopyPreferredTagWithClass (UTI, kUTTagClassMIMEType) {
                     let mimeTypeCFString = MIMEType.takeUnretainedValue() as CFString
@@ -132,7 +132,7 @@ open class Path {
     
     /// 转换字节数为最大单位可读字符串
     open class func string(fromBytes bytes: UInt64) -> String {
-        let kb = Double(bytes)/1024.0;
+        let kb = Double(bytes)/1024;
         if (kb < 1) {
             return "\(bytes)B"
         }
@@ -193,7 +193,7 @@ public extension Bundle
     /// - Parameters:
     ///   - name: 资源名称
     /// - Returns: 返回资源路径
-    open func resource(_ name: String) -> Path? {
+    public func resource(_ name: String) -> Path? {
         let path = name as NSString
         let pathExtension = path.pathExtension
         var nameWithoutExtension = name
@@ -207,7 +207,7 @@ public extension Bundle
 
 public extension String
 {
-    open var path: Path {
+    public var path: Path {
         return Path(self)
     }
 }

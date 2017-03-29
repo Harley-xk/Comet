@@ -10,7 +10,7 @@ import Foundation
 
 public extension UITextField {
     
-    open func setPlaceholderColor(_ color: UIColor) {
+    public func setPlaceholderColor(_ color: UIColor) {
         
         if let string = self.placeholder {
             if string.characters.count > 0 {
@@ -19,7 +19,7 @@ public extension UITextField {
             }
         } else if let string = self.attributedPlaceholder {
             if string.length > 0 {
-                var attributedString = NSMutableAttributedString(attributedString: string)
+                let attributedString = NSMutableAttributedString(attributedString: string)
                 attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: NSMakeRange(0, string.length))
                 self.attributedPlaceholder = attributedString
             }

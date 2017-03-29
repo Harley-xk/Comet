@@ -17,7 +17,7 @@ public extension UIColor {
      *
      *  @return 返回创建的UIColor对象
      */
-    open convenience init?(hex: String, alpha: CGFloat = 1) {
+    public convenience init?(hex: String, alpha: CGFloat = 1) {
         
         let characterSet = CharacterSet.whitespacesAndNewlines
         var string = hex.trimmingCharacters(in: characterSet).uppercased()
@@ -27,11 +27,11 @@ public extension UIColor {
         }
 
         if string.hasPrefix("0X") {
-            var ns = string as NSString
+            let ns = string as NSString
             string = ns.substring(from: 2)
         }
         if string.hasPrefix("#") {
-            var ns = string as NSString
+            let ns = string as NSString
             string = ns.substring(from: 1)
         }
         

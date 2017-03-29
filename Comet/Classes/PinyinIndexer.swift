@@ -37,7 +37,7 @@ open class PinyinIndexer<T: NSObject>: NSObject {
 
         // 按索引分组
         let theCollation = UILocalizedIndexedCollation.current()
-        var indexArray = [PinyinIndex<T>]();
+        let indexArray = [PinyinIndex<T>]();
         
         for object in self.objectList {
             let index = PinyinIndex(fromObject: object, property: propertyName)
