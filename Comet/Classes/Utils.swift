@@ -21,6 +21,12 @@ open class Utils {
         return UIDevice.current.systemVersion
     }
     
+    /// App Bundle Identifier
+    open class var bundleIdentifier: String {
+        let infoDictionary = Bundle.main.infoDictionary!
+        return infoDictionary["CFBundleIdentifier"] as! String
+    }
+    
     /// App 版本号
     open class var appVersion: String {
         let infoDictionary = Bundle.main.infoDictionary!
