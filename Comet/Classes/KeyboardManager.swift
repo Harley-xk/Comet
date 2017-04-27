@@ -68,15 +68,15 @@ open class KeyboardManager: NSObject {
     }
     fileprivate var keyboardStatus = KeyboardStatus.hidden
     
-    fileprivate var viewController:UIViewController
-    fileprivate var viewToAdjust:UIView
-    fileprivate var positionConstraint:NSLayoutConstraint
+    fileprivate weak var viewController: UIViewController!
+    fileprivate weak var viewToAdjust: UIView!
+    fileprivate weak var positionConstraint: NSLayoutConstraint!
     
-    fileprivate var originalConstant:CGFloat
-    fileprivate var originalBottomSpace:CGFloat = 0
-    fileprivate var currentKeyboardHeight:CGFloat = 0
+    fileprivate var originalConstant: CGFloat
+    fileprivate var originalBottomSpace: CGFloat = 0
+    fileprivate var currentKeyboardHeight: CGFloat = 0
 
-    init(withViewController viewController:UIViewController, positionConstraint:NSLayoutConstraint, viewToAdjust:UIView) {
+    init(withViewController viewController: UIViewController, positionConstraint: NSLayoutConstraint, viewToAdjust: UIView) {
         self.viewController = viewController
         self.viewToAdjust = viewToAdjust
         self.positionConstraint = positionConstraint
@@ -105,7 +105,7 @@ open class KeyboardManager: NSObject {
     
     fileprivate func viewBottomSpace() -> CGFloat
     {
-        var bottomOffSet:CGFloat = 0
+        var bottomOffSet: CGFloat = 0
         if let scrollView = self.viewToAdjust as? UIScrollView {
             bottomOffSet = scrollView.contentInset.bottom
             bottomOffSet = max(0, bottomOffSet)
@@ -114,7 +114,7 @@ open class KeyboardManager: NSObject {
     }
 
     
-    @objc internal func keyboardWillShow(_ notification:Notification) {
+    @objc internal func keyboardWillShow(_ notification: Notification) {
         guard keyboardStatus == .hidden else {
             return
         }
@@ -126,7 +126,7 @@ open class KeyboardManager: NSObject {
         keyboardStatus = .showing
     }
     
-    @objc internal func keyboardDidShow(_ notification:Notification) {
+    @objc internal func keyboardDidShow(_ notification: Notification) {
         guard keyboardStatus == .showing else {
             return
         }
@@ -135,7 +135,7 @@ open class KeyboardManager: NSObject {
         keyboardStatus = .shown
     }
     
-    @objc internal func keyboardWillChangeFrame(_ notification:Notification) {
+    @objc internal func keyboardWillChangeFrame(_ notification: Notification) {
         
         guard keyboardStatus != .hidden else {
             return
@@ -144,7 +144,7 @@ open class KeyboardManager: NSObject {
         updateForKeyboard(withNotification: notification)
     }
     
-    @objc internal func keyboardWillHide(_ notification:Notification) {
+    @objc internal func keyboardWillHide(_ notification: Notification) {
         guard keyboardStatus != .hidden else {
             return
         }
@@ -164,7 +164,7 @@ open class KeyboardManager: NSObject {
         keyboardStatus = .hidden
     }
     
-    fileprivate func updateForKeyboard(withNotification notification:Notification) {
+    fileprivate func updateForKeyboard(withNotification notification: Notification) {
         if (enabled) {
             let userInfo = notification.userInfo!
             let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
