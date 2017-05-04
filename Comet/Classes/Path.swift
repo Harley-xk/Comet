@@ -36,6 +36,11 @@ open class Path {
         return NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0].path
     }
     
+    /// 获取沙盒 Cache 路径
+    open class func cache() -> Path {
+        return NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0].path
+    }
+    
     /// 获取沙盒 Temp 路径
     open class func temp() -> Path {
         return NSTemporaryDirectory().path
