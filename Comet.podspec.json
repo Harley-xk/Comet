@@ -1,6 +1,6 @@
 {
     "name": "Comet",
-    "version": "0.3.1",
+    "version": "0.4.1",
     "summary": "iOS 项目的 Swift 基础库，提供一些常用组件、便利方法等。",
     "description": "基于 HKProjectBase 库，根据 Swift 的语法特性，重新实现了大部分的逻辑, 移除了部分不常用/不成熟的代码。",
     "homepage": "https://github.com/Harley-xk/Comet",
@@ -13,7 +13,7 @@
     },
     "source": {
         "git": "https://github.com/Harley-xk/Comet.git",
-        "tag": "0.3.1"
+        "tag": "0.4.1"
     },
     "platforms": {
         "ios": "8.0"
