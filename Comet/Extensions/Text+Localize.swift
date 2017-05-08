@@ -1,6 +1,6 @@
 //
 //  Text+Localize.swift
-//  Pods
+//  Comet
 //
 //  Created by Harley.xk on 2017/5/8.
 //
@@ -36,5 +36,25 @@ extension UITextField {
             placeholder = NSLocalizedString(newValue, comment: "")
         }
         get { return placeholder }
+    }
+}
+
+extension UINavigationItem {
+    @IBInspectable var localizedKey: String? {
+        set {
+            guard let newValue = newValue else { return }
+            title = NSLocalizedString(newValue, comment: "")
+        }
+        get { return title }
+    }
+}
+
+extension UIBarItem {
+    @IBInspectable var localizedKey: String? {
+        set {
+            guard let newValue = newValue else { return }
+            title = NSLocalizedString(newValue, comment: "")
+        }
+        get { return title }
     }
 }
