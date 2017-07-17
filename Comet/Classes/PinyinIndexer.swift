@@ -8,9 +8,13 @@
 
 import UIKit
 
+/// 索引器对象协议，用来告知索引器需要转换为拼音的属性
+public protocol PinyinIndexable {
+    var valueToPinyin: String { get }
+}
 
 /// 拼音索引器，将指定的对象数组按照指定属性进行拼音首字母排序并创建索引
-open class PinyinIndexer<T: NSObject>: NSObject {
+open class PinyinIndexer<T: PinyinIndexable> {
 
     private var objectList: [T]
     private var propertyName: String
@@ -28,7 +32,6 @@ open class PinyinIndexer<T: NSObject>: NSObject {
     public init(objects: [T], property: String) {
         objectList = objects
         propertyName = property
-        super.init()
         
         self.indexObjects()
     }
@@ -41,7 +44,7 @@ open class PinyinIndexer<T: NSObject>: NSObject {
         
         for object in self.objectList {
             let index = PinyinIndex(fromObject: object, property: propertyName)
-            let section = theCollation.section(for: index, collationStringSelector: #selector(PinyinIndex.pinyin))
+            let section = theCollation.section(for: index, collationStringSelector: #selector(PinyinIndex<T>.pinyin))
             index.sectionNumber = section
         }
         
@@ -67,7 +70,7 @@ open class PinyinIndexer<T: NSObject>: NSObject {
     }
 }
 
-class PinyinIndex<T: NSObject>: NSObject {
+class PinyinIndex<T: PinyinIndexable> {
     
     var object: T
     var name: String
@@ -75,11 +78,7 @@ class PinyinIndex<T: NSObject>: NSObject {
     
     init(fromObject obj: T, property: String) {
         object = obj
-        if let propertyValue = obj.value(forKey: property) as? String {
-            name = propertyValue
-        }else {
-            name = ""
-        }
+        name = obj.valueToPinyin
     }
     
     @objc func pinyin() -> String {
