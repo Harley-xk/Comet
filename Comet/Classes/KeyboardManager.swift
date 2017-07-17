@@ -153,12 +153,10 @@ open class KeyboardManager: NSObject {
             let timeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
             let option = UIViewAnimationOptions(rawValue: UInt(userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber))
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05, execute: {
-                UIView.animate(withDuration: timeInterval, delay: 0, options:option, animations: {
-                    self.positionConstraint.constant = self.originalConstant
-                    self.viewController.view.layoutIfNeeded()
-                }, completion: nil)
-            })
+            UIView.animate(withDuration: timeInterval, delay: 0, options:option, animations: {
+                self.positionConstraint.constant = self.originalConstant
+                self.viewController.view.layoutIfNeeded()
+            }, completion: nil)
             self.currentKeyboardHeight = 0;
         }
         keyboardStatus = .hidden
