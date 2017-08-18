@@ -326,6 +326,38 @@ DispatchQueue.global().asyncAfter(delay: .nanoseconds(2)) {
 }
 ```
 
+##### 8. KVO & 闭包
+KVO 是 Foundation 框架强大的功能之一，但是由于不支持闭包，导致实现起来比较繁琐。注册和实际处理的代码需要写在不同的地方，对于一些轻量级的逻辑来说并不十分友好。
+
+通过 NSObject+KVOHandler 扩展，可以在注册 KVO 观察者时直接提供一个闭包来实现了。比如下面的代码实现了观察 ScrollView 的 contentOffset 的变化，可以比较一下原来的实现方式和闭包形式的实现方式。
+
+原来的实现：
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    scrollView.addObserver(self, forKeyPath: "contentOffset", context: nil)
+}
+
+override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+	if keyPath == "contentOffset" {
+		updateLayout()
+	}
+}
+```
+
+使用闭包实现：
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    scrollView.addObserver(for: "contentOffset") { (_, _, _) in
+        // Do something
+    }
+}
+```
 
 ### 移除
 1. 移除 MD5 编码、RC4 加密等相关内容。推荐使用 [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift)， 更加成熟的加密框架，支持更广泛的加密协议。
