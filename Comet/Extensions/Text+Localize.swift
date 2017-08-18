@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+/// 给常用控件扩展功能：
+/// 通过 localizedKey 属性，可以给常用控件在 IB 中直接设置多语言的 string key
+
+
 extension UILabel {
     @IBInspectable var localizedKey: String? {
         set {

@@ -1,28 +1,24 @@
 //
-//  UIBarbuttonItemClosureSample.swift
+//  KeyPathObserverViewController.swift
 //  Comet
 //
-//  Created by Harley.xk on 2017/3/23.
+//  Created by Harley.xk on 2017/8/18.
 //  Copyright © 2017年 CocoaPods. All rights reserved.
 //
 
 import UIKit
 import Comet
 
-class UIBarbuttonItemClosureSample: UIViewController {
+class KeyPathObserverViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Action", style: .plain, callback: { (sender) in
-            let alert = UIAlertController(title: "Action!", message: nil, preferredStyle: .alert)
-            alert.addAction(title: "确定", style: .cancel)
-            self.present(alert, animated: true, completion: nil)
-        })
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, callback: { (_) in
-            self.dismiss(animated: true)
-        })
+        textView.addObserver(for: "contentOffset") { (_, change, _) in
+            print("Content Offset: \(self.textView.contentOffset)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
