@@ -106,7 +106,7 @@ public extension Date {
     
     // 两个日期相隔的小时数
     public func hoursSince(_ date: Date) -> Double {
-        let minute = hoursSince(date)
+        let minute = minutesSince(date)
         return minute / 60
     }
     
