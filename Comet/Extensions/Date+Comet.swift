@@ -96,6 +96,36 @@ public extension Date {
         components.timeZone = TimeZone.current
         return (components.weekday ?? 1) - 1
     }
+    
+    // 两个日期相隔的分钟数
+    public func minutesSince(_ date: Date) -> Double {
+        let timeInterval = timeIntervalSince(date)
+        let minute = timeInterval / 60
+        return minute
+    }
+    
+    // 两个日期相隔的小时数
+    public func hoursSince(_ date: Date) -> Double {
+        let minute = hoursSince(date)
+        return minute / 60
+    }
+    
+    /// 两个日期相隔的天数
+    ///
+    /// - Parameters:
+    ///   - date: 与当前日期比较的日期
+    ///   - withoutTime: 是否忽略精确的时分秒，可以启用该属性来比较两个日期的物理天数（即昨天、前天等）
+    /// - Returns: 天数
+    public func daysSince(_ date: Date, withoutTime: Bool = false) -> Double {
+        var date1 = self
+        var date2 = date
+        if withoutTime {
+            date1 = self.withoutTime
+            date2 = date.withoutTime
+        }
+        let hours = date1.hoursSince(date2)
+        return hours / 24
+    }
 }
 
 public extension TimeZone {
