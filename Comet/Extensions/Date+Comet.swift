@@ -40,6 +40,11 @@ public extension Date {
         formatter.timeZone = timeZone
         return formatter.string(from: self)
     }
+    
+    /// 转换为年月日的字符串
+    public func dateString() -> String {
+        return string(format: "yyyy-MM-dd")
+    }
 
     /// 日期计算，返回当前日期加上指定单位值之后的日期，会自动进位或减位
     /// 返回计算后的新日期
