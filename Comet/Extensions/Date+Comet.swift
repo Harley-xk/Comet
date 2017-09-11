@@ -131,6 +131,16 @@ public extension Date {
         let hours = date1.hoursSince(date2)
         return hours / 24
     }
+    
+    
+    /// 判断两个日期是否在同一天内
+    public func isSameDay(as date: Date?) -> Bool {
+        guard let date = date else {
+            return false
+        }
+        let days = daysSince(date, withoutTime: true)
+        return days == 0
+    }
 }
 
 public extension TimeZone {
