@@ -18,8 +18,14 @@ class KeyPathObserverViewController: UIViewController {
 
         textView.addObserver(for: "contentOffset") { (_, change, _) in
             print("Content Offset: \(self.textView.contentOffset)")
-        }
+        }        
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        textView.removeObserver(for: "contentOffset")
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

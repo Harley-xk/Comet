@@ -1,16 +1,16 @@
 PODS:
-  - Comet (0.1.0)
+  - Comet (0.3.1)
 
 DEPENDENCIES:
   - Comet (from `../`)
 
 EXTERNAL SOURCES:
   Comet:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Comet: d0cd7a48848ae34ff71942dfed185b61f55ee66c
+  Comet: df5a678a4a4d21d65fc6b18b02a84347be127d6a
 
 PODFILE CHECKSUM: 3b39828ed5dc212344e3a11d86a1aa5cb071e1bc
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.2.0

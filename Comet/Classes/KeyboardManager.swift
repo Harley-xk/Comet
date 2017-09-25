@@ -151,7 +151,7 @@ open class KeyboardManager: NSObject {
         if (enabled) {
             let userInfo = notification.userInfo!
             let timeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-            let option = UIViewAnimationOptions(rawValue: UInt(userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber))
+            let option = UIViewAnimationOptions(rawValue: UInt(truncating: userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber))
             
             UIView.animate(withDuration: timeInterval, delay: 0, options:option, animations: {
                 self.positionConstraint.constant = self.originalConstant
@@ -178,7 +178,7 @@ open class KeyboardManager: NSObject {
             let offset = keyBoardHeight - bottomSpace;
             
             let timeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-            let option = UIViewAnimationOptions(rawValue: UInt(userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber))
+            let option = UIViewAnimationOptions(rawValue: UInt(truncating: userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber))
             
             UIView.animate(withDuration: timeInterval, delay: 0, options:option, animations: {
                 self.positionConstraint.constant = self.originalConstant + offset
