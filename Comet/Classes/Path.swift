@@ -90,7 +90,7 @@ open class Path {
     open var fileExist: (exist: Bool, isFile: Bool) {
         var isDirectory = ObjCBool(false)
         let exist = fileManager.fileExists(atPath: string, isDirectory: &isDirectory)
-        return (exist, isDirectory.boolValue)
+        return (exist, !isDirectory.boolValue)
     }
     
     /// 文件扩展名
