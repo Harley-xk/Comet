@@ -175,7 +175,7 @@ open class Path {
         if fileExist.exist && !fileExist.isFile {
             if let contents = try? fileManager.contentsOfDirectory(atPath: string) {
                 for file in contents {
-                    let path = file.path
+                    let path = resource(file)
                     let subFileExist = path.fileExist
                     if subFileExist.exist {
                         if subFileExist.isFile {
