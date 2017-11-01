@@ -22,7 +22,7 @@ open class Path {
     open var string: String
     
     /// URL 实例
-    open var url: URL? {
+    open var url: URL {
         return URL(fileURLWithPath: string)
     }
     
@@ -202,7 +202,7 @@ public extension Bundle
         let path = name as NSString
         let pathExtension = path.pathExtension
         var nameWithoutExtension = name
-        if pathExtension.characters.count > 0{
+        if !pathExtension.isEmpty {
             nameWithoutExtension = path.deletingPathExtension
         }
         let string = self.path(forResource: nameWithoutExtension, ofType: pathExtension)

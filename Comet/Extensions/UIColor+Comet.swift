@@ -22,7 +22,7 @@ public extension UIColor {
         let characterSet = CharacterSet.whitespacesAndNewlines
         var string = hex.trimmingCharacters(in: characterSet).uppercased()
         
-        if string.characters.count < 6 {
+        if string.count < 6 {
             return nil
         }
 
@@ -35,7 +35,7 @@ public extension UIColor {
             string = ns.substring(from: 1)
         }
         
-        if string.characters.count != 6 {
+        if string.count != 6 {
             return nil
         }
 

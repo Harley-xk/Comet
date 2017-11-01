@@ -13,7 +13,7 @@ public extension UITextField {
     public func setPlaceholderColor(_ color: UIColor) {
         
         if let string = self.placeholder {
-            if string.characters.count > 0 {
+            if !string.isEmpty {
                 let attributedString = NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor : color])
                 self.attributedPlaceholder = attributedString
             }
