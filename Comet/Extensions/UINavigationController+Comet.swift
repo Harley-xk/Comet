@@ -24,7 +24,9 @@ extension UINavigationController {
     }
     
     /// 简化 pop 函数，且不强制要求接收返回值
-    @discardableResult open func pop(animated: Bool = true) -> UIViewController? {
-        return popViewController(animated: animated)
+    @discardableResult
+    open func pop(animated: Bool = true) -> UIViewController? {
+        let poped = popViewController(animated: animated)
+        return poped
     }
 }

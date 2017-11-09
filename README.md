@@ -1,5 +1,11 @@
 # ![](Images/img_0.png) Comet
 
+[![CI Status](http://img.shields.io/travis/Harley-xk/Comet.svg?style=flat)](https://travis-ci.org/Harley-xk/Comet)
+[![Version](https://img.shields.io/cocoapods/v/Comet.svg?style=flat)](http://cocoapods.org/pods/Comet)
+[![License](https://img.shields.io/cocoapods/l/Comet.svg?style=flat)](http://cocoapods.org/pods/Comet)
+[![Platform](https://img.shields.io/cocoapods/p/Comet.svg?style=flat)](http://cocoapods.org/pods/Comet)
+
+
 iOS 项目的 Swift 基础库，提供大量常用组件、便利方法等。支持 **Swift 3.0+**。
 1.0.0 起支持 Swift 4.0，需要支持 Swift 3.x 请使用 0.7.5 版本。
 
@@ -8,7 +14,7 @@ iOS 项目的 Swift 基础库，提供大量常用组件、便利方法等。支
 
 ```ruby
 # for swift 4.0
-pod 'Comet', :git => 'https://github.com/Harley-xk/Comet.git'
+pod 'Comet'
 # for swift 3.1/3.2
 pod 'Comet', :git => 'https://github.com/Harley-xk/Comet.git, :tag=>0.7.5'
 ```
