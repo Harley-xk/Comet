@@ -8,6 +8,15 @@
 
 import UIKit
 
+// MARK: - Bridge
+public extension String {
+    
+    /// 返回桥接版的 NSString
+    public var ns: NSString {
+        return self as NSString
+    }
+}
+
 // MARK: - 拼音
 
 public extension String {
