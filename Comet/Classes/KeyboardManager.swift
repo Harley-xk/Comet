@@ -115,7 +115,7 @@ open class KeyboardManager: NSObject {
 
     
     @objc internal func keyboardWillShow(_ notification: Notification) {
-        guard keyboardStatus == .hidden else {
+        guard keyboardStatus == .hidden, viewController.containsFirstResponder else {
             return
         }
         
@@ -127,7 +127,7 @@ open class KeyboardManager: NSObject {
     }
     
     @objc internal func keyboardDidShow(_ notification: Notification) {
-        guard keyboardStatus == .showing else {
+        guard keyboardStatus == .showing, viewController.containsFirstResponder else {
             return
         }
 
@@ -137,7 +137,7 @@ open class KeyboardManager: NSObject {
     
     @objc internal func keyboardWillChangeFrame(_ notification: Notification) {
         
-        guard keyboardStatus != .hidden else {
+        guard keyboardStatus != .hidden, viewController.containsFirstResponder else {
             return
         }
         
@@ -145,7 +145,7 @@ open class KeyboardManager: NSObject {
     }
     
     @objc internal func keyboardWillHide(_ notification: Notification) {
-        guard keyboardStatus != .hidden else {
+        guard keyboardStatus != .hidden, viewController.containsFirstResponder else {
             return
         }
         if (enabled) {
