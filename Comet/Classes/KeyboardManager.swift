@@ -15,41 +15,44 @@ import UIKit
  *  使用方法：
  *  1、将需要始终可见的视图放置于 UIScrollView 或其子类中
  *  2、设置合适的约束
- *  3、创建 HKKeyboardManager，并关联对应的约束和视图
+ *  3、获取全局 HKKeyboardManager，并关联对应的约束和视图
  */
 
-public extension UIViewController {
+open class KeyboardManager {
     
-    /// 初始化键盘UI管理器
+    open class var `default`: KeyboardManager {
+        return defaultKeyboardManager
+    }
+    
+    /// Set Gloable KeyboardManager to delegate keyboard events for viewController
+    /// 将键盘管理器设置为指定视图控制器的代理，处理键盘事件
     ///
     /// - Parameters:
-    ///   - constraint: 键盘UI变化时需要调整的约束
+    ///   - positionConstraint: 键盘UI变化时需要调整的约束
     ///   - viewToAdjust: 键盘变化时需要调整的视图
-    public func setupKeyboardManager(withPositionConstraint constraint:NSLayoutConstraint, viewToAdjust:UIView) {
-        let manager = KeyboardManager(withViewController: self, positionConstraint: constraint, viewToAdjust: viewToAdjust)
-        self.keyboardManager = manager;
+    open func delegate(for viewController: UIViewController, positionConstraint: NSLayoutConstraint, viewToAdjust: UIView) {
+        self.viewController = viewController
+        self.viewToAdjust = viewToAdjust
+        self.positionConstraint = positionConstraint
+        self.originalConstant = positionConstraint.constant
+        self.originalBottomSpace = viewBottomSpace()
+        enabled = true
     }
     
-    fileprivate struct AssociatedKeys {
-        static var KeyboardManagerKey = "KeyboardManagerKey"
+    /// 在视图退出后解除代理任务
+    /// 如果此时已经绑定了其它的控制器，则该方法会跳过，不会再次尝试停止代理
+    open func stopDelegate(for viewController: UIViewController) {
+        guard self.viewController == viewController else {
+            return
+        }
+        self.viewController = nil
+        self.viewToAdjust = nil
+        self.positionConstraint = nil
+        UIResponder.resignAnyFirstResponder()
+        keyboardStatus = .hidden
+        enabled = false
     }
     
-    /// 键盘管理器
-    public var keyboardManager: KeyboardManager? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.KeyboardManagerKey) as? KeyboardManager
-        }
-        set {
-            if let newValue = newValue {
-                objc_setAssociatedObject(self, &AssociatedKeys.KeyboardManagerKey, newValue as KeyboardManager?, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            }
-        }
-    }
-}
-
-
-open class KeyboardManager: NSObject {
-
     /**
      *  临时启用或关闭管理器
      */
@@ -60,62 +63,53 @@ open class KeyboardManager: NSObject {
      */
     var animateAlongwithKeyboard = true
     
-
-    fileprivate enum KeyboardStatus {
+    private enum KeyboardStatus {
         case hidden
         case shown
         case showing
     }
-    fileprivate var keyboardStatus = KeyboardStatus.hidden
+    private var keyboardStatus = KeyboardStatus.hidden
     
-    fileprivate weak var viewController: UIViewController!
-    fileprivate weak var viewToAdjust: UIView!
-    fileprivate weak var positionConstraint: NSLayoutConstraint!
+    private weak var viewController: UIViewController?
+    private weak var viewToAdjust: UIView?
+    private weak var positionConstraint: NSLayoutConstraint?
     
-    fileprivate var originalConstant: CGFloat
-    fileprivate var originalBottomSpace: CGFloat = 0
-    fileprivate var currentKeyboardHeight: CGFloat = 0
-
-    init(withViewController viewController: UIViewController, positionConstraint: NSLayoutConstraint, viewToAdjust: UIView) {
-        self.viewController = viewController
-        self.viewToAdjust = viewToAdjust
-        self.positionConstraint = positionConstraint
-        self.originalConstant = positionConstraint.constant
-        super.init()
-        
-        DispatchQueue.main.async {
-            self.registerKeyboardEvents()
-        }
+    private var originalConstant: CGFloat = 0
+    private var originalBottomSpace: CGFloat = 0
+    private var currentKeyboardHeight: CGFloat = 0
+    
+    fileprivate init() {
+        registerKeyboardEvents()
     }
     
     deinit {
-        notificationCenter.removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    fileprivate let notificationCenter = NotificationCenter.default
-    
     // MARK: - Private Logics
-    fileprivate func registerKeyboardEvents()
-    {
+    private func registerKeyboardEvents() {
+        let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardDidShow), name: Notification.Name.UIKeyboardDidShow, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillChangeFrame), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
-    fileprivate func viewBottomSpace() -> CGFloat
-    {
+    private func viewBottomSpace() -> CGFloat {
+        guard let vc = viewController, let view = viewToAdjust else {
+            return 0
+        }
         var bottomOffSet: CGFloat = 0
-        if let scrollView = self.viewToAdjust as? UIScrollView {
+        if let scrollView = view as? UIScrollView {
             bottomOffSet = scrollView.contentInset.bottom
             bottomOffSet = max(0, bottomOffSet)
         }
-        return self.viewController.view.frame.size.height - self.viewToAdjust.frame.size.height - self.viewToAdjust.frame.origin.y + bottomOffSet;
+        return vc.view.frame.size.height - view.frame.size.height - view.frame.origin.y + bottomOffSet;
     }
-
     
-    @objc internal func keyboardWillShow(_ notification: Notification) {
-        guard keyboardStatus == .hidden, viewController.containsFirstResponder else {
+    @objc
+    private func keyboardWillShow(_ notification: Notification) {
+        guard keyboardStatus == .hidden else {
             return
         }
         
@@ -126,67 +120,72 @@ open class KeyboardManager: NSObject {
         keyboardStatus = .showing
     }
     
-    @objc internal func keyboardDidShow(_ notification: Notification) {
-        guard keyboardStatus == .showing, viewController.containsFirstResponder else {
+    @objc
+    private func keyboardDidShow(_ notification: Notification) {
+        guard keyboardStatus == .showing else {
             return
         }
-
+        
         updateForKeyboard(withNotification: notification)
         keyboardStatus = .shown
     }
     
-    @objc internal func keyboardWillChangeFrame(_ notification: Notification) {
-        
-        guard keyboardStatus != .hidden, viewController.containsFirstResponder else {
+    @objc
+    private func keyboardWillChangeFrame(_ notification: Notification) {
+        guard keyboardStatus != .hidden else {
             return
         }
-        
         updateForKeyboard(withNotification: notification)
     }
     
-    @objc internal func keyboardWillHide(_ notification: Notification) {
-        guard keyboardStatus != .hidden, viewController.containsFirstResponder else {
+    @objc
+    private func keyboardWillHide(_ notification: Notification) {
+        guard keyboardStatus != .hidden, let viewController = self.viewController, let positionConstraint = self.positionConstraint else {
             return
         }
+        
         if (enabled) {
             let userInfo = notification.userInfo!
             let timeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
             let option = UIViewAnimationOptions(rawValue: UInt(truncating: userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber))
             
             UIView.animate(withDuration: timeInterval, delay: 0, options:option, animations: {
-                self.positionConstraint.constant = self.originalConstant
-                self.viewController.view.layoutIfNeeded()
+                positionConstraint.constant = self.originalConstant
+                viewController.view.layoutIfNeeded()
             }, completion: nil)
-            self.currentKeyboardHeight = 0;
+            currentKeyboardHeight = 0;
         }
         keyboardStatus = .hidden
     }
     
-    fileprivate func updateForKeyboard(withNotification notification: Notification) {
-        if (enabled) {
-            let userInfo = notification.userInfo!
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-            let frameInView = self.viewController.view.convert(endFrame, from: viewController.view.window)
-            var keyBoardHeight = self.viewController.view.frame.size.height - frameInView.origin.y
-            keyBoardHeight = max(0, keyBoardHeight)
-            
-            let bottomSpace = self.originalBottomSpace;
-            if (bottomSpace > keyBoardHeight) {
-                return;
-            }
-            
-            let offset = keyBoardHeight - bottomSpace;
-            
-            let timeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-            let option = UIViewAnimationOptions(rawValue: UInt(truncating: userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber))
-            
-            UIView.animate(withDuration: timeInterval, delay: 0, options:option, animations: {
-                self.positionConstraint.constant = self.originalConstant + offset
-                self.viewController.view.layoutIfNeeded()
-                }, completion: nil);
-            
-            self.currentKeyboardHeight = keyBoardHeight;
+    private func updateForKeyboard(withNotification notification: Notification) {
+        guard let viewController = self.viewController, let positionConstraint = self.positionConstraint, enabled else {
+            return
         }
+        
+        let userInfo = notification.userInfo!
+        let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let frameInView = viewController.view.convert(endFrame, from: viewController.view.window)
+        var keyBoardHeight = viewController.view.frame.size.height - frameInView.origin.y
+        keyBoardHeight = max(0, keyBoardHeight)
+        
+        let bottomSpace = self.originalBottomSpace;
+        if (bottomSpace > keyBoardHeight) {
+            return;
+        }
+        
+        let offset = keyBoardHeight - bottomSpace;
+        
+        let timeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        let option = UIViewAnimationOptions(rawValue: UInt(truncating: userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber))
+        
+        UIView.animate(withDuration: timeInterval, delay: 0, options:option, animations: {
+            positionConstraint.constant = self.originalConstant + offset
+            viewController.view.layoutIfNeeded()
+        }, completion: nil);
+        
+        self.currentKeyboardHeight = keyBoardHeight;
     }
 }
 
+fileprivate let defaultKeyboardManager = KeyboardManager()
