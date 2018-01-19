@@ -9,6 +9,10 @@
 import UIKit
 import Comet
 
+class CustomView: UIView {
+    
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var line: HairLine!
@@ -19,7 +23,7 @@ class ViewController: UIViewController {
         
         let _ = UIStoryboard.main.create() as ViewController
         
-        let vc = ViewController.fromSB()
+        let vc = ViewController.createFromStoryboard(.main)
         print(vc)
         
         DispatchQueue.global().asyncAfter(delay: 2, execute:{
