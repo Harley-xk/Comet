@@ -10,13 +10,10 @@ import UIKit
 
 public extension UIColor {
 
-    /**
-     *  使用16进制字符串创建颜色
-     *
-     *  @param hexString 16进制字符串，可以是 0XFFFFFF/#FFFFFF/FFFFFF 三种格式之一
-     *
-     *  @return 返回创建的UIColor对象
-     */
+    /// 使用16进制字符串创建颜色
+    ///
+    /// - Parameter hexString: 16进制字符串，支持 0XFFFFFF/#FFFFFF/FFFFFF 三种格式
+    /// - Attention 在代码中创建颜色时，首选推荐使用更可靠高效的 Xcode 新特性 - Color Literal
     public convenience init?(hex: String, alpha: CGFloat = 1) {
         
         let characterSet = CharacterSet.whitespacesAndNewlines
