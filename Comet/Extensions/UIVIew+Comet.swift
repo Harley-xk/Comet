@@ -47,10 +47,13 @@ public extension Bundle {
     ///
     /// - Parameter name: xib 文件名，默认为指定视图类名
     public func createView<T: UIView>(_ name: String? = nil, owner: Any? = nil, options: [AnyHashable : Any]? = nil) -> T {
-        let nibName = name ?? T.classNameWithoutModule
+        let nibName = name ?? T.typeName
         let view = loadNibNamed(nibName, owner: owner, options: options)![0] as! T
         return view
     }
+}
+
+public extension UIView {
 }
 
 
