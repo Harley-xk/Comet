@@ -25,6 +25,7 @@
 		87603280233CBC3FD44293D8E8BFFAA0 /* Pods-Comet_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1FAF95DC046ADD9BA86B8A254080476 /* Pods-Comet_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		87D9537B0D93F8AEEF4309A59960B298 /* Pods-Comet_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494EDBEB8FF8A8159C6BF504476688B /* Pods-Comet_Example-dummy.m */; };
 		88620903B4D85684E25B8C2DAE835129 /* UIColor+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF255D97298B7167C678B16DDC99BD5 /* UIColor+Comet.swift */; };
+		B61F871120186A7C00A43858 /* Bool+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F871020186A7C00A43858 /* Bool+Comet.swift */; };
 		B9EFE6C48F472A702E6E1DEACA9389A9 /* HairLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B39B3390DE143E3C2A468993A72F8 /* HairLine.swift */; };
 		C34ECBEA1EBFFD49007543B1 /* Text+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34ECBE91EBFFD49007543B1 /* Text+Localize.swift */; };
 		C37C1CE41F46CCB900E1889C /* NSObject+KVOHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C1CE31F46CCB900E1889C /* NSObject+KVOHandler.swift */; };
@@ -71,6 +72,7 @@
 		9DF3F071D32762C2ED5BC1715393A24F /* Comet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Comet-dummy.m"; sourceTree = "<group>"; };
 		A1FAF95DC046ADD9BA86B8A254080476 /* Pods-Comet_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Comet_Example-umbrella.h"; sourceTree = "<group>"; };
 		AA36F4E943FA04AABC8F1E1100D7D0AD /* Comet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Comet.xcconfig; sourceTree = "<group>"; };
+		B61F871020186A7C00A43858 /* Bool+Comet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Comet.swift"; sourceTree = "<group>"; };
 		B6FA388935445405586984FD77C97BD9 /* String+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Comet.swift"; sourceTree = "<group>"; };
 		C11BBF8DB74CAA961728D10CBC42ACF6 /* Pods-Comet_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Comet_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C34ECBE91EBFFD49007543B1 /* Text+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text+Localize.swift"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		780EC8C96031E20B6CE4086FFD321FC9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B61F871020186A7C00A43858 /* Bool+Comet.swift */,
 				89A216FD32ADFB651DF41FA6B33401C9 /* Date+Comet.swift */,
 				C6052CBD1D13C80380D507C94C439152 /* Dispatch+Comet.swift */,
 				B6FA388935445405586984FD77C97BD9 /* String+Comet.swift */,
@@ -371,6 +374,7 @@
 				1423FF396876E98585052920CA1D3A41 /* UIResponder+Comet.swift in Sources */,
 				FA51048596E1688191C2984A70D1C822 /* UIScrollView+Comet.swift in Sources */,
 				C37C1CE41F46CCB900E1889C /* NSObject+KVOHandler.swift in Sources */,
+				B61F871120186A7C00A43858 /* Bool+Comet.swift in Sources */,
 				7911A0C12B96346A9968A5767DB28097 /* UITextField+Comet.swift in Sources */,
 				DCC3B8EAD92BE60BF26C8B883EEBDAEB /* UIVIew+Comet.swift in Sources */,
 				115ABB2245CF66E8E81ACFC170FA5F20 /* UIViewController+Comet.swift in Sources */,
