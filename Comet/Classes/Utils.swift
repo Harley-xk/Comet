@@ -11,11 +11,6 @@ import UIKit
 
 open class Utils {
     
-    /// 设备唯一标识号
-    open class var deviceUUID: String {
-        return UIDevice.current.identifierForVendor!.uuidString
-    }
-    
     /// 系统版本号
     open class var systemVersion: String {
         return UIDevice.current.systemVersion
@@ -33,13 +28,17 @@ open class Utils {
         return infoDictionary["CFBundleShortVersionString"] as! String
     }
 
-    /// App 版本号(含 build 号)
+    /// App Build 号
     open class var appBuild: String {
         let infoDictionary = Bundle.main.infoDictionary!
         return infoDictionary["CFBundleVersion"] as! String
     }
     
-    
+    /// 设备唯一标识号
+    open class var deviceUUID: String {
+        return UIDevice.current.identifierForVendor!.uuidString
+    }
+
     /// 设备型号
     ///
     /// @return iPhone 1,2 etc...
@@ -53,7 +52,6 @@ open class Utils {
         }
         return identifier
     }
-    
     
     /// 电话呼叫
     ///
