@@ -9,7 +9,7 @@
 
 import UIKit
 
-public protocol TaskProtocol: NSObjectProtocol {
+public protocol TaskProtocol: class {
     func cancel()
 }
 
@@ -30,6 +30,7 @@ class TaskRecorder: NSObject {
                 task.cancel()
             }
         }
+        self.unfinishedTasks.removeAllObjects()
     }
     
     deinit {

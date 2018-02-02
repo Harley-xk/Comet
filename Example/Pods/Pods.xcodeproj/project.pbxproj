@@ -46,6 +46,9 @@
 		AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CDAC6C1187C5467E576980E1062C8B /* SessionManager.swift */; };
 		B085856A5A88FFC8CF0F40038189FE3B /* UITextField+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB272822681AECF05062FDF7C0C150 /* UITextField+Comet.swift */; };
 		B6486AF320241BEC00AB887D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6486AF220241BEC00AB887D /* Task.swift */; };
+		B6486AF520241D0A00AB887D /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6486AF420241D0A00AB887D /* Server.swift */; };
+		B6486AFC20244BD500AB887D /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6486AFB20244BD500AB887D /* DataTask.swift */; };
+		B6486AFE20244C5000AB887D /* TaskMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6486AFD20244C5000AB887D /* TaskMiddleware.swift */; };
 		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155538D91ACEEEDF82069ACF6C1A02E7 /* MultipartFormData.swift */; };
 		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029DBC43E49A740F12B5E4D2E6DD452 /* Validation.swift */; };
 		BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6639346628280A0D0FAD35196BF56108 /* ParameterEncoding.swift */; };
@@ -138,6 +141,9 @@
 		B44A27EFBB0DA84D738057B77F3413B1 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		B5F2FCBC3A1C354D22702714D4079460 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B6486AF220241BEC00AB887D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Task.swift; path = Comet/Networking/Task.swift; sourceTree = "<group>"; };
+		B6486AF420241D0A00AB887D /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Server.swift; path = Comet/Networking/Server.swift; sourceTree = "<group>"; };
+		B6486AFB20244BD500AB887D /* DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataTask.swift; path = Comet/Networking/DataTask.swift; sourceTree = "<group>"; };
+		B6486AFD20244C5000AB887D /* TaskMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskMiddleware.swift; path = Comet/Networking/TaskMiddleware.swift; sourceTree = "<group>"; };
 		B952F7EA29925FD3C5A1E28AC534958F /* Comet.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Comet.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BCA5AFDA9B1175D494EC19CA8328FFB3 /* Date+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+Comet.swift"; sourceTree = "<group>"; };
 		BCCA9CA7D9C1A2047BB93336C5708DFD /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
@@ -398,9 +404,28 @@
 			isa = PBXGroup;
 			children = (
 				19C489860470452770FD32FAFCD0DFDA /* TaskCenter.swift */,
-				B6486AF220241BEC00AB887D /* Task.swift */,
+				B6486AF420241D0A00AB887D /* Server.swift */,
+				B6486AF62024361500AB887D /* Task */,
+				B6486AF72024362300AB887D /* Response */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		B6486AF62024361500AB887D /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				B6486AF220241BEC00AB887D /* Task.swift */,
+				B6486AFB20244BD500AB887D /* DataTask.swift */,
+				B6486AFD20244C5000AB887D /* TaskMiddleware.swift */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		B6486AF72024362300AB887D /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,11 +580,14 @@
 			files = (
 				D8E3092297058392D933D98BC33A0A53 /* Bool+Comet.swift in Sources */,
 				9A4C806C5E3124700A933981FE347562 /* Comet-dummy.m in Sources */,
+				B6486AFE20244C5000AB887D /* TaskMiddleware.swift in Sources */,
+				B6486AFC20244BD500AB887D /* DataTask.swift in Sources */,
 				5F9447724A72729E608090DD359B19BB /* Date+Comet.swift in Sources */,
 				D98640510E31BD12418FC838D350EAC1 /* Dispatch+Comet.swift in Sources */,
 				0FFAFBB0789FF505CDE676A7D12A832C /* HairLine.swift in Sources */,
 				232275BF25EB83B4789898A0FEA1AE5C /* KeyboardManager.swift in Sources */,
 				ABCDADC9ADBE2C49ECB45C2BE2CCB9F5 /* NSObject+KVOHandler.swift in Sources */,
+				B6486AF520241D0A00AB887D /* Server.swift in Sources */,
 				FDC73C2B203A679C0952B9F6E99BB528 /* Numbers+Comet.swift in Sources */,
 				B6486AF320241BEC00AB887D /* Task.swift in Sources */,
 				82DE58488F1301076C4D16EF00435E9C /* Path.swift in Sources */,
