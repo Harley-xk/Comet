@@ -15,7 +15,6 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		B64C03711E3456FA00600128 /* ScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C03701E3456FA00600128 /* ScrollViewExtension.swift */; };
 		B657E7761DD16562002F0420 /* Playground.playground in Sources */ = {isa = PBXBuildFile; fileRef = B6D8E9441DD07BC200425493 /* Playground.playground */; };
-		B6D8E93A1DD078B000425493 /* Comet.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D8E9391DD078B000425493 /* Comet.podspec.json */; };
 		C37C1CE21F46C97E00E1889C /* KeyPathObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C1CE11F46C97E00E1889C /* KeyPathObserverViewController.swift */; };
 		C37D12201E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D121F1E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift */; };
 		C3873A001F46CEB60077CB72 /* Exttensions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38739FF1F46CEB60077CB72 /* Exttensions.storyboard */; };
@@ -36,7 +35,6 @@
 		9D05A51CC4B470C902538E35 /* Pods-Comet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comet_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comet_Example/Pods-Comet_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B3DCA0C7D032B10A535BEEFB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B64C03701E3456FA00600128 /* ScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewExtension.swift; sourceTree = "<group>"; };
-		B6D8E9391DD078B000425493 /* Comet.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Comet.podspec.json; path = ../Comet.podspec.json; sourceTree = "<group>"; };
 		B6D8E9441DD07BC200425493 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C37C1CE11F46C97E00E1889C /* KeyPathObserverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPathObserverViewController.swift; sourceTree = "<group>"; };
 		C37D121F1E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarbuttonItemClosureSample.swift; sourceTree = "<group>"; };
@@ -60,7 +58,8 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				B3DCA0C7D032B10A535BEEFB /* README.md */,
+				2FD8A526100B41703F8D6CF3 /* LICENSE */,
 				607FACD21AFB9204008FA782 /* Example for Comet */,
 				607FACD11AFB9204008FA782 /* Products */,
 				DF6AE2C1A736F91407D6C118 /* Pods */,
@@ -99,16 +98,6 @@
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
-			isa = PBXGroup;
-			children = (
-				B6D8E9391DD078B000425493 /* Comet.podspec.json */,
-				B3DCA0C7D032B10A535BEEFB /* README.md */,
-				2FD8A526100B41703F8D6CF3 /* LICENSE */,
-			);
-			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
 		B1142697E098738960AFEEEA /* Frameworks */ = {
@@ -180,7 +169,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = CocoaPods;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -214,7 +203,6 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				B6D8E93A1DD078B000425493 /* Comet.podspec.json in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				C3873A001F46CEB60077CB72 /* Exttensions.storyboard in Resources */,
 			);
@@ -229,13 +217,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Comet_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D406FCB6FEC86A1061C3EC53 /* [CP] Embed Pods Frameworks */ = {
@@ -244,9 +235,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Comet_Example/Pods-Comet_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Comet/Comet.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Comet.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
