@@ -23,6 +23,10 @@ open class TaskCenter {
     /// 如果开启了网络请求并且没有给 TaskCenter 设置默认服务器，会造成 App Crash ！
     public var server: Server!
     
+    public func startTask<M>(_ task: DataTask<M>, finished: DataTask<M>.ResponseHandler?) {
+        task.start()
+    }
+    
     // MARK: - Initialize
     static let sharedMainTaskCenter = TaskCenter()
 

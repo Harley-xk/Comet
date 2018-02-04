@@ -13,7 +13,7 @@ public protocol Excutable: TaskProtocol {
     func start()
 }
 
-open class Task {
+open class Task: Excutable {
     
 //    /// 请求响应回调
 //    public typealias ResponseHandler = (_ response: Response) -> ()
@@ -41,8 +41,7 @@ open class Task {
     public lazy var paramEncoding = URLEncoding()
     
     /// 请求的原始响应数据
-    public private(set) var response: HTTPURLResponse?
-    public private(set) var result: Result<Data>?
+    public private(set) var dataResponse: DataResponseFromAF?
     
     /// 任务处理的中间件，通过中间件可以实现对于网络请求的特殊自定义需求
     /// 默认情况下会装载在 TaskCenter 中指定的通用中间件
@@ -62,9 +61,8 @@ open class Task {
     
     /// Newworking 使用 Alamofire 管理网络请求
     private var af_request: Alamofire.DataRequest?
-}
 
-extension Task: Excutable {
+    // MARK: - Excutable
     
     public func start() {
         
@@ -74,13 +72,16 @@ extension Task: Excutable {
         /// 组装参数并执行请求
         af_request = request(targetServer.path + apiName, method: method, parameters: parameters, encoding: paramEncoding, headers: headers)
         af_request?.responseData(completionHandler: { (resp) in
-            
-            self.response = resp.response
-            self.result = resp.result
-            
-            /// 通知中间件请求已完成
-            self.sendNotificationToMiddlewares(for: .didFihished)
+            /// 请求完成，读取返回数据
+            self.dataResponse = DataResponseFromAF(dataResponse: resp)
+            /// 执行完成任务的逻辑
+            self.finished()
         })
+    }
+    
+    public func finished() {
+        /// 通知中间件请求已完成
+        self.sendNotificationToMiddlewares(for: .didFihished)
     }
     
     public func cancel() {

@@ -18,6 +18,11 @@ class NetworkingViewController: UIViewController {
         TaskCenter.main.server = server
         let task = Task(method: .get, api: "weather_mini", params: ["citykey": "101010100"])
         task.start()
+        
+        let userTask = AuthTask.userInfo()
+        TaskCenter.main.startDataTask(userTask) { (res) in
+            let user = res.data
+        }
     }
 
     override func didReceiveMemoryWarning() {

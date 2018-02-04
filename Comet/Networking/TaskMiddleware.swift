@@ -74,9 +74,9 @@ class LoggingMiddleWare: TaskMiddleWare {
         print("TaskFinished: ", date, "------------------->")
         print("        Host: ", task.targetServer.path)
         print("         Api: ", task.method.rawValue, task.apiName)
-        print("      Status: ", task.response?.statusCode ?? -1)
+        print("      Status: ", task.dataResponse?.response?.statusCode ?? -1)
 
-        if case let .success(value)? = task.result {
+        if case let .success(value)? = task.dataResponse?.result {
             var data: Data?
             var isJson = false
             if let json = try? JSONSerialization.jsonObject(with: value, options: .allowFragments), let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
@@ -86,7 +86,7 @@ class LoggingMiddleWare: TaskMiddleWare {
             let string = String(data: data ?? value, encoding: .utf8)
             print("    Response: ", isJson ? "<JSON> " : "<String> ", value.count, "bytes\n")
             print(string ?? "<null>")
-        } else if case let .failure(error)? = task.result {
+        } else if case let .failure(error)? = task.dataResponse?.result {
             print("       Error: ", error.localizedDescription)
         } else {
             print("Unknown Response!")
