@@ -8,8 +8,11 @@
 import Foundation
 
 public enum TaskMiddleWareState {
+    /// 在任务即将发送到目标服务器之前调用，可以在这里给任务添加一些通用参数、header等
     case willStart
+    /// 在任务完成后调用，框架自身会默认注册中间件用于数据解析等逻辑
     case didFihished
+    /// 在任务被取消后调用
     case didCanceled
 }
 
@@ -23,14 +26,8 @@ public protocol TaskMiddleWare {
     /// 相同优先级的执行顺序由注册的先后顺序决定
     func priority(for state: TaskMiddleWareState) -> Int
     
-    /// 在任务即将发送到目标服务器之前调用，可以在这里给任务添加一些通用参数、header等
-    func taskWillStart(_ task: Task)
-    
-    /// 在任务完成后调用，框架自身会默认注册中间件用于数据解析等逻辑
-    func taskDidFinished(_ task: Task)
-    
-    /// 在任务被取消后调用
-    func taskDidCanceled(_ task: Task)
+    /// 任务状态发生改变时，注册的中间件都会收到通知，可以进行中间处理
+    func task(_ task: Task, stateChangedTo state: TaskMiddleWareState)
 }
 
 
@@ -49,40 +46,60 @@ class LoggingMiddleWare: TaskMiddleWare {
         case .didCanceled: return 999
         }
     }
+    
+    func task(_ task: Task, stateChangedTo state: TaskMiddleWareState) {
+        switch state {
+        case .willStart: taskWillStart(task)
+        case .didFihished: taskDidFinished(task)
+        case .didCanceled: taskDidCanceled(task)
+        }
+    }
 
     func taskWillStart(_ task: Task) {
         #if DEBUG
             let date = Date().string(format: "yyyy-MM-dd HH:mm:ss.SSS")
             print()
             print("TaskStarted: ", date, "-+-+-+-+-+-+-+-+-+->")
-            print("  Host: ", task.targetServer.path)
-            print("   Api: ", task.method.rawValue, task.apiName)
-            print("Header: ", task.headers)
-            print("Params: ", task.parameters)
+            print("       Host: ", task.targetServer.path)
+            print("        Api: ", task.method.rawValue, task.apiName)
+            print("     Header: ", task.headers)
+            print("     Params: ", task.parameters)
             print()
         #endif
     }
     
     func taskDidFinished(_ task: Task) {
-        if let data = task.responseData?.data {
-            let responseString = String(data: data, encoding: .utf8)
-            let date = Date().string(format: "yyyy-MM-dd HH:mm:ss.SSS")
-            print()
-            print("TaskFinished: ", date, "------------------->")
-            print("  Host: ", task.targetServer.path)
-            print("   Api: ", task.method.rawValue, task.apiName)
-//            print("Status: ", response.response?.statusCode ?? -1)
-//            print("Response: \n", responseString ?? "<null>")
-            print()
+        let date = Date().string(format: "yyyy-MM-dd HH:mm:ss.SSS")
+        print()
+        print("TaskFinished: ", date, "------------------->")
+        print("        Host: ", task.targetServer.path)
+        print("         Api: ", task.method.rawValue, task.apiName)
+        print("      Status: ", task.response?.statusCode ?? -1)
+
+        if case let .success(value)? = task.result {
+            var data: Data?
+            var isJson = false
+            if let json = try? JSONSerialization.jsonObject(with: value, options: .allowFragments), let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
+                data = jsonData
+                isJson = true
+            }
+            let string = String(data: data ?? value, encoding: .utf8)
+            print("    Response: ", isJson ? "<JSON> " : "<String> ", value.count, "bytes\n")
+            print(string ?? "<null>")
+        } else if case let .failure(error)? = task.result {
+            print("       Error: ", error.localizedDescription)
+        } else {
+            print("Unknown Response!")
         }
+        print()
     }
     
     func taskDidCanceled(_ task: Task) {
         let date = Date().string(format: "yyyy-MM-dd HH:mm:ss.SSS")
         print()
         print("TaskCanceled: ", date, "-+-+-+-+-+-+-+-+-+->")
-        print("  Host: ", task.targetServer.path)
-        print("   Api: ", task.method.rawValue, task.apiName)
+        print("        Host: ", task.targetServer.path)
+        print("         Api: ", task.method.rawValue, task.apiName)
     }
 }
 

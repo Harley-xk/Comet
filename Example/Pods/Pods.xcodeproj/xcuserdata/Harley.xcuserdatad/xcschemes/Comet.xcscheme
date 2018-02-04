@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '75176D9643911DF453DEA93B50EF21EC'
+               BlueprintIdentifier = '3D4C52C5C8F85A8CDF218A0ED2989AEF'
                BlueprintName = 'Comet'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Comet.framework'>

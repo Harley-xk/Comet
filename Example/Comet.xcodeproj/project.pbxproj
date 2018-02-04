@@ -13,6 +13,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		B613C60F202739DB003F5516 /* NetworkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613C60E202739DB003F5516 /* NetworkingViewController.swift */; };
 		B64C03711E3456FA00600128 /* ScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C03701E3456FA00600128 /* ScrollViewExtension.swift */; };
 		B657E7761DD16562002F0420 /* Playground.playground in Sources */ = {isa = PBXBuildFile; fileRef = B6D8E9441DD07BC200425493 /* Playground.playground */; };
 		C37C1CE21F46C97E00E1889C /* KeyPathObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C1CE11F46C97E00E1889C /* KeyPathObserverViewController.swift */; };
@@ -34,6 +35,7 @@
 		75487C1464C84BC5B5E06A69 /* Pods_Comet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D05A51CC4B470C902538E35 /* Pods-Comet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comet_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comet_Example/Pods-Comet_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B3DCA0C7D032B10A535BEEFB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B613C60E202739DB003F5516 /* NetworkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingViewController.swift; sourceTree = "<group>"; };
 		B64C03701E3456FA00600128 /* ScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewExtension.swift; sourceTree = "<group>"; };
 		B6D8E9441DD07BC200425493 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C37C1CE11F46C97E00E1889C /* KeyPathObserverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPathObserverViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				B64C036E1E3456AF00600128 /* Samples-Core */,
 				B64C036F1E3456BD00600128 /* Samples-Extensions */,
+				B613C60D202739A8003F5516 /* Samples-Networking */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for Comet";
@@ -107,6 +110,14 @@
 				2CE358FF0E7BF46D244C8CE3 /* Pods_Comet_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B613C60D202739A8003F5516 /* Samples-Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B613C60E202739DB003F5516 /* NetworkingViewController.swift */,
+			);
+			name = "Samples-Networking";
 			sourceTree = "<group>";
 		};
 		B64C036E1E3456AF00600128 /* Samples-Core */ = {
@@ -272,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B657E7761DD16562002F0420 /* Playground.playground in Sources */,
+				B613C60F202739DB003F5516 /* NetworkingViewController.swift in Sources */,
 				C37C1CE21F46C97E00E1889C /* KeyPathObserverViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,

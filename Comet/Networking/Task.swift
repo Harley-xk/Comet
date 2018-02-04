@@ -41,7 +41,12 @@ open class Task {
     public lazy var paramEncoding = URLEncoding()
     
     /// 请求的原始响应数据
-    public var responseData: DataResponse<Data>?
+    public private(set) var response: HTTPURLResponse?
+    public private(set) var result: Result<Data>?
+    
+    /// 任务处理的中间件，通过中间件可以实现对于网络请求的特殊自定义需求
+    /// 默认情况下会装载在 TaskCenter 中指定的通用中间件
+    public lazy var middlewares: [TaskMiddleWare] = TaskCenter.main.defaultTaskMiddleWares
     
     /// 初始化网络任务类
     ///
@@ -49,26 +54,55 @@ open class Task {
     ///   - method: 网络请求的方法类型：get、post 等
     ///   - api: api 接口名称
     ///   - params: 参数列表
-    init(method: Method = .get, api: String, params: [String: Any] = [:]) {
+    public init(method: Method = .get, api: String, params: [String: Any] = [:]) {
         self.method = method
         self.apiName = api
         self.parameters = params
     }
     
+    /// Newworking 使用 Alamofire 管理网络请求
     private var af_request: Alamofire.DataRequest?
 }
 
 extension Task: Excutable {
     
     public func start() {
+        
+        /// 通知中间件请求即将开始
+        sendNotificationToMiddlewares(for: .willStart)
+        
+        /// 组装参数并执行请求
         af_request = request(targetServer.path + apiName, method: method, parameters: parameters, encoding: paramEncoding, headers: headers)
         af_request?.responseData(completionHandler: { (resp) in
             
+            self.response = resp.response
+            self.result = resp.result
+            
+            /// 通知中间件请求已完成
+            self.sendNotificationToMiddlewares(for: .didFihished)
         })
     }
     
     public func cancel() {
         af_request?.cancel()
+        
+        /// 通知中间件请求已取消
+        self.sendNotificationToMiddlewares(for: .didFihished)
+    }
+}
+
+extension Task {
+    func sortedMiddlewares(for state: TaskMiddleWareState) -> [TaskMiddleWare] {
+        return middlewares.sorted { (m1, m2) -> Bool in
+            return m1.priority(for: state) > m2.priority(for: state)
+        }
+    }
+    
+    func sendNotificationToMiddlewares(for state: TaskMiddleWareState) {
+        let sorted = sortedMiddlewares(for: state)
+        sorted.forEach { (middleware) in
+            middleware.task(self, stateChangedTo: state)
+        }
     }
 }
 

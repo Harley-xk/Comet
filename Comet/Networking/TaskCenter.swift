@@ -30,8 +30,8 @@ open class TaskCenter {
         
     }
     
-    /// 返回默认的中间件
-    public var defaultTaskMiddleWares: [TaskMiddleWare] {
+    /// 返回默认的中间件：<控制台日志(Debug only)><参数处理><模型解析>等通用组件，也可以自定中间件并覆盖设置
+    public lazy var defaultTaskMiddleWares: [TaskMiddleWare] = {
         var middlewares: [TaskMiddleWare] = [
             
         ]
@@ -40,7 +40,7 @@ open class TaskCenter {
             middlewares.append(LoggingMiddleWare())
         #endif
         return middlewares
-    }
+    }()
 }
 
 
