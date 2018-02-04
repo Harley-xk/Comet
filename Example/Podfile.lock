@@ -1,16 +1,24 @@
 PODS:
-  - Comet (0.3.1)
+  - Alamofire (4.6.0)
+  - Comet (2.0.0):
+    - Comet/Basic (= 2.0.0)
+    - Comet/Networking (= 2.0.0)
+  - Comet/Basic (2.0.0)
+  - Comet/Networking (2.0.0):
+    - Alamofire
+    - Comet/Basic
 
 DEPENDENCIES:
   - Comet (from `../`)
 
 EXTERNAL SOURCES:
   Comet:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  Comet: df5a678a4a4d21d65fc6b18b02a84347be127d6a
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Comet: 2b30092383dc1afff116dc36fece4afac8f9fc46
 
 PODFILE CHECKSUM: 3b39828ed5dc212344e3a11d86a1aa5cb071e1bc
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1
