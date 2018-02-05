@@ -44,6 +44,9 @@
 		B4D1AA112E8D5B29CFCC1CE9097F690B /* UINavigationController+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADD3EC2A5F072F5F442866B68140678 /* UINavigationController+Comet.swift */; };
 		B65B5E0F384832C4CD0102A24CD4FD83 /* Numbers+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36455F6456F2E076E99D909EBF1D5C /* Numbers+Comet.swift */; };
 		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155538D91ACEEEDF82069ACF6C1A02E7 /* MultipartFormData.swift */; };
+		B6A158F2202803E00021F25F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A158F0202803DC0021F25F /* Response.swift */; };
+		B6A158F5202824540021F25F /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A158F4202824540021F25F /* ErrorCode.swift */; };
+		B6A158F92028431B0021F25F /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A158F82028431B0021F25F /* LoggingMiddleware.swift */; };
 		B6E5F7602027581700B9CD57 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E5F75F2027581700B9CD57 /* DataResponse.swift */; };
 		B8AC973287F6C9CF2A5D4A175167EA3E /* NSObject+KVOHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369BDB1EBE41345F35EEF61707F4F85 /* NSObject+KVOHandler.swift */; };
 		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029DBC43E49A740F12B5E4D2E6DD452 /* Validation.swift */; };
@@ -147,6 +150,9 @@
 		AB856A1ED43078BA0FFC66BB7230E139 /* KeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		B029DBC43E49A740F12B5E4D2E6DD452 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		B44A27EFBB0DA84D738057B77F3413B1 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		B6A158F0202803DC0021F25F /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Comet/Networking/Response.swift; sourceTree = "<group>"; };
+		B6A158F4202824540021F25F /* ErrorCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		B6A158F82028431B0021F25F /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoggingMiddleware.swift; path = Comet/Networking/LoggingMiddleware.swift; sourceTree = "<group>"; };
 		B6E5F75F2027581700B9CD57 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataResponse.swift; path = Comet/Networking/DataResponse.swift; sourceTree = "<group>"; };
 		B96C7DF8CA5DF1700FC9AF7737921FF5 /* TaskRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TaskRecorder.swift; sourceTree = "<group>"; };
 		BCCA9CA7D9C1A2047BB93336C5708DFD /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
@@ -352,11 +358,9 @@
 		986F87902C564DAB5F57FE603FF80B12 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				7426C109B21614689E6C57EC21F1EFD5 /* DataTask.swift */,
-				42030C07AEE877F4DFDC9C64313F976B /* Server.swift */,
-				43F6B23977DBE69B29E76D0FCA9F1EAE /* Task.swift */,
 				A432BA6E055142559D4862451AB93D5B /* TaskCenter.swift */,
-				B6E5F75F2027581700B9CD57 /* DataResponse.swift */,
+				B6A158F3202804F90021F25F /* Task */,
+				B6A158EF202802DB0021F25F /* Entity */,
 				B613C60C20273472003F5516 /* Middlewares */,
 			);
 			name = Networking;
@@ -366,8 +370,29 @@
 			isa = PBXGroup;
 			children = (
 				5D9D2C910D5AEF9BD98EFCDAE27B0451 /* TaskMiddleware.swift */,
+				B6A158F82028431B0021F25F /* LoggingMiddleware.swift */,
 			);
 			name = Middlewares;
+			sourceTree = "<group>";
+		};
+		B6A158EF202802DB0021F25F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				42030C07AEE877F4DFDC9C64313F976B /* Server.swift */,
+				B6A158F0202803DC0021F25F /* Response.swift */,
+				B6E5F75F2027581700B9CD57 /* DataResponse.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		B6A158F3202804F90021F25F /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				43F6B23977DBE69B29E76D0FCA9F1EAE /* Task.swift */,
+				7426C109B21614689E6C57EC21F1EFD5 /* DataTask.swift */,
+				B6A158F4202824540021F25F /* ErrorCode.swift */,
+			);
+			name = Task;
 			sourceTree = "<group>";
 		};
 		D70658D7B75EAC52E6D7FD091E7B89C2 /* Classes */ = {
@@ -554,6 +579,7 @@
 				38EE7E6E821FC75E0287A77CD71853B7 /* Bool+Comet.swift in Sources */,
 				1DD0515D68E3CF20291D861275C1E730 /* Comet-dummy.m in Sources */,
 				C2DDB303FF4D6C579EFA58036B0086D0 /* DataTask.swift in Sources */,
+				B6A158F92028431B0021F25F /* LoggingMiddleware.swift in Sources */,
 				3CE505B64E40520A656A1986DCCB5A4C /* Date+Comet.swift in Sources */,
 				B6E5F7602027581700B9CD57 /* DataResponse.swift in Sources */,
 				DC0EBE2246197E7F0CF7E4DF74E7E189 /* Dispatch+Comet.swift in Sources */,
@@ -566,11 +592,13 @@
 				6E7B0549816368D3EEBFA87B15FE9D00 /* Server.swift in Sources */,
 				D78077669EB2E7194EC529B0C71C777F /* String+Comet.swift in Sources */,
 				EAE5D42A253E6B22BBEAE42D6AF2456A /* Task.swift in Sources */,
+				B6A158F5202824540021F25F /* ErrorCode.swift in Sources */,
 				3BF8FAEF9D9174872B973557F9F2AF35 /* TaskCenter.swift in Sources */,
 				CBA7860C24F07AC91AFABFEA6E23CBEA /* TaskMiddleware.swift in Sources */,
 				0192BFAA76AB9CF17CF428DE24317650 /* TaskRecorder.swift in Sources */,
 				124BD65272E353B0AE154085FE462416 /* Text+Localize.swift in Sources */,
 				599FD48C03A74FC61403C13EF886A05B /* UIAlertController+Comet.swift in Sources */,
+				B6A158F2202803E00021F25F /* Response.swift in Sources */,
 				F901AB60600D2853EC3A1AA61802671D /* UIBarButtonItem+Closure.swift in Sources */,
 				2586C36649FEAE0CC1FFC94D406595D5 /* UIColor+Comet.swift in Sources */,
 				EAA826C5674EC55633D22182F63957F8 /* UINavigationBar+Comet.swift in Sources */,

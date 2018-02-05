@@ -7,12 +7,8 @@
 
 import Foundation
 
-public struct Response<Model: Codable> {
-
-    public var data: Model?
-}
-
 public class DataTask<Model: Codable>: Task {
+    
     public typealias ResponseHandler = (Response<Model>) -> Swift.Void
     public var responseHandler: ResponseHandler?
     
@@ -20,17 +16,10 @@ public class DataTask<Model: Codable>: Task {
         super.start()
     }
     
-}
-
-public struct User: Codable {
-    
-}
-
-public class AuthTask {
-
-    public class func userInfo() -> DataTask<User> {
-        return DataTask(api: "xxx")
+    public override func finished() {
+        super.finished()
+        
+        let response = Response<Model>(dataResponse: dataResponse)
+        responseHandler?(response)
     }
-    
 }
-

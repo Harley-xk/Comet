@@ -8,6 +8,20 @@
 import UIKit
 import Comet
 
+
+public struct User: Codable {
+    
+}
+
+public class AuthTask {
+    
+    public class func userInfo() -> DataTask<User> {
+        return DataTask(api: "xxx")
+    }
+    
+}
+
+
 class NetworkingViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -16,12 +30,17 @@ class NetworkingViewController: UIViewController {
         // Do any additional setup after loading the view.
         let server = Server(scheme: "http", host: "wthrcdn.etouch.cn")
         TaskCenter.main.server = server
-        let task = Task(method: .get, api: "weather_mini", params: ["citykey": "101010100"])
-        task.start()
+        let task = DataTask<String>(method: .get, api: "weather_mini", params: ["citykey": "101010100"])
+        self.record(task: task)
+        TaskCenter.main.startTask(task) { (resp) in
+            
+        }
         
         let userTask = AuthTask.userInfo()
-        TaskCenter.main.startDataTask(userTask) { (res) in
-            let user = res.data
+        self.record(task: userTask)
+        TaskCenter.main.startTask(userTask) { (res) in
+            let user = res.model
+            print(user.debugDescription)
         }
     }
 
