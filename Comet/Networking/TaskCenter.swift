@@ -29,7 +29,7 @@ open class TaskCenter {
     /// - Parameters:
     ///   - task: 数据请求，包含预先指定的响应数据格式
     ///   - finished: 请求完成的回调，包含请求的状态数据，以及实例化后的返回数据实体
-    public func startTask<M>(_ task: DataTask<M>, finished: DataTask<M>.ResponseHandler?) {
+    public func startTask<M>(_ task: Task<M>, finished: Task<M>.ResponseHandler? = nil) {
         task.responseHandler = finished
         task.start()
     }
@@ -37,14 +37,11 @@ open class TaskCenter {
     // MARK: - Initialize
     static let sharedMainTaskCenter = TaskCenter()
 
-    init() {
-        
-    }
     
     /// 返回默认的中间件：<控制台日志(Debug only)><参数处理><模型解析>等通用组件，也可以自定中间件并覆盖设置
     public lazy var defaultTaskMiddlewares: [TaskMiddleware] = {
         var middlewares: [TaskMiddleware] = [
-            
+            CodableJsonMiddleware()
         ]
         #if DEBUG
             /// DEBUG 模式下打印请求数据

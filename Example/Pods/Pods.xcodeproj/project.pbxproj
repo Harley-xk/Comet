@@ -42,6 +42,7 @@
 		A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1C119BCE81C53F76CAC2BE27C38E0 /* Alamofire-dummy.m */; };
 		AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CDAC6C1187C5467E576980E1062C8B /* SessionManager.swift */; };
 		B4D1AA112E8D5B29CFCC1CE9097F690B /* UINavigationController+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADD3EC2A5F072F5F442866B68140678 /* UINavigationController+Comet.swift */; };
+		B63809D820293FD700EC54CC /* CodableJsonMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63809D720293FD700EC54CC /* CodableJsonMiddleware.swift */; };
 		B65B5E0F384832C4CD0102A24CD4FD83 /* Numbers+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36455F6456F2E076E99D909EBF1D5C /* Numbers+Comet.swift */; };
 		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155538D91ACEEEDF82069ACF6C1A02E7 /* MultipartFormData.swift */; };
 		B6A158F2202803E00021F25F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A158F0202803DC0021F25F /* Response.swift */; };
@@ -150,6 +151,7 @@
 		AB856A1ED43078BA0FFC66BB7230E139 /* KeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		B029DBC43E49A740F12B5E4D2E6DD452 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		B44A27EFBB0DA84D738057B77F3413B1 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		B63809D720293FD700EC54CC /* CodableJsonMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CodableJsonMiddleware.swift; path = Comet/Networking/CodableJsonMiddleware.swift; sourceTree = "<group>"; };
 		B6A158F0202803DC0021F25F /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Comet/Networking/Response.swift; sourceTree = "<group>"; };
 		B6A158F4202824540021F25F /* ErrorCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		B6A158F82028431B0021F25F /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoggingMiddleware.swift; path = Comet/Networking/LoggingMiddleware.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			children = (
 				5D9D2C910D5AEF9BD98EFCDAE27B0451 /* TaskMiddleware.swift */,
 				B6A158F82028431B0021F25F /* LoggingMiddleware.swift */,
+				B63809D720293FD700EC54CC /* CodableJsonMiddleware.swift */,
 			);
 			name = Middlewares;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				0192BFAA76AB9CF17CF428DE24317650 /* TaskRecorder.swift in Sources */,
 				124BD65272E353B0AE154085FE462416 /* Text+Localize.swift in Sources */,
 				599FD48C03A74FC61403C13EF886A05B /* UIAlertController+Comet.swift in Sources */,
+				B63809D820293FD700EC54CC /* CodableJsonMiddleware.swift in Sources */,
 				B6A158F2202803E00021F25F /* Response.swift in Sources */,
 				F901AB60600D2853EC3A1AA61802671D /* UIBarButtonItem+Closure.swift in Sources */,
 				2586C36649FEAE0CC1FFC94D406595D5 /* UIColor+Comet.swift in Sources */,

@@ -13,7 +13,7 @@ import UIKit
  **/
 class LoggingMiddleware: TaskMiddleware {
     
-    func priority(for state: Task.State) -> Int {
+    func priority<Model>(for state: Task<Model>.State) -> Int {
         switch state {
         /// 请求开始时的优先级最低，以保证打印日志时所有参数都已经设置完毕
         case .willStart: return 0
@@ -25,7 +25,7 @@ class LoggingMiddleware: TaskMiddleware {
         }
     }
     
-    func task(_ task: Task, stateChangedTo state: Task.State) {
+    func task<Model>(_ task: Task<Model>, stateChangedTo state: Task<Model>.State) {
         switch state {
         case .willStart: taskWillStart(task)
         case .didFihished: taskDidFinished(task)
@@ -35,7 +35,7 @@ class LoggingMiddleware: TaskMiddleware {
     }
     
     
-    func taskWillStart(_ task: Task) {
+    func taskWillStart<Model>(_ task: Task<Model>) {
         let date = Date().string(format: "yyyy-MM-dd HH:mm:ss.SSS")
         print()
         print("TaskStarted: ", date, "-+-+-+-+-+-+-+-+-+->")
@@ -46,7 +46,7 @@ class LoggingMiddleware: TaskMiddleware {
         print()
     }
     
-    func taskDidFinished(_ task: Task) {
+    func taskDidFinished<Model>(_ task: Task<Model>) {
         let date = Date().string(format: "yyyy-MM-dd HH:mm:ss.SSS")
         print()
         print("TaskFinished: ", date, "------------------->")
@@ -72,7 +72,7 @@ class LoggingMiddleware: TaskMiddleware {
         print()
     }
     
-    func taskDidCanceled(_ task: Task) {
+    func taskDidCanceled<Model>(_ task: Task<Model>) {
         let date = Date().string(format: "yyyy-MM-dd HH:mm:ss.SSS")
         print()
         print("TaskCanceled: ", date, "-+-+-+-+-+-+-+-+-+->")
