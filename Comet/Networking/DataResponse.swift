@@ -31,14 +31,17 @@ public class DataResponseFromAF {
     /// Returns the associated error value if the result if it is a failure, `nil` otherwise.
     public var error: Error? { return result.error }
 
-    public init(dataResponse: DataResponse<Data>)
-    {
+    public init(dataResponse: DataResponse<Data>) {
         self.request = dataResponse.request
         self.response = dataResponse.response
         self.result = dataResponse.result
         self.timeline = dataResponse.timeline
     }
 }
+
+/**
+ * DownloadResponseFromAF 等价于 Alamofire.DownloadResponse<Data>，重写该类型以实现继承
+ **/
 
 public class DownloadResponseFromAF: DataResponseFromAF {
     
@@ -51,8 +54,7 @@ public class DownloadResponseFromAF: DataResponseFromAF {
     /// The resume data generated if the request was cancelled.
     public let resumeData: Data?
     
-    public init(downloadResponse: DownloadResponse<Data>)
-    {
+    public init(downloadResponse: DownloadResponse<Data>) {
         self.temporaryURL = downloadResponse.temporaryURL
         self.destinationURL = downloadResponse.destinationURL
         self.resumeData = downloadResponse.resumeData

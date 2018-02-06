@@ -8,6 +8,28 @@
 import UIKit
 import Comet
 
+typealias Model = (ModelDecodable & Codable)
+
+public struct User: Model {
+}
+
+public struct LoginContent: Model {
+    
+}
+
+public class AuthTask {
+    
+    public class func login() -> Task<LoginContent> {
+        return Task(method: .post, api: "api/login", params: [:])
+    }
+    
+    public class func userInfo() -> Task<User> {
+        return Task(api: "xxx")
+    }
+    
+}
+
+
 class NetworkingViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -16,12 +38,17 @@ class NetworkingViewController: UIViewController {
         // Do any additional setup after loading the view.
         let server = Server(scheme: "http", host: "wthrcdn.etouch.cn")
         TaskCenter.main.server = server
-        let task = Task(method: .get, api: "weather_mini", params: ["citykey": "101010100"])
-        task.start()
+        let task = Task<String>(method: .get, api: "weather_mini", params: ["citykey": "101010100"])
+        self.record(task: task)
+        TaskCenter.main.startTask(task) { (resp) in
+            
+        }
         
         let userTask = AuthTask.userInfo()
-        TaskCenter.main.startDataTask(userTask) { (res) in
-            let user = res.data
+        self.record(task: userTask)
+        TaskCenter.main.startTask(userTask) { (res) in
+            let user = res.model
+            print(user.debugDescription)
         }
     }
 
