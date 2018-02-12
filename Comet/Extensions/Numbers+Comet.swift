@@ -80,4 +80,10 @@ extension Int {
         let number = random % (max + 1 - min) + min
         return number
     }
+    
+    
+    /// 返回当前值是否是偶数
+    public var isEven: Bool {
+        return self % 2 == 0
+    }
 }

@@ -47,7 +47,8 @@ date.weekday
 
 let duration = DateInterval(start: date2, end: date).duration
 
-
+let even = (-4).isEven
+print()
 
 
 //Utils.call("17768061343")

@@ -17,6 +17,21 @@ public extension String {
     }
 }
 
+// MARK: - Urils
+public extension String {
+    /// 给空值提供默认替换值, 如果 string 为空字符串，则使用指定的默认值替换
+    ///
+    /// - Parameter value: 指定用来替换的值
+    public func emptyDefault(_ value: String) -> String {
+        return self.isEmpty ? value : self
+    }
+    
+    /// 判断 String 是否不为空
+    var notEmpty: Bool {
+        return !isEmpty
+    }
+}
+
 // MARK: - 拼音
 
 public extension String {
