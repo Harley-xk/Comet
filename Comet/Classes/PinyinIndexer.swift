@@ -8,16 +8,10 @@
 
 import UIKit
 
-/// 索引器对象协议，用来告知索引器需要转换为拼音的属性
-public protocol PinyinIndexable {
-    var valueToPinyin: String { get }
-}
-
 /// 拼音索引器，将指定的对象数组按照指定属性进行拼音首字母排序并创建索引
-open class PinyinIndexer<T: PinyinIndexable> {
-
+open class PinyinIndexer<T> {
+    
     private var objectList: [T]
-    private var propertyName: String
     
     /// 处理完毕的对象数组，按索引分组
     open var indexedObjects = [[T]]()
@@ -29,23 +23,22 @@ open class PinyinIndexer<T: PinyinIndexable> {
     /// - Parameters:
     ///   - objects: 需要索引的对象数组
     ///   - property: 索引依据的属性键值，属性必须为 String 类型
-    public init(objects: [T], property: String) {
+    public init(objects: [T], property: KeyPath<T, String>) {
         objectList = objects
-        propertyName = property
-        
-        self.indexObjects()
+        indexObjects(for: property)
     }
     
-    private func indexObjects() {
-
+    private func indexObjects(for property: KeyPath<T, String>) {
+        
         // 按索引分组
         let theCollation = UILocalizedIndexedCollation.current()
-        let indexArray = [PinyinIndex<T>]();
+        var indexArray = [PinyinIndex<T>]();
         
         for object in self.objectList {
-            let index = PinyinIndex(fromObject: object, property: propertyName)
+            let index = PinyinIndex(fromObject: object, property: property)
             let section = theCollation.section(for: index, collationStringSelector: #selector(PinyinIndex<T>.pinyin))
             index.sectionNumber = section
+            indexArray.append(index)
         }
         
         let sortedIndexArray = indexArray.sorted { (index1, index2) -> Bool in
@@ -70,18 +63,20 @@ open class PinyinIndexer<T: PinyinIndexable> {
     }
 }
 
-class PinyinIndex<T: PinyinIndexable> {
+class PinyinIndex<T>: NSObject {
     
     var object: T
     var name: String
     var sectionNumber: Int = 0
     
-    init(fromObject obj: T, property: String) {
+    init(fromObject obj: T, property: KeyPath<T, String>) {
         object = obj
-        name = obj.valueToPinyin
+        name = obj[keyPath: property]
     }
     
     @objc func pinyin() -> String {
         return name.pinyin(.firstLetter)
     }
 }
+
+
