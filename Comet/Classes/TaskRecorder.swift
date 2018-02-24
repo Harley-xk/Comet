@@ -9,7 +9,7 @@
 
 import UIKit
 
-public protocol TaskProtocol: NSObjectProtocol {
+public protocol TaskProtocol: AnyObject {
     func cancel()
 }
 
