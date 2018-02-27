@@ -16,7 +16,7 @@ let path = Path.applicationSupport().resource("data.Sqlite").string
 
 let obj = NSObject()
 
-class Task: NSObject, TaskProtocol {
+class Task: TaskProtocol {
     
     func cancel() {
         
@@ -30,22 +30,25 @@ let color = UIColor(hex: "0xaaddff")
 
 let action = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
 
-let date = Date()
+let now = Date()
 
 TimeZone(identifier: "Asia/Shanghai")
 
-date.add(1, .day).weekday
+now.add(.day(1)).weekday
 
-let date2 = date.set(.hour, to: 0)
+let date2 = now.set(.hour(0))
 date2.string()
-date2.unit(.day)
+date2.unit(.era)
 
-date.withoutTime.string()
+now.withoutTime.string()
 date2.withoutTime
 
-date.weekday
+now.weekday
 
-let duration = DateInterval(start: date2, end: date).duration
+let nextMonth = Date() + .month(1)
+let yestoday = now - .day(1)
+
+let duration = DateInterval(start: date2, end: now).duration
 
 let even = (-4).isEven
 print()

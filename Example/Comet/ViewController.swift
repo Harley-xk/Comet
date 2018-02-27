@@ -40,7 +40,10 @@ class ViewController: UIViewController {
         
         let date = Date(string: "2013-10-24 12:24:56")
         
-        _ = date?.add(2, .day)
+        _ = date?.add(.day(2))
+        
+        let nextMonth = Date() + .month(1)
+        print(nextMonth.dateString())
     }
 
     override func didReceiveMemoryWarning() {

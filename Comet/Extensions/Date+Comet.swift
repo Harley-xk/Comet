@@ -11,13 +11,15 @@ import Foundation
 public extension Date {
     
     /// 日期单元
-    public enum DateUnit {
-        case year
-        case month
-        case day
-        case hour
-        case minute
-        case second
+    public struct DateUnit {
+        var component: Calendar.Component
+        var value: Int
+        public static func year(_ value: Int) -> DateUnit { return DateUnit(component: .year, value: value) }
+        public static func month(_ value: Int) -> DateUnit { return DateUnit(component: .month, value: value) }
+        public static func day(_ value: Int) -> DateUnit { return DateUnit(component: .day, value: value) }
+        public static func hour(_ value: Int) -> DateUnit { return DateUnit(component: .hour, value: value) }
+        public static func minute(_ value: Int) -> DateUnit { return DateUnit(component: .minute, value: value) }
+        public static func second(_ value: Int) -> DateUnit { return DateUnit(component: .second, value: value) }
     }
     
     /// 从日期字符串创建日期对象
@@ -49,15 +51,14 @@ public extension Date {
 
     /// 日期计算，返回当前日期加上指定单位值之后的日期，会自动进位或减位
     /// 返回计算后的新日期
-    public func add(_ value: Int, _ unit: DateUnit) -> Date {
+    public func add(_ unit: DateUnit) -> Date {
         
-        let component = unit.componentValue()
         let calendar = Calendar.current
-        var components = calendar.dateComponents(DateUnit.all(), from: self)
+        var components = calendar.dateComponents(Set(Calendar.Component.dateAndTime), from: self)
         components.timeZone = TimeZone.current
         
-        if let oriValue = components.value(for: component) {
-            components.setValue(oriValue + value, for: component)
+        if let oriValue = components.value(for: unit.component) {
+            components.setValue(oriValue + unit.value, for: unit.component)
         }
         let date = calendar.date(from: components)
         return date ?? self
@@ -65,12 +66,11 @@ public extension Date {
     
     /// 将指定单位设置为指定的值，返回修改后的新日期
     /// 如果设置的值大于当前单位的最大值或者小于最小值，会自动进位或减位
-    public func set(_ unit: DateUnit, to value: Int) -> Date {
-        let component = unit.componentValue()
+    public func set(_ unit: DateUnit) -> Date {
         let calendar = Calendar.current
-        var components = calendar.dateComponents(DateUnit.all(), from: self)
+        var components = calendar.dateComponents(Set(Calendar.Component.dateAndTime), from: self)
         components.timeZone = TimeZone.current
-        components.setValue(value, for: component)
+        components.setValue(unit.value, for: unit.component)
 
         let date = calendar.date(from: components)
         return date ?? self
@@ -87,12 +87,11 @@ public extension Date {
     }
 
     /// 某个单位的值
-    public func unit(_ unit: DateUnit) -> Int {
-        let component = unit.componentValue()
+    public func unit(_ unit: Calendar.Component) -> Int {
         let calendar = Calendar.current
-        var components = calendar.dateComponents([component], from: self)
+        var components = calendar.dateComponents([unit], from: self)
         components.timeZone = TimeZone.current
-        return components.value(for: component) ?? 0
+        return components.value(for: unit) ?? 0
     }
     
     /// 周几，周日为0
@@ -144,6 +143,16 @@ public extension Date {
     }
 }
 
+public func +(lhs: Date, rhs: Date.DateUnit) -> Date {
+    return lhs.add(rhs)
+}
+
+public func -(lhs: Date, rhs: Date.DateUnit) -> Date {
+    var r = rhs
+    r.value = -rhs.value
+    return lhs.add(r)
+}
+
 public extension TimeZone {
     
     /// 中国时区(东8区)
@@ -158,23 +167,17 @@ public extension TimeZone {
     
 }
 
-fileprivate extension Date.DateUnit {
-    fileprivate func componentValue() -> Calendar.Component {
-        switch self {
-        case .year: return .year
-        case .month: return .month
-        case .day: return .day
-        case .hour: return .hour
-        case .minute: return .minute
-        case .second: return .second
-        }
+public extension Calendar.Component {
+    public static var date: [Calendar.Component] {
+        return [.year, .month, .day]
     }
-    
-    fileprivate static func all() -> Set<Calendar.Component> {
-        return [.year, .month, .day, .hour, . minute, .second]
+    public static var time: [Calendar.Component] {
+        return [.hour, .minute, .second]
+    }
+    public static var dateAndTime: [Calendar.Component] {
+        return [.year, .month, .day, .hour, .minute, .second]
     }
 }
-
 
 
 public extension Locale {
