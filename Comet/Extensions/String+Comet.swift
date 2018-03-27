@@ -56,14 +56,14 @@ public extension String {
     
     private func pinyinWithTone() -> String {
         //转换为带声调的拼音
-        let nameRef = CFStringCreateMutableCopy(nil, 0, self as CFString!)
+        let nameRef = CFStringCreateMutableCopy(nil, 0, self as CFString)
         CFStringTransform(nameRef, nil, kCFStringTransformMandarinLatin, false)
         return nameRef! as String
     }
     
     private func normalPinyin() -> String {
         //去除声调
-        let nameRef = CFStringCreateMutableCopy(nil, 0, self as CFString!)
+        let nameRef = CFStringCreateMutableCopy(nil, 0, self as CFString)
         CFStringTransform(nameRef, nil, kCFStringTransformMandarinLatin, false)
         CFStringTransform(nameRef, nil, kCFStringTransformStripDiacritics, false)
         return nameRef! as String
