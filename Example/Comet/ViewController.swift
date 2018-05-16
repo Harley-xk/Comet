@@ -14,8 +14,6 @@ class CustomView: UIView {
 }
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var line: HairLine!
     
     override func viewDidLoad() {
         super.viewDidLoad()
