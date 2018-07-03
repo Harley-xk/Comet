@@ -28,6 +28,7 @@
 		B61F871120186A7C00A43858 /* Bool+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F871020186A7C00A43858 /* Bool+Comet.swift */; };
 		B6262CDD20319271003E7045 /* UITableView+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6262CDC20319271003E7045 /* UITableView+Comet.swift */; };
 		B6262CDF203192F3003E7045 /* UICollectionView+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6262CDE203192F3003E7045 /* UICollectionView+Comet.swift */; };
+		B6C790D520EBA10C00A17C71 /* WindowPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C790D420EBA10C00A17C71 /* WindowPresentable.swift */; };
 		C34ECBEA1EBFFD49007543B1 /* Text+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34ECBE91EBFFD49007543B1 /* Text+Localize.swift */; };
 		C37C1CE41F46CCB900E1889C /* NSObject+KVOHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C1CE31F46CCB900E1889C /* NSObject+KVOHandler.swift */; };
 		C3873A021F46E20D0077CB72 /* Numbers+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3873A011F46E20D0077CB72 /* Numbers+Comet.swift */; };
@@ -75,6 +76,7 @@
 		B61F871020186A7C00A43858 /* Bool+Comet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Comet.swift"; sourceTree = "<group>"; };
 		B6262CDC20319271003E7045 /* UITableView+Comet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Comet.swift"; sourceTree = "<group>"; };
 		B6262CDE203192F3003E7045 /* UICollectionView+Comet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Comet.swift"; sourceTree = "<group>"; };
+		B6C790D420EBA10C00A17C71 /* WindowPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowPresentable.swift; sourceTree = "<group>"; };
 		B6FA388935445405586984FD77C97BD9 /* String+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Comet.swift"; sourceTree = "<group>"; };
 		C11BBF8DB74CAA961728D10CBC42ACF6 /* Pods-Comet_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Comet_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C34ECBE91EBFFD49007543B1 /* Text+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text+Localize.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				5CDD3091C31D99402B82F6DE792D434E /* Path.swift */,
 				E1A506AC315A64F14DBF261D8D947E70 /* PinyinIndexer.swift */,
 				C8CE30D9F5BB559775290C0032F3C085 /* TaskRecorder.swift */,
+				B6C790D420EBA10C00A17C71 /* WindowPresentable.swift */,
 				37F7F7EF0136320456800716EE21E957 /* Utils.swift */,
 			);
 			path = Classes;
@@ -378,6 +381,7 @@
 				1423FF396876E98585052920CA1D3A41 /* UIResponder+Comet.swift in Sources */,
 				FA51048596E1688191C2984A70D1C822 /* UIScrollView+Comet.swift in Sources */,
 				C37C1CE41F46CCB900E1889C /* NSObject+KVOHandler.swift in Sources */,
+				B6C790D520EBA10C00A17C71 /* WindowPresentable.swift in Sources */,
 				B61F871120186A7C00A43858 /* Bool+Comet.swift in Sources */,
 				7911A0C12B96346A9968A5767DB28097 /* UITextField+Comet.swift in Sources */,
 				DCC3B8EAD92BE60BF26C8B883EEBDAEB /* UIVIew+Comet.swift in Sources */,
