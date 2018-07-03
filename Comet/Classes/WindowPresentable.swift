@@ -8,13 +8,13 @@
 
 import UIKit
 
-enum WindowPresentableAnimation {
+public enum WindowPresentableAnimation {
     case transform
     case fade
     case none
 }
 
-protocol WindowPresentable: class {
+public protocol WindowPresentable: class {
     var window: UIWindow? { get set }
     var windowRoot: UIViewController { get }
     var animationDuration: TimeInterval { get }
@@ -23,10 +23,10 @@ protocol WindowPresentable: class {
 /// 全局变量，保存当前所有已弹出 Window 的 Level
 var GloableWindowLevels = [UIWindowLevelNormal]
 
-extension WindowPresentable where Self: UIViewController {
+public extension WindowPresentable where Self: UIViewController {
     
     // MARK: - Show Hide
-    func showWindow(animation: WindowPresentableAnimation = .transform, completion: (() -> Void)? = nil) {
+    public func showWindow(animation: WindowPresentableAnimation = .transform, completion: (() -> Void)? = nil) {
         let screenFrame = UIScreen.main.bounds
         window = UIWindow(frame: screenFrame)
         window?.windowLevel = windowLevel
@@ -57,7 +57,7 @@ extension WindowPresentable where Self: UIViewController {
         }
     }
     
-    func hideWindow(animation: WindowPresentableAnimation = .fade, completion: (() -> Void)? = nil) {
+    public func hideWindow(animation: WindowPresentableAnimation = .fade, completion: (() -> Void)? = nil) {
         let block = {
             self.setNeedsStatusBarAppearanceUpdate()
             self.window?.rootViewController = nil
@@ -88,15 +88,15 @@ extension WindowPresentable where Self: UIViewController {
         }
     }
     
-    var windowRoot: UIViewController {
+    public var windowRoot: UIViewController {
         return self
     }
 
-    var animationDuration: TimeInterval {
+    public var animationDuration: TimeInterval {
         return 0.2
     }
     
-    var windowLevel: UIWindowLevel {
+    public var windowLevel: UIWindowLevel {
         if let level = GloableWindowLevels.last {
             return level + 1
         }
