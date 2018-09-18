@@ -7,14 +7,16 @@
 
 
 iOS 项目的 Swift 基础库，提供大量常用组件、便利方法等。支持 **Swift 3.0+**。
-1.0.0 起支持 Swift 4.0，需要支持 Swift 3.x 请使用 0.7.5 版本。
-
+1.0.0 起支持 Swift 4.x，需要支持 Swift 3.x 请使用 0.7.5 版本。
+1.5.0 起支持 Swift 4.2， 需要支持 Swift 4.0/4.1 请指定 1.4.1 版本。
 ### 安装
 支持 CocoaPods 安装：
 
 ```ruby
-# for swift 4.0
+# for swift 4.2
 pod 'Comet'
+# for swift 4.0/4.1
+pod 'Comet', :git => 'https://github.com/Harley-xk/Comet.git, :tag=>1.4.1'
 # for swift 3.1/3.2
 pod 'Comet', :git => 'https://github.com/Harley-xk/Comet.git, :tag=>0.7.5'
 ```

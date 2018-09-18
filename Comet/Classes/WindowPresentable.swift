@@ -21,7 +21,7 @@ public protocol WindowPresentable: class {
 }
 
 /// 全局变量，保存当前所有已弹出 Window 的 Level
-var GloableWindowLevels = [UIWindowLevelNormal]
+var GloableWindowLevels = [UIWindow.Level.normal]
 
 public extension WindowPresentable where Self: UIViewController {
     
@@ -61,6 +61,7 @@ public extension WindowPresentable where Self: UIViewController {
         let block = {
             self.setNeedsStatusBarAppearanceUpdate()
             self.window?.rootViewController = nil
+            self.window?.isHidden = true
             self.window?.resignKey()
             self.window = nil
             GloableWindowLevels.removeLast()
@@ -96,10 +97,10 @@ public extension WindowPresentable where Self: UIViewController {
         return 0.2
     }
     
-    public var windowLevel: UIWindowLevel {
+    public var windowLevel: UIWindow.Level {
         if let level = GloableWindowLevels.last {
             return level + 1
         }
-        return UIWindowLevelNormal + 1
+        return .normal + 1
     }
 }
