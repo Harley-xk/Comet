@@ -54,8 +54,13 @@ class ViewController: UITableViewController {
         let image = navigationController?.view.takeSnapshot()
         let imageView = UIImageView(image: image)
         view.addSubview(imageView)
+        imageView.borderColor = .black
+        imageView.borderWidth = 1
+        imageView.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
         
-        DispatchQueue.main.asyncAfter(delay: 3) {
+        UIView.animate(withDuration: 1, delay: 1, animations: {
+            imageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        }) { (_) in
             imageView.removeFromSuperview()
         }
     }
@@ -67,6 +72,7 @@ extension ViewController {
         if indexPath.section == 1, indexPath.row == 3 {
             snapshotSample()
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
