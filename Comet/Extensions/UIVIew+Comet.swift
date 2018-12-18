@@ -68,3 +68,12 @@ public extension UIView {
 }
 
 
+public extension UIView {
+    func takeSnapshot() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, contentScaleFactor)
+        drawHierarchy(in: bounds, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+}
