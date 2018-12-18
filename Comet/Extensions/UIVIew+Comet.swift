@@ -70,10 +70,16 @@ public extension UIView {
 
 public extension UIView {
     func takeSnapshot() -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, true, contentScaleFactor)
-        drawHierarchy(in: bounds, afterScreenUpdates: false)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
+        if #available(iOS 10.0, *) {
+            return UIGraphicsImageRenderer(size: bounds.size).image { (context) in
+                layer.render(in: context.cgContext)
+            }
+        } else {
+            UIGraphicsBeginImageContextWithOptions(bounds.size, true, contentScaleFactor)
+            drawHierarchy(in: bounds, afterScreenUpdates: true)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return image
+        }
     }
 }

@@ -13,7 +13,7 @@ class CustomView: UIView {
     
 }
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,26 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Samples
+    func snapshotSample() {
+        let image = navigationController?.view.takeSnapshot()
+        let imageView = UIImageView(image: image)
+        view.addSubview(imageView)
+        
+        DispatchQueue.main.asyncAfter(delay: 3) {
+            imageView.removeFromSuperview()
+        }
+    }
 
+}
+
+extension ViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1, indexPath.row == 3 {
+            snapshotSample()
+        }
+    }
 }
 
 class LoginViewController: UIViewController {
