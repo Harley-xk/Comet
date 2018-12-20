@@ -51,7 +51,7 @@ class ViewController: UITableViewController {
     
     // MARK: - Samples
     func snapshotSample() {
-        let image = navigationController?.view.takeSnapshot()
+        let image = navigationController?.view.snapshotImage()
         let imageView = UIImageView(image: image)
         view.addSubview(imageView)
         imageView.borderColor = .black
