@@ -69,14 +69,19 @@ public extension UIView {
 
 
 public extension UIView {
-    func takeSnapshot() -> UIImage? {
+    
+    /// 获取视图快照并转换为图片
+    ///
+    /// - Attention:
+    ///   - 常规截图方式无法截取到特殊层级的图像数据，比如 AVSampleBufferDisplayLayer
+    func snapshotImage(afterScreenUpdates: Bool = false) -> UIImage? {
         if #available(iOS 10.0, *) {
             return UIGraphicsImageRenderer(size: bounds.size).image { (context) in
-                layer.render(in: context.cgContext)
+                drawHierarchy(in: bounds, afterScreenUpdates: afterScreenUpdates)
             }
         } else {
             UIGraphicsBeginImageContextWithOptions(bounds.size, true, contentScaleFactor)
-            drawHierarchy(in: bounds, afterScreenUpdates: true)
+            drawHierarchy(in: bounds, afterScreenUpdates: afterScreenUpdates)
             let image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             return image
