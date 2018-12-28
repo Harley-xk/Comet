@@ -22,6 +22,12 @@ public protocol KeyboardManagerDelegatingTarget {
     func animationsAlongsidesKeyboardFrame(keyboardStatus: KeyboardManager.KeyboardStatus, offset: CGFloat, notification: Notification)
 }
 
+public extension KeyboardManagerDelegatingTarget {
+    /// 提供 animationsAlongsidesKeyboardFrame 的默认空实现
+    func animationsAlongsidesKeyboardFrame(keyboardStatus: KeyboardManager.KeyboardStatus, offset: CGFloat, notification: Notification) {}
+}
+
+
 /**
  *  键盘管理器，用于在键盘弹出或收起时调整相应视图，以保证相关内容始终可见
  *
