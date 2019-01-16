@@ -42,11 +42,19 @@ open class KeyboardManager {
     /// 代理对象，必须是实现 KeyboardManagerDelegatingTarget 协议的视图控制器
     public typealias DelegatingTarget = (UIViewController & KeyboardManagerDelegatingTarget)
     
+    /// 全局的默认键盘管理器，适合短时间独占使用键盘的场景
     open class var `default`: KeyboardManager {
         return defaultKeyboardManager
     }
     
-    /// Set Gloable KeyboardManager to delegate keyboard events for viewController
+    /// 创建单独的键盘管理器
+    /// 对于需要长时间占用键盘管理，并且可能会切换到其他使用键盘的场景的，建议为其单独创建键盘管理器
+    convenience init(target: DelegatingTarget, positionConstraint: NSLayoutConstraint, viewToAdjust: UIView) {
+        self.init()
+        self.delegate(for: target, positionConstraint: positionConstraint, viewToAdjust: viewToAdjust)
+    }
+    
+    /// Set KeyboardManager to delegate keyboard events for viewController
     /// 将键盘管理器设置为指定视图控制器的代理，处理键盘事件
     ///
     /// - Parameters:
