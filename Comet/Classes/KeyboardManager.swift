@@ -86,12 +86,12 @@ open class KeyboardManager {
     /**
      *  临时启用或关闭管理器
      */
-    var enabled = true
+    open var enabled = true
     
     /**
      *  是否与键盘同时执行调整动画，默认为 YES。设置为 NO 后，将会在键盘显示之后再执行动画。
      */
-    var animateAlongwithKeyboard = true
+    open var animateAlongwithKeyboard = true
     
     public enum KeyboardStatus {
         case hidden
