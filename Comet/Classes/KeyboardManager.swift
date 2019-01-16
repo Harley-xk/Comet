@@ -49,7 +49,7 @@ open class KeyboardManager {
     
     /// 创建单独的键盘管理器
     /// 对于需要长时间占用键盘管理，并且可能会切换到其他使用键盘的场景的，建议为其单独创建键盘管理器
-    convenience init(target: DelegatingTarget, positionConstraint: NSLayoutConstraint, viewToAdjust: UIView) {
+    public convenience init(target: DelegatingTarget, positionConstraint: NSLayoutConstraint, viewToAdjust: UIView) {
         self.init()
         self.delegate(for: target, positionConstraint: positionConstraint, viewToAdjust: viewToAdjust)
     }
