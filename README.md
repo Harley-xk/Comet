@@ -234,8 +234,9 @@ App 的基本功能就是执行各种任务，比如网络任务。正常情况�
 	```
 	在 IB 中，将特定事件指派到 FirstResponder 上的 *autoResignFirstResponder* 方法，可以在事件触发后解除当前第一响应者状态的操作，如图：
 	        
-	![](Images/img_1.png){:height="150px" width="150px"}
-	
+	<img src="Images/img_1.png" width="430" height="400">
+
+
 3. **在 IB 中设置 - 指定第一响应者**
 
 	```swift
@@ -243,7 +244,7 @@ App 的基本功能就是执行各种任务，比如网络任务。正常情况�
 	```
 	在 IB 中，将特定事件指派到输入框的 *autoBecomFirstResponder* 方法，可以在事件触发后使指定控件成为第一响应者，如图：
 	
-	![](Images/img_2.png){:height="150px" width="150px"}
+	<img src="Images/img_2.png" width="430" height="345">
 
 ##### 5. UIView
 
@@ -255,8 +256,8 @@ App 的基本功能就是执行各种任务，比如网络任务。正常情况�
    @IBInspectable var borderColor: UIColor?  // 边框颜色
 	```
 	这些声明实现了直接在 IB 中设置 UIView 相关属性的功能：
-	
-	![](Images/img_3.png){:height="150px" width="150px"}
+
+	<img src="Images/img_3.png" width="265" height="220">
 
 ##### 6. UIStoryboard
 	
