@@ -208,7 +208,7 @@ public extension Bundle
     /// - Parameters:
     ///   - name: 资源名称
     /// - Returns: 返回资源路径
-    public func resource(_ name: String) -> Path? {
+    func resource(_ name: String) -> Path? {
         let path = name as NSString
         let pathExtension = path.pathExtension
         var nameWithoutExtension = name
@@ -222,7 +222,7 @@ public extension Bundle
 
 public extension String
 {
-    public var path: Path {
+    var path: Path {
         return Path(self)
     }
 }
