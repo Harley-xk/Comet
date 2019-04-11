@@ -7,257 +7,326 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F12E5443F1421FF48CF1F5B579FCF11 /* TaskRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE30D9F5BB559775290C0032F3C085 /* TaskRecorder.swift */; };
-		0FA7D3B3692AC9C55D22EB7252FDED82 /* UIAlertController+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092E2439E89A6D701B8F07A9E52CF53 /* UIAlertController+Comet.swift */; };
-		115ABB2245CF66E8E81ACFC170FA5F20 /* UIViewController+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EA1B04C80ADB504E6CBC995CBE052 /* UIViewController+Comet.swift */; };
-		1423FF396876E98585052920CA1D3A41 /* UIResponder+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85D70903337F5DE8F7200D9537F50C /* UIResponder+Comet.swift */; };
-		2319DAFA7111D79B026C731F5AF1A624 /* Date+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A216FD32ADFB651DF41FA6B33401C9 /* Date+Comet.swift */; };
-		35735A5B043D3594F8AEF2ACDAC1A174 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7F7EF0136320456800716EE21E957 /* Utils.swift */; };
-		3CFA8CCC3AAB67750BB26B16D8223DEF /* PinyinIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A506AC315A64F14DBF261D8D947E70 /* PinyinIndexer.swift */; };
-		4439471A14A1173AA0CF990CB83BD019 /* UINavigationBar+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D65BCDC70EEBCAE08FFB83CE06284 /* UINavigationBar+Comet.swift */; };
-		44675ACA2C48B452CFF901710F8DFD96 /* String+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA388935445405586984FD77C97BD9 /* String+Comet.swift */; };
-		557EA515B8F80764FD21FCB46F15ACAB /* UIBarButtonItem+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03D8B0FAE23531D8D5C0BE33D681B22 /* UIBarButtonItem+Closure.swift */; };
-		5C7A7D8A9DDBA2F2BE2F0B56694B7B3E /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD3091C31D99402B82F6DE792D434E /* Path.swift */; };
-		6333E2C6E2474859F08C5C8B80DE6D22 /* Comet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 268AD759888C8A840D5A12568711AAB9 /* Comet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6F0E5EE549BFA3A4A5216803137F8109 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		7911A0C12B96346A9968A5767DB28097 /* UITextField+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD08176453A1DDBAC1402F25ED77C5 /* UITextField+Comet.swift */; };
-		7E790FC8F314BD187DAEDE9FAF328322 /* Comet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F071D32762C2ED5BC1715393A24F /* Comet-dummy.m */; };
-		87603280233CBC3FD44293D8E8BFFAA0 /* Pods-Comet_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1FAF95DC046ADD9BA86B8A254080476 /* Pods-Comet_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		87D9537B0D93F8AEEF4309A59960B298 /* Pods-Comet_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494EDBEB8FF8A8159C6BF504476688B /* Pods-Comet_Example-dummy.m */; };
-		88620903B4D85684E25B8C2DAE835129 /* UIColor+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF255D97298B7167C678B16DDC99BD5 /* UIColor+Comet.swift */; };
-		B61F871120186A7C00A43858 /* Bool+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F871020186A7C00A43858 /* Bool+Comet.swift */; };
-		B6262CDD20319271003E7045 /* UITableView+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6262CDC20319271003E7045 /* UITableView+Comet.swift */; };
-		B6262CDF203192F3003E7045 /* UICollectionView+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6262CDE203192F3003E7045 /* UICollectionView+Comet.swift */; };
-		B6C790D520EBA10C00A17C71 /* WindowPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C790D420EBA10C00A17C71 /* WindowPresentable.swift */; };
-		C34ECBEA1EBFFD49007543B1 /* Text+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34ECBE91EBFFD49007543B1 /* Text+Localize.swift */; };
-		C37C1CE41F46CCB900E1889C /* NSObject+KVOHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C1CE31F46CCB900E1889C /* NSObject+KVOHandler.swift */; };
-		C3873A021F46E20D0077CB72 /* Numbers+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3873A011F46E20D0077CB72 /* Numbers+Comet.swift */; };
-		C3E0C326222D8073004E67A3 /* KeyboardPlacehoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C325222D8073004E67A3 /* KeyboardPlacehoder.swift */; };
-		D88E406402634F8E05FECA6DF2DE9C7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		D90A3603350FA04F3331E50CCFBCE30E /* Dispatch+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6052CBD1D13C80380D507C94C439152 /* Dispatch+Comet.swift */; };
-		DCC3B8EAD92BE60BF26C8B883EEBDAEB /* UIVIew+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B127AF5CA346A16792BBE2D068E3E0D /* UIVIew+Comet.swift */; };
-		E520F102AD611191E0F8337D0B5D8A55 /* UINavigationController+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8879776C39026B8D902F0E2CF0B2831 /* UINavigationController+Comet.swift */; };
-		ED20A6F6B0EA4E8D82913859C3647613 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE495A258B0B0539567FBE293199F56 /* KeyboardManager.swift */; };
-		FA51048596E1688191C2984A70D1C822 /* UIScrollView+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8A76F7ED44D3246C6F3BE379E768E7 /* UIScrollView+Comet.swift */; };
+		0114D046FDB8AEE3757458FC872E7588 /* Pods-Comet_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA48B70422B7FF784EB5C030FF4F26E /* Pods-Comet_Example-dummy.m */; };
+		0804911E706F982C97D7489F3D44ABDA /* UIAlertController+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761D266837BEDBD9D1070BA57D43F3C /* UIAlertController+Comet.swift */; };
+		17C8248CECE1995B5F3ECD1A00179A10 /* Numbers+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC885A4CCA6D29A8A29315D883DCF674 /* Numbers+Comet.swift */; };
+		1B39C151D476461279E5622D4FB6CE4A /* Date+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1984842B83BA16D5919B58334A36566 /* Date+Comet.swift */; };
+		201D5ABBB9A2D83F5CB851BBE4C83EEB /* UINavigationBar+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD3FE3E38FC3B284FA4394ED25B878 /* UINavigationBar+Comet.swift */; };
+		33EBFAF4377DE42CB8F16EC70DA824F5 /* WindowPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C009FF5BF782421B2AA2308DC390728 /* WindowPresentable.swift */; };
+		3405E9F15E74DF2AF9F9BB1E2AF72E6A /* SwiftRandom-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19D328A7E634D445D4816F0D85C7B873 /* SwiftRandom-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4303CA0F4FACC312DDCE6DB75C1FAEEB /* TaskRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850C89CE3D6BAC579BA130C70A1CBAE3 /* TaskRecorder.swift */; };
+		430B2758463B4A14646F9BF37A6986CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		4B0424DF507A7F69D7AD7F7ABA4EB5F8 /* UIBarButtonItem+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1DBE162600CB1349904C96DE3C20E /* UIBarButtonItem+Closure.swift */; };
+		51FA03BF891E5F84ADACDB22A1F6DB53 /* SwiftRandom-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ABBEA944FBF5E8E2CB13B84EF8C39E /* SwiftRandom-dummy.m */; };
+		5EE6F58841B2CF4E16027132CA951700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		66D4E011FA0442E59109A99FB4432C13 /* UIColor+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA252043F5386DD047D336490AC3726 /* UIColor+Comet.swift */; };
+		6CFEC81818F4DC6119A4476E9523F936 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		7236DC6645724665525099E7732A948B /* Pods-Comet_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19663AB9222D68D50CC301184BF275C0 /* Pods-Comet_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		736B42E1F90D54D4FDB36AE3926A6780 /* UIScrollView+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4188FF476322BDE90813CD1CA273851 /* UIScrollView+Comet.swift */; };
+		74364AC5C81355522FFA25BEA6F858DE /* Bool+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86AE0A5800C7C14811D9C837AD70A /* Bool+Comet.swift */; };
+		87461889C893F34133EDD9B103AD5503 /* Text+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A608E499D0965D29CDE82B77A75B3C4 /* Text+Localize.swift */; };
+		896E74DCDE17B428BAB945CB08D9574B /* Dispatch+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A137ED97535660738EC23EE66DAB2A7A /* Dispatch+Comet.swift */; };
+		8EF0B251BF92AB929825B0FE31E16ED4 /* PinyinIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A63803DB815A0DFCB42D6CB12C7D6E /* PinyinIndexer.swift */; };
+		9D61A99E3BAB9DDCA695B9CBD340700F /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851C6C33226D5D4B4799F5FF034587C /* Path.swift */; };
+		9DA7E9886E6B68C4B597557DF297093F /* UITextField+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275FE9EEB5803C8346BD154DFB7A6EC /* UITextField+Comet.swift */; };
+		A5A2826B1484795261CF5C0C18379188 /* UIResponder+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4117586AAEE443E2F791DB74269AF6E0 /* UIResponder+Comet.swift */; };
+		A8BC19B335111219186D0D9B45D033F2 /* Grouper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01406E6EB8401CF14442776095A8D4B6 /* Grouper.swift */; };
+		B7A4A48EFE095DC1E1A125C130A38E4E /* UICollectionView+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949C9DEED6010BAA7BAF4A4CE8A98488 /* UICollectionView+Comet.swift */; };
+		BC6377F815D99D3B0ED9F5DC61414E2C /* Randoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0941015CA7EC355ACD1B7A235C4168A /* Randoms.swift */; };
+		BEEEF0A2EB95B1C7142A4D44D7175DF7 /* UITableView+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5942EEC7C8FBEF4143544E5FD135BFB1 /* UITableView+Comet.swift */; };
+		C0AAEA6D3EDE679B322C161AC127D367 /* Comet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7965474B4A95256253B845863CC6FBE4 /* Comet-dummy.m */; };
+		CC630351C67E851DAB5713CDCF3B4957 /* UIViewController+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3649D32B7FBE9CDB1C805CEE678FEE32 /* UIViewController+Comet.swift */; };
+		CDA0DAAE6AE63E49D3058A6B516901B9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A65BAAFE8D5E166863DE264FD8C0EA /* Utils.swift */; };
+		D0EF0D4E5E0BB49E4E83B970113EA0A5 /* UINavigationController+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06623BD8E348F4E2D3FF9EE8C46BE0C /* UINavigationController+Comet.swift */; };
+		D560C378016D2A166D47099E538E57C3 /* KeyboardPlacehoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EFE1FD03E74ECAE702CE16137D15C /* KeyboardPlacehoder.swift */; };
+		DFE7121009484D6C4E6AFFA166E185CE /* UIVIew+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B221C00CC896A6CB6999EE3DD2949 /* UIVIew+Comet.swift */; };
+		DFE9982FFCBD74E159349CD7F9752541 /* Comet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B366149E4B8326B92DA18EFA5AE3EB72 /* Comet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6B9BA895BDF153B0EEA7F5476105EDE /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60963BA446FEBCF5E6C9FD882B396090 /* KeyboardManager.swift */; };
+		F82CF80EC8CCBE8ADC5753365D8403CA /* NSObject+KVOHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B115B15E5C9F3FC4614EDF785ED7A3D4 /* NSObject+KVOHandler.swift */; };
+		FBC8E8AF9EE3A8DC7A7C52DE3EE517A6 /* String+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E575BBAE4A2B289EFFBFAB7FDF82AE /* String+Comet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		40AE16FD50C5C5B28F2BC1CD2F430B7D /* PBXContainerItemProxy */ = {
+		4CF27BF9BCF0BA2A5BE73F1B94D02B99 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6BE292C937697128FCA993ABB835295C;
+			remoteGlobalIDString = 7948FA6CEC690B41FA1B2C81C36664C5;
+			remoteInfo = SwiftRandom;
+		};
+		A8193A258F8EE59B7D75939E6F13FC9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 249802A81BEB496BC296B9E6130D7A9D;
 			remoteInfo = Comet;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		047D55583D53EDC30091921A4941D9E5 /* Pods-Comet_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Comet_Example-resources.sh"; sourceTree = "<group>"; };
-		0849F12EF2A1EF331B9AA7F7CC80601A /* Pods-Comet_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Comet_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		0DE495A258B0B0539567FBE293199F56 /* KeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
-		227CF6A18B23738436AA8AFE6D7ED36F /* Pods_Comet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		268AD759888C8A840D5A12568711AAB9 /* Comet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Comet-umbrella.h"; sourceTree = "<group>"; };
-		37F7F7EF0136320456800716EE21E957 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		3FF255D97298B7167C678B16DDC99BD5 /* UIColor+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Comet.swift"; sourceTree = "<group>"; };
-		47664F4EBBD276AA9E7A58D1DC6E822B /* Pods-Comet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Comet_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5CDD3091C31D99402B82F6DE792D434E /* Path.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
-		6B127AF5CA346A16792BBE2D068E3E0D /* UIVIew+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIVIew+Comet.swift"; sourceTree = "<group>"; };
-		712789BAFC9461282A61CF3497B6565A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7494EDBEB8FF8A8159C6BF504476688B /* Pods-Comet_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Comet_Example-dummy.m"; sourceTree = "<group>"; };
-		7577267B650BF419920434616D9E07AF /* Comet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Comet-prefix.pch"; sourceTree = "<group>"; };
-		7E389E3DD2A724AEDD756A35A2E5967E /* Pods-Comet_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Comet_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		844D65BCDC70EEBCAE08FFB83CE06284 /* UINavigationBar+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Comet.swift"; sourceTree = "<group>"; };
-		89A216FD32ADFB651DF41FA6B33401C9 /* Date+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+Comet.swift"; sourceTree = "<group>"; };
-		8BFD08176453A1DDBAC1402F25ED77C5 /* UITextField+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITextField+Comet.swift"; sourceTree = "<group>"; };
-		92DA9AE9041669337ED747723CC5298F /* Comet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Comet.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DF3F071D32762C2ED5BC1715393A24F /* Comet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Comet-dummy.m"; sourceTree = "<group>"; };
-		A1FAF95DC046ADD9BA86B8A254080476 /* Pods-Comet_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Comet_Example-umbrella.h"; sourceTree = "<group>"; };
-		AA36F4E943FA04AABC8F1E1100D7D0AD /* Comet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Comet.xcconfig; sourceTree = "<group>"; };
-		B61F871020186A7C00A43858 /* Bool+Comet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Comet.swift"; sourceTree = "<group>"; };
-		B6262CDC20319271003E7045 /* UITableView+Comet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Comet.swift"; sourceTree = "<group>"; };
-		B6262CDE203192F3003E7045 /* UICollectionView+Comet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Comet.swift"; sourceTree = "<group>"; };
-		B6C790D420EBA10C00A17C71 /* WindowPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowPresentable.swift; sourceTree = "<group>"; };
-		B6FA388935445405586984FD77C97BD9 /* String+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Comet.swift"; sourceTree = "<group>"; };
-		C11BBF8DB74CAA961728D10CBC42ACF6 /* Pods-Comet_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Comet_Example-frameworks.sh"; sourceTree = "<group>"; };
-		C34ECBE91EBFFD49007543B1 /* Text+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text+Localize.swift"; sourceTree = "<group>"; };
-		C37C1CE31F46CCB900E1889C /* NSObject+KVOHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+KVOHandler.swift"; sourceTree = "<group>"; };
-		C3873A011F46E20D0077CB72 /* Numbers+Comet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numbers+Comet.swift"; sourceTree = "<group>"; };
-		C3E0C325222D8073004E67A3 /* KeyboardPlacehoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPlacehoder.swift; sourceTree = "<group>"; };
-		C6052CBD1D13C80380D507C94C439152 /* Dispatch+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dispatch+Comet.swift"; sourceTree = "<group>"; };
-		C8879776C39026B8D902F0E2CF0B2831 /* UINavigationController+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Comet.swift"; sourceTree = "<group>"; };
-		C8CE30D9F5BB559775290C0032F3C085 /* TaskRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TaskRecorder.swift; sourceTree = "<group>"; };
-		C9EAE8B67C1710B721BC9FFFA5DB8ABE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CF88B3E6A3664F5A7FE87A44E6F4E34A /* Pods-Comet_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Comet_Example.modulemap"; sourceTree = "<group>"; };
-		CF8A76F7ED44D3246C6F3BE379E768E7 /* UIScrollView+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Comet.swift"; sourceTree = "<group>"; };
-		D03D8B0FAE23531D8D5C0BE33D681B22 /* UIBarButtonItem+Closure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Closure.swift"; sourceTree = "<group>"; };
-		D092E2439E89A6D701B8F07A9E52CF53 /* UIAlertController+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Comet.swift"; sourceTree = "<group>"; };
-		D84EA1B04C80ADB504E6CBC995CBE052 /* UIViewController+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Comet.swift"; sourceTree = "<group>"; };
-		D86BD4AF56B2B75BD3CEC750DA924837 /* Comet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Comet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA85D70903337F5DE8F7200D9537F50C /* UIResponder+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIResponder+Comet.swift"; sourceTree = "<group>"; };
-		E1A506AC315A64F14DBF261D8D947E70 /* PinyinIndexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PinyinIndexer.swift; sourceTree = "<group>"; };
-		E83521FF86C3DC9F9CFB4C2EE0562115 /* Pods-Comet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Comet_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		01406E6EB8401CF14442776095A8D4B6 /* Grouper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Grouper.swift; sourceTree = "<group>"; };
+		0168A584615001B5263235ECE84DBBF7 /* SwiftRandom.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftRandom.modulemap; sourceTree = "<group>"; };
+		06C1DBE162600CB1349904C96DE3C20E /* UIBarButtonItem+Closure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Closure.swift"; sourceTree = "<group>"; };
+		0E705FBCD296F16A7CF4101FBB1F6723 /* Pods-Comet_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Comet_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		10A8B2FE20CE7B242D8BE9E6D37B9277 /* Comet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Comet-Info.plist"; sourceTree = "<group>"; };
+		1778E54BE8291912F9EADC6F91EDBFD6 /* Comet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Comet.xcconfig; sourceTree = "<group>"; };
+		19663AB9222D68D50CC301184BF275C0 /* Pods-Comet_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Comet_Example-umbrella.h"; sourceTree = "<group>"; };
+		19D328A7E634D445D4816F0D85C7B873 /* SwiftRandom-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftRandom-umbrella.h"; sourceTree = "<group>"; };
+		1BAD3FE3E38FC3B284FA4394ED25B878 /* UINavigationBar+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Comet.swift"; sourceTree = "<group>"; };
+		26053839B11CE7ACEB71229DC0C07004 /* Pods-Comet_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Comet_Example-Info.plist"; sourceTree = "<group>"; };
+		2C8265B58F75AF83AAA7259C741AFCCE /* SwiftRandom-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftRandom-prefix.pch"; sourceTree = "<group>"; };
+		2D0C6A04A54254E3CECA9A8257DBCEE9 /* Pods-Comet_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Comet_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3649D32B7FBE9CDB1C805CEE678FEE32 /* UIViewController+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Comet.swift"; sourceTree = "<group>"; };
+		3A608E499D0965D29CDE82B77A75B3C4 /* Text+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Text+Localize.swift"; sourceTree = "<group>"; };
+		3C009FF5BF782421B2AA2308DC390728 /* WindowPresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WindowPresentable.swift; sourceTree = "<group>"; };
+		3D7FCF7CE3747B339A9307FEC0B32228 /* Comet.podspec.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = Comet.podspec.json; sourceTree = "<group>"; };
+		4117586AAEE443E2F791DB74269AF6E0 /* UIResponder+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIResponder+Comet.swift"; sourceTree = "<group>"; };
+		42CE9D0C01652E79FD4A2237BBD3CF62 /* SwiftRandom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRandom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4761D266837BEDBD9D1070BA57D43F3C /* UIAlertController+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Comet.swift"; sourceTree = "<group>"; };
+		4E8B221C00CC896A6CB6999EE3DD2949 /* UIVIew+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIVIew+Comet.swift"; sourceTree = "<group>"; };
+		50E7E81A49B5855674501E016AF287A1 /* SwiftRandom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftRandom.xcconfig; sourceTree = "<group>"; };
+		5942EEC7C8FBEF4143544E5FD135BFB1 /* UITableView+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableView+Comet.swift"; sourceTree = "<group>"; };
+		5CA48B70422B7FF784EB5C030FF4F26E /* Pods-Comet_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Comet_Example-dummy.m"; sourceTree = "<group>"; };
+		5F81EC8EE68765D561EC41A626CDD024 /* Pods-Comet_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Comet_Example-frameworks.sh"; sourceTree = "<group>"; };
+		60963BA446FEBCF5E6C9FD882B396090 /* KeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		67EE5CC1E411C4617E639C7D290D7A75 /* Comet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Comet-prefix.pch"; sourceTree = "<group>"; };
+		69A65BAAFE8D5E166863DE264FD8C0EA /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		741D08B46EFFB0D12E6A93356B0C042D /* Comet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Comet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7965474B4A95256253B845863CC6FBE4 /* Comet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Comet-dummy.m"; sourceTree = "<group>"; };
+		7DA252043F5386DD047D336490AC3726 /* UIColor+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Comet.swift"; sourceTree = "<group>"; };
+		8275FE9EEB5803C8346BD154DFB7A6EC /* UITextField+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITextField+Comet.swift"; sourceTree = "<group>"; };
+		84A63803DB815A0DFCB42D6CB12C7D6E /* PinyinIndexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PinyinIndexer.swift; sourceTree = "<group>"; };
+		850C89CE3D6BAC579BA130C70A1CBAE3 /* TaskRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TaskRecorder.swift; sourceTree = "<group>"; };
+		88D86AE0A5800C7C14811D9C837AD70A /* Bool+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bool+Comet.swift"; sourceTree = "<group>"; };
+		939AC4222FFB73B8D775764CF53F5718 /* Comet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Comet.modulemap; sourceTree = "<group>"; };
+		949C9DEED6010BAA7BAF4A4CE8A98488 /* UICollectionView+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Comet.swift"; sourceTree = "<group>"; };
+		94E575BBAE4A2B289EFFBFAB7FDF82AE /* String+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Comet.swift"; sourceTree = "<group>"; };
+		9851C6C33226D5D4B4799F5FF034587C /* Path.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		9AB514A5EC36697271908C6358B901B4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E4A41FF72423BAE4954D701668E28F8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A137ED97535660738EC23EE66DAB2A7A /* Dispatch+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dispatch+Comet.swift"; sourceTree = "<group>"; };
+		A85EFE1FD03E74ECAE702CE16137D15C /* KeyboardPlacehoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardPlacehoder.swift; sourceTree = "<group>"; };
+		B115B15E5C9F3FC4614EDF785ED7A3D4 /* NSObject+KVOHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSObject+KVOHandler.swift"; sourceTree = "<group>"; };
+		B366149E4B8326B92DA18EFA5AE3EB72 /* Comet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Comet-umbrella.h"; sourceTree = "<group>"; };
+		B386AE37B06E124C211DCDDBD96B154B /* SwiftRandom-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftRandom-Info.plist"; sourceTree = "<group>"; };
+		C03AA573C1C85F8390B20D7562A4CE23 /* Pods-Comet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Comet_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C06623BD8E348F4E2D3FF9EE8C46BE0C /* UINavigationController+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Comet.swift"; sourceTree = "<group>"; };
+		C0941015CA7EC355ACD1B7A235C4168A /* Randoms.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Randoms.swift; path = SwiftRandom/Randoms.swift; sourceTree = "<group>"; };
+		C4DCBB4E674B4ACB997AF89537C6F9C0 /* Pods-Comet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Comet_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D1984842B83BA16D5919B58334A36566 /* Date+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+Comet.swift"; sourceTree = "<group>"; };
+		D1ABBEA944FBF5E8E2CB13B84EF8C39E /* SwiftRandom-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftRandom-dummy.m"; sourceTree = "<group>"; };
+		D775DD21D8C460D865C2232726B9E0D7 /* Pods_Comet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC885A4CCA6D29A8A29315D883DCF674 /* Numbers+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Numbers+Comet.swift"; sourceTree = "<group>"; };
+		DD7227A2F800AFA2E6517198CF1909B6 /* Pods-Comet_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Comet_Example.modulemap"; sourceTree = "<group>"; };
+		E4188FF476322BDE90813CD1CA273851 /* UIScrollView+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Comet.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3DD5D7E4081DE0850FBB7173A2D9D755 /* Frameworks */ = {
+		06BBE8E9ADDB174856B1FA999FD6C5FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F0E5EE549BFA3A4A5216803137F8109 /* Foundation.framework in Frameworks */,
+				5EE6F58841B2CF4E16027132CA951700 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E11753F8E0D40D387C521E6BD6B69BDB /* Frameworks */ = {
+		208D5BAAFC715E86C2B71F5FB7835534 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D88E406402634F8E05FECA6DF2DE9C7E /* Foundation.framework in Frameworks */,
+				6CFEC81818F4DC6119A4476E9523F936 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE4C4CACB3D70DBBE4E3413278FF0015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				430B2758463B4A14646F9BF37A6986CA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3732BE740F6C61ABCF9CEA9A0F55282F /* Development Pods */ = {
+		1D0DCC0F70E412A3E74D80C34AABCCBF /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DF1D7C7F7CE8B2C56960F443D8B435C8 /* Comet */,
+				0168A584615001B5263235ECE84DBBF7 /* SwiftRandom.modulemap */,
+				50E7E81A49B5855674501E016AF287A1 /* SwiftRandom.xcconfig */,
+				D1ABBEA944FBF5E8E2CB13B84EF8C39E /* SwiftRandom-dummy.m */,
+				B386AE37B06E124C211DCDDBD96B154B /* SwiftRandom-Info.plist */,
+				2C8265B58F75AF83AAA7259C741AFCCE /* SwiftRandom-prefix.pch */,
+				19D328A7E634D445D4816F0D85C7B873 /* SwiftRandom-umbrella.h */,
 			);
-			name = "Development Pods";
+			name = "Support Files";
+			path = "../Target Support Files/SwiftRandom";
 			sourceTree = "<group>";
 		};
-		4326E611195C7A8D68CB3B2382CEF832 /* Targets Support Files */ = {
+		33E7BDFEF0196F959304AEEAB6217E9E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8EE311539906158E0FF80D36E07F98DA /* Pods-Comet_Example */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		780EC8C96031E20B6CE4086FFD321FC9 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B61F871020186A7C00A43858 /* Bool+Comet.swift */,
-				89A216FD32ADFB651DF41FA6B33401C9 /* Date+Comet.swift */,
-				C6052CBD1D13C80380D507C94C439152 /* Dispatch+Comet.swift */,
-				B6FA388935445405586984FD77C97BD9 /* String+Comet.swift */,
-				C3873A011F46E20D0077CB72 /* Numbers+Comet.swift */,
-				D092E2439E89A6D701B8F07A9E52CF53 /* UIAlertController+Comet.swift */,
-				D03D8B0FAE23531D8D5C0BE33D681B22 /* UIBarButtonItem+Closure.swift */,
-				3FF255D97298B7167C678B16DDC99BD5 /* UIColor+Comet.swift */,
-				844D65BCDC70EEBCAE08FFB83CE06284 /* UINavigationBar+Comet.swift */,
-				C8879776C39026B8D902F0E2CF0B2831 /* UINavigationController+Comet.swift */,
-				DA85D70903337F5DE8F7200D9537F50C /* UIResponder+Comet.swift */,
-				CF8A76F7ED44D3246C6F3BE379E768E7 /* UIScrollView+Comet.swift */,
-				B6262CDC20319271003E7045 /* UITableView+Comet.swift */,
-				B6262CDE203192F3003E7045 /* UICollectionView+Comet.swift */,
-				8BFD08176453A1DDBAC1402F25ED77C5 /* UITextField+Comet.swift */,
-				6B127AF5CA346A16792BBE2D068E3E0D /* UIVIew+Comet.swift */,
-				D84EA1B04C80ADB504E6CBC995CBE052 /* UIViewController+Comet.swift */,
-				C34ECBE91EBFFD49007543B1 /* Text+Localize.swift */,
-				C37C1CE31F46CCB900E1889C /* NSObject+KVOHandler.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		78CC995BA77A098727CA8937C5BEDE1C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D86BD4AF56B2B75BD3CEC750DA924837 /* Comet.framework */,
-				227CF6A18B23738436AA8AFE6D7ED36F /* Pods_Comet_Example.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				3732BE740F6C61ABCF9CEA9A0F55282F /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				78CC995BA77A098727CA8937C5BEDE1C /* Products */,
-				4326E611195C7A8D68CB3B2382CEF832 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		8EE311539906158E0FF80D36E07F98DA /* Pods-Comet_Example */ = {
-			isa = PBXGroup;
-			children = (
-				712789BAFC9461282A61CF3497B6565A /* Info.plist */,
-				CF88B3E6A3664F5A7FE87A44E6F4E34A /* Pods-Comet_Example.modulemap */,
-				7E389E3DD2A724AEDD756A35A2E5967E /* Pods-Comet_Example-acknowledgements.markdown */,
-				0849F12EF2A1EF331B9AA7F7CC80601A /* Pods-Comet_Example-acknowledgements.plist */,
-				7494EDBEB8FF8A8159C6BF504476688B /* Pods-Comet_Example-dummy.m */,
-				C11BBF8DB74CAA961728D10CBC42ACF6 /* Pods-Comet_Example-frameworks.sh */,
-				047D55583D53EDC30091921A4941D9E5 /* Pods-Comet_Example-resources.sh */,
-				A1FAF95DC046ADD9BA86B8A254080476 /* Pods-Comet_Example-umbrella.h */,
-				E83521FF86C3DC9F9CFB4C2EE0562115 /* Pods-Comet_Example.debug.xcconfig */,
-				47664F4EBBD276AA9E7A58D1DC6E822B /* Pods-Comet_Example.release.xcconfig */,
-			);
-			name = "Pods-Comet_Example";
-			path = "Target Support Files/Pods-Comet_Example";
-			sourceTree = "<group>";
-		};
-		B11594A4F985BBBEC9742B429DFCD0DC /* Comet */ = {
-			isa = PBXGroup;
-			children = (
-				B8A516FB5A713C344D08E10A358B8260 /* Classes */,
-				780EC8C96031E20B6CE4086FFD321FC9 /* Extensions */,
-			);
-			path = Comet;
-			sourceTree = "<group>";
-		};
-		B8A516FB5A713C344D08E10A358B8260 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				0DE495A258B0B0539567FBE293199F56 /* KeyboardManager.swift */,
-				C3E0C325222D8073004E67A3 /* KeyboardPlacehoder.swift */,
-				5CDD3091C31D99402B82F6DE792D434E /* Path.swift */,
-				E1A506AC315A64F14DBF261D8D947E70 /* PinyinIndexer.swift */,
-				C8CE30D9F5BB559775290C0032F3C085 /* TaskRecorder.swift */,
-				B6C790D420EBA10C00A17C71 /* WindowPresentable.swift */,
-				37F7F7EF0136320456800716EE21E957 /* Utils.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CFCE371778F19207768E0B0C84D2C29F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				92DA9AE9041669337ED747723CC5298F /* Comet.modulemap */,
-				AA36F4E943FA04AABC8F1E1100D7D0AD /* Comet.xcconfig */,
-				9DF3F071D32762C2ED5BC1715393A24F /* Comet-dummy.m */,
-				7577267B650BF419920434616D9E07AF /* Comet-prefix.pch */,
-				268AD759888C8A840D5A12568711AAB9 /* Comet-umbrella.h */,
-				C9EAE8B67C1710B721BC9FFFA5DB8ABE /* Info.plist */,
+				939AC4222FFB73B8D775764CF53F5718 /* Comet.modulemap */,
+				1778E54BE8291912F9EADC6F91EDBFD6 /* Comet.xcconfig */,
+				7965474B4A95256253B845863CC6FBE4 /* Comet-dummy.m */,
+				10A8B2FE20CE7B242D8BE9E6D37B9277 /* Comet-Info.plist */,
+				67EE5CC1E411C4617E639C7D290D7A75 /* Comet-prefix.pch */,
+				B366149E4B8326B92DA18EFA5AE3EB72 /* Comet-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Comet";
 			sourceTree = "<group>";
 		};
-		DF1D7C7F7CE8B2C56960F443D8B435C8 /* Comet */ = {
+		362A973B664817F5F54BA4A16E0ACFB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B11594A4F985BBBEC9742B429DFCD0DC /* Comet */,
-				CFCE371778F19207768E0B0C84D2C29F /* Support Files */,
+				741D08B46EFFB0D12E6A93356B0C042D /* Comet.framework */,
+				D775DD21D8C460D865C2232726B9E0D7 /* Pods_Comet_Example.framework */,
+				42CE9D0C01652E79FD4A2237BBD3CF62 /* SwiftRandom.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B5F2E84322F63637C347EE90D539976 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				3D7FCF7CE3747B339A9307FEC0B32228 /* Comet.podspec.json */,
+				9AB514A5EC36697271908C6358B901B4 /* LICENSE */,
+				9E4A41FF72423BAE4954D701668E28F8 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		557953526E46E91EEAA169799E914397 /* SwiftRandom */ = {
+			isa = PBXGroup;
+			children = (
+				C0941015CA7EC355ACD1B7A235C4168A /* Randoms.swift */,
+				1D0DCC0F70E412A3E74D80C34AABCCBF /* Support Files */,
+			);
+			path = SwiftRandom;
+			sourceTree = "<group>";
+		};
+		6CF3DB8078F6D1A5D477EF4BA7BE779B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				88D86AE0A5800C7C14811D9C837AD70A /* Bool+Comet.swift */,
+				D1984842B83BA16D5919B58334A36566 /* Date+Comet.swift */,
+				A137ED97535660738EC23EE66DAB2A7A /* Dispatch+Comet.swift */,
+				B115B15E5C9F3FC4614EDF785ED7A3D4 /* NSObject+KVOHandler.swift */,
+				DC885A4CCA6D29A8A29315D883DCF674 /* Numbers+Comet.swift */,
+				94E575BBAE4A2B289EFFBFAB7FDF82AE /* String+Comet.swift */,
+				3A608E499D0965D29CDE82B77A75B3C4 /* Text+Localize.swift */,
+				4761D266837BEDBD9D1070BA57D43F3C /* UIAlertController+Comet.swift */,
+				06C1DBE162600CB1349904C96DE3C20E /* UIBarButtonItem+Closure.swift */,
+				949C9DEED6010BAA7BAF4A4CE8A98488 /* UICollectionView+Comet.swift */,
+				7DA252043F5386DD047D336490AC3726 /* UIColor+Comet.swift */,
+				1BAD3FE3E38FC3B284FA4394ED25B878 /* UINavigationBar+Comet.swift */,
+				C06623BD8E348F4E2D3FF9EE8C46BE0C /* UINavigationController+Comet.swift */,
+				4117586AAEE443E2F791DB74269AF6E0 /* UIResponder+Comet.swift */,
+				E4188FF476322BDE90813CD1CA273851 /* UIScrollView+Comet.swift */,
+				5942EEC7C8FBEF4143544E5FD135BFB1 /* UITableView+Comet.swift */,
+				8275FE9EEB5803C8346BD154DFB7A6EC /* UITextField+Comet.swift */,
+				4E8B221C00CC896A6CB6999EE3DD2949 /* UIVIew+Comet.swift */,
+				3649D32B7FBE9CDB1C805CEE678FEE32 /* UIViewController+Comet.swift */,
+			);
+			name = Extensions;
+			path = Comet/Extensions;
+			sourceTree = "<group>";
+		};
+		980B90710C51F7E31C2BD66B2ED57AC6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE4C45640CD9D7DC9572F83413FDDF9F /* Pods-Comet_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		985E467B60A102A535940A680C98A883 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E75FBB4FAEF4839D6879792CC174F6D3 /* Comet */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		AE4C45640CD9D7DC9572F83413FDDF9F /* Pods-Comet_Example */ = {
+			isa = PBXGroup;
+			children = (
+				DD7227A2F800AFA2E6517198CF1909B6 /* Pods-Comet_Example.modulemap */,
+				2D0C6A04A54254E3CECA9A8257DBCEE9 /* Pods-Comet_Example-acknowledgements.markdown */,
+				0E705FBCD296F16A7CF4101FBB1F6723 /* Pods-Comet_Example-acknowledgements.plist */,
+				5CA48B70422B7FF784EB5C030FF4F26E /* Pods-Comet_Example-dummy.m */,
+				5F81EC8EE68765D561EC41A626CDD024 /* Pods-Comet_Example-frameworks.sh */,
+				26053839B11CE7ACEB71229DC0C07004 /* Pods-Comet_Example-Info.plist */,
+				19663AB9222D68D50CC301184BF275C0 /* Pods-Comet_Example-umbrella.h */,
+				C03AA573C1C85F8390B20D7562A4CE23 /* Pods-Comet_Example.debug.xcconfig */,
+				C4DCBB4E674B4ACB997AF89537C6F9C0 /* Pods-Comet_Example.release.xcconfig */,
+			);
+			name = "Pods-Comet_Example";
+			path = "Target Support Files/Pods-Comet_Example";
+			sourceTree = "<group>";
+		};
+		CE81FE05D6D0DF15F2884AC40E89F49C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				01406E6EB8401CF14442776095A8D4B6 /* Grouper.swift */,
+				60963BA446FEBCF5E6C9FD882B396090 /* KeyboardManager.swift */,
+				A85EFE1FD03E74ECAE702CE16137D15C /* KeyboardPlacehoder.swift */,
+				9851C6C33226D5D4B4799F5FF034587C /* Path.swift */,
+				84A63803DB815A0DFCB42D6CB12C7D6E /* PinyinIndexer.swift */,
+				850C89CE3D6BAC579BA130C70A1CBAE3 /* TaskRecorder.swift */,
+				69A65BAAFE8D5E166863DE264FD8C0EA /* Utils.swift */,
+				3C009FF5BF782421B2AA2308DC390728 /* WindowPresentable.swift */,
+			);
+			name = Classes;
+			path = Comet/Classes;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				985E467B60A102A535940A680C98A883 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				DADA3A46CABE948376D5A161CD05A8BB /* Pods */,
+				362A973B664817F5F54BA4A16E0ACFB5 /* Products */,
+				980B90710C51F7E31C2BD66B2ED57AC6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DADA3A46CABE948376D5A161CD05A8BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				557953526E46E91EEAA169799E914397 /* SwiftRandom */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E75FBB4FAEF4839D6879792CC174F6D3 /* Comet */ = {
+			isa = PBXGroup;
+			children = (
+				CE81FE05D6D0DF15F2884AC40E89F49C /* Classes */,
+				6CF3DB8078F6D1A5D477EF4BA7BE779B /* Extensions */,
+				3B5F2E84322F63637C347EE90D539976 /* Pod */,
+				33E7BDFEF0196F959304AEEAB6217E9E /* Support Files */,
 			);
 			name = Comet;
 			path = ../..;
@@ -266,32 +335,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D7A5CBDFA3BD5104BA9F1820CB76DB57 /* Headers */ = {
+		36B5B07EB541C5AA84FEB3C1477A79F6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6333E2C6E2474859F08C5C8B80DE6D22 /* Comet-umbrella.h in Headers */,
+				3405E9F15E74DF2AF9F9BB1E2AF72E6A /* SwiftRandom-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCEBE4F3FC13C34AF43CA36EDDDCA4A1 /* Headers */ = {
+		9E17CB6054DB52A18C6B8D7559D605B3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87603280233CBC3FD44293D8E8BFFAA0 /* Pods-Comet_Example-umbrella.h in Headers */,
+				DFE9982FFCBD74E159349CD7F9752541 /* Comet-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0747B777D90F1DC0F69AD67F4FF4F7C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7236DC6645724665525099E7732A948B /* Pods-Comet_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6BE292C937697128FCA993ABB835295C /* Comet */ = {
+		249802A81BEB496BC296B9E6130D7A9D /* Comet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73068BF52D3EE5F901D5A237942F8631 /* Build configuration list for PBXNativeTarget "Comet" */;
+			buildConfigurationList = 62CD1E534B56A768B75B6C0C5517F39E /* Build configuration list for PBXNativeTarget "Comet" */;
 			buildPhases = (
-				97B80995840C56E5454F48BBAB0BF82E /* Sources */,
-				E11753F8E0D40D387C521E6BD6B69BDB /* Frameworks */,
-				D7A5CBDFA3BD5104BA9F1820CB76DB57 /* Headers */,
+				9E17CB6054DB52A18C6B8D7559D605B3 /* Headers */,
+				B9C76277A4925FD96C9F7A6B8138ED23 /* Sources */,
+				208D5BAAFC715E86C2B71F5FB7835534 /* Frameworks */,
+				E4689DA9DDCA08BC810EC13E3F8FEACC /* Resources */,
 			);
 			buildRules = (
 			);
@@ -299,130 +377,189 @@
 			);
 			name = Comet;
 			productName = Comet;
-			productReference = D86BD4AF56B2B75BD3CEC750DA924837 /* Comet.framework */;
+			productReference = 741D08B46EFFB0D12E6A93356B0C042D /* Comet.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F616BF41154754BE261116E98B3AAB96 /* Pods-Comet_Example */ = {
+		7948FA6CEC690B41FA1B2C81C36664C5 /* SwiftRandom */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72F5597EC4043989E6F68F9276972387 /* Build configuration list for PBXNativeTarget "Pods-Comet_Example" */;
+			buildConfigurationList = F621D087F6ACF3B74FC8FE4D60A8767F /* Build configuration list for PBXNativeTarget "SwiftRandom" */;
 			buildPhases = (
-				370199623D1C916D8B36CA2BEA1FF82B /* Sources */,
-				3DD5D7E4081DE0850FBB7173A2D9D755 /* Frameworks */,
-				DCEBE4F3FC13C34AF43CA36EDDDCA4A1 /* Headers */,
+				36B5B07EB541C5AA84FEB3C1477A79F6 /* Headers */,
+				F65F93B87DAB590D86E2AD87E7FFEDA6 /* Sources */,
+				FE4C4CACB3D70DBBE4E3413278FF0015 /* Frameworks */,
+				FD64F4556D8012011912ECBEBD1D7B5C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				26BD300BB12B26A79A206A0325F111E8 /* PBXTargetDependency */,
+			);
+			name = SwiftRandom;
+			productName = SwiftRandom;
+			productReference = 42CE9D0C01652E79FD4A2237BBD3CF62 /* SwiftRandom.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FEF6937C69E1C66A8F84551E93B287FE /* Pods-Comet_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0023F1B13FCA80CF3ABEF75112A5217D /* Build configuration list for PBXNativeTarget "Pods-Comet_Example" */;
+			buildPhases = (
+				B0747B777D90F1DC0F69AD67F4FF4F7C /* Headers */,
+				31DA6C4B84C2B1EABE9253DDEE09DC74 /* Sources */,
+				06BBE8E9ADDB174856B1FA999FD6C5FC /* Frameworks */,
+				02BA5CD247BD2FC88FB5FAEB602010B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9B6AA3B69DC4CB7D2DBE6885E302C80 /* PBXTargetDependency */,
+				D024B2BCF6F101867C0733A90FB38A20 /* PBXTargetDependency */,
 			);
 			name = "Pods-Comet_Example";
 			productName = "Pods-Comet_Example";
-			productReference = 227CF6A18B23738436AA8AFE6D7ED36F /* Pods_Comet_Example.framework */;
+			productReference = D775DD21D8C460D865C2232726B9E0D7 /* Pods_Comet_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1000;
-				TargetAttributes = {
-					6BE292C937697128FCA993ABB835295C = {
-						LastSwiftMigration = 0900;
-					};
-				};
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
-				Base,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 78CC995BA77A098727CA8937C5BEDE1C /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 362A973B664817F5F54BA4A16E0ACFB5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6BE292C937697128FCA993ABB835295C /* Comet */,
-				F616BF41154754BE261116E98B3AAB96 /* Pods-Comet_Example */,
+				249802A81BEB496BC296B9E6130D7A9D /* Comet */,
+				FEF6937C69E1C66A8F84551E93B287FE /* Pods-Comet_Example */,
+				7948FA6CEC690B41FA1B2C81C36664C5 /* SwiftRandom */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		370199623D1C916D8B36CA2BEA1FF82B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		02BA5CD247BD2FC88FB5FAEB602010B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87D9537B0D93F8AEEF4309A59960B298 /* Pods-Comet_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97B80995840C56E5454F48BBAB0BF82E /* Sources */ = {
+		E4689DA9DDCA08BC810EC13E3F8FEACC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD64F4556D8012011912ECBEBD1D7B5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31DA6C4B84C2B1EABE9253DDEE09DC74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E790FC8F314BD187DAEDE9FAF328322 /* Comet-dummy.m in Sources */,
-				2319DAFA7111D79B026C731F5AF1A624 /* Date+Comet.swift in Sources */,
-				D90A3603350FA04F3331E50CCFBCE30E /* Dispatch+Comet.swift in Sources */,
-				ED20A6F6B0EA4E8D82913859C3647613 /* KeyboardManager.swift in Sources */,
-				B6262CDF203192F3003E7045 /* UICollectionView+Comet.swift in Sources */,
-				B6262CDD20319271003E7045 /* UITableView+Comet.swift in Sources */,
-				5C7A7D8A9DDBA2F2BE2F0B56694B7B3E /* Path.swift in Sources */,
-				3CFA8CCC3AAB67750BB26B16D8223DEF /* PinyinIndexer.swift in Sources */,
-				44675ACA2C48B452CFF901710F8DFD96 /* String+Comet.swift in Sources */,
-				0F12E5443F1421FF48CF1F5B579FCF11 /* TaskRecorder.swift in Sources */,
-				0FA7D3B3692AC9C55D22EB7252FDED82 /* UIAlertController+Comet.swift in Sources */,
-				C3E0C326222D8073004E67A3 /* KeyboardPlacehoder.swift in Sources */,
-				557EA515B8F80764FD21FCB46F15ACAB /* UIBarButtonItem+Closure.swift in Sources */,
-				88620903B4D85684E25B8C2DAE835129 /* UIColor+Comet.swift in Sources */,
-				C34ECBEA1EBFFD49007543B1 /* Text+Localize.swift in Sources */,
-				4439471A14A1173AA0CF990CB83BD019 /* UINavigationBar+Comet.swift in Sources */,
-				E520F102AD611191E0F8337D0B5D8A55 /* UINavigationController+Comet.swift in Sources */,
-				1423FF396876E98585052920CA1D3A41 /* UIResponder+Comet.swift in Sources */,
-				FA51048596E1688191C2984A70D1C822 /* UIScrollView+Comet.swift in Sources */,
-				C37C1CE41F46CCB900E1889C /* NSObject+KVOHandler.swift in Sources */,
-				B6C790D520EBA10C00A17C71 /* WindowPresentable.swift in Sources */,
-				B61F871120186A7C00A43858 /* Bool+Comet.swift in Sources */,
-				7911A0C12B96346A9968A5767DB28097 /* UITextField+Comet.swift in Sources */,
-				DCC3B8EAD92BE60BF26C8B883EEBDAEB /* UIVIew+Comet.swift in Sources */,
-				115ABB2245CF66E8E81ACFC170FA5F20 /* UIViewController+Comet.swift in Sources */,
-				35735A5B043D3594F8AEF2ACDAC1A174 /* Utils.swift in Sources */,
-				C3873A021F46E20D0077CB72 /* Numbers+Comet.swift in Sources */,
+				0114D046FDB8AEE3757458FC872E7588 /* Pods-Comet_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9C76277A4925FD96C9F7A6B8138ED23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74364AC5C81355522FFA25BEA6F858DE /* Bool+Comet.swift in Sources */,
+				C0AAEA6D3EDE679B322C161AC127D367 /* Comet-dummy.m in Sources */,
+				1B39C151D476461279E5622D4FB6CE4A /* Date+Comet.swift in Sources */,
+				896E74DCDE17B428BAB945CB08D9574B /* Dispatch+Comet.swift in Sources */,
+				A8BC19B335111219186D0D9B45D033F2 /* Grouper.swift in Sources */,
+				F6B9BA895BDF153B0EEA7F5476105EDE /* KeyboardManager.swift in Sources */,
+				D560C378016D2A166D47099E538E57C3 /* KeyboardPlacehoder.swift in Sources */,
+				F82CF80EC8CCBE8ADC5753365D8403CA /* NSObject+KVOHandler.swift in Sources */,
+				17C8248CECE1995B5F3ECD1A00179A10 /* Numbers+Comet.swift in Sources */,
+				9D61A99E3BAB9DDCA695B9CBD340700F /* Path.swift in Sources */,
+				8EF0B251BF92AB929825B0FE31E16ED4 /* PinyinIndexer.swift in Sources */,
+				FBC8E8AF9EE3A8DC7A7C52DE3EE517A6 /* String+Comet.swift in Sources */,
+				4303CA0F4FACC312DDCE6DB75C1FAEEB /* TaskRecorder.swift in Sources */,
+				87461889C893F34133EDD9B103AD5503 /* Text+Localize.swift in Sources */,
+				0804911E706F982C97D7489F3D44ABDA /* UIAlertController+Comet.swift in Sources */,
+				4B0424DF507A7F69D7AD7F7ABA4EB5F8 /* UIBarButtonItem+Closure.swift in Sources */,
+				B7A4A48EFE095DC1E1A125C130A38E4E /* UICollectionView+Comet.swift in Sources */,
+				66D4E011FA0442E59109A99FB4432C13 /* UIColor+Comet.swift in Sources */,
+				201D5ABBB9A2D83F5CB851BBE4C83EEB /* UINavigationBar+Comet.swift in Sources */,
+				D0EF0D4E5E0BB49E4E83B970113EA0A5 /* UINavigationController+Comet.swift in Sources */,
+				A5A2826B1484795261CF5C0C18379188 /* UIResponder+Comet.swift in Sources */,
+				736B42E1F90D54D4FDB36AE3926A6780 /* UIScrollView+Comet.swift in Sources */,
+				BEEEF0A2EB95B1C7142A4D44D7175DF7 /* UITableView+Comet.swift in Sources */,
+				9DA7E9886E6B68C4B597557DF297093F /* UITextField+Comet.swift in Sources */,
+				DFE7121009484D6C4E6AFFA166E185CE /* UIVIew+Comet.swift in Sources */,
+				CC630351C67E851DAB5713CDCF3B4957 /* UIViewController+Comet.swift in Sources */,
+				CDA0DAAE6AE63E49D3058A6B516901B9 /* Utils.swift in Sources */,
+				33EBFAF4377DE42CB8F16EC70DA824F5 /* WindowPresentable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F65F93B87DAB590D86E2AD87E7FFEDA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC6377F815D99D3B0ED9F5DC61414E2C /* Randoms.swift in Sources */,
+				51FA03BF891E5F84ADACDB22A1F6DB53 /* SwiftRandom-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		26BD300BB12B26A79A206A0325F111E8 /* PBXTargetDependency */ = {
+		C9B6AA3B69DC4CB7D2DBE6885E302C80 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Comet;
-			target = 6BE292C937697128FCA993ABB835295C /* Comet */;
-			targetProxy = 40AE16FD50C5C5B28F2BC1CD2F430B7D /* PBXContainerItemProxy */;
+			target = 249802A81BEB496BC296B9E6130D7A9D /* Comet */;
+			targetProxy = A8193A258F8EE59B7D75939E6F13FC9F /* PBXContainerItemProxy */;
+		};
+		D024B2BCF6F101867C0733A90FB38A20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftRandom;
+			target = 7948FA6CEC690B41FA1B2C81C36664C5 /* SwiftRandom */;
+			targetProxy = 4CF27BF9BCF0BA2A5BE73F1B94D02B99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+		07488D4657FB0A78086563621D425F8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -430,17 +567,18 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -449,85 +587,82 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		3D2A9CFE8353CAAC825D7A298E1605E0 /* Debug */ = {
+		252DFF8EA5DC64D71DE3D8D5478DDFB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E83521FF86C3DC9F9CFB4C2EE0562115 /* Pods-Comet_Example.debug.xcconfig */;
+			baseConfigurationReference = C03AA573C1C85F8390B20D7562A4CE23 /* Pods-Comet_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Comet_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Comet_Example/Pods-Comet_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Comet_Example/Pods-Comet_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Comet_Example;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		41E43F5E5DA57F08AE62D5E7C17214A8 /* Debug */ = {
+		56004E0126D6CB20A70485611D1F676D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA36F4E943FA04AABC8F1E1100D7D0AD /* Comet.xcconfig */;
+			baseConfigurationReference = 50E7E81A49B5855674501E016AF287A1 /* SwiftRandom.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Comet/Comet-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Comet/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftRandom/SwiftRandom-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftRandom/SwiftRandom-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Comet/Comet.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Comet;
+				MODULEMAP_FILE = "Target Support Files/SwiftRandom/SwiftRandom.modulemap";
+				PRODUCT_MODULE_NAME = SwiftRandom;
+				PRODUCT_NAME = SwiftRandom;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -535,21 +670,89 @@
 			};
 			name = Debug;
 		};
-		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+		6AC32D25EC6797780D25F9C605371BD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4DCBB4E674B4ACB997AF89537C6F9C0 /* Pods-Comet_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Comet_Example/Pods-Comet_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Comet_Example/Pods-Comet_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C59ACD163CDC4EA5EA9F099D06659BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1778E54BE8291912F9EADC6F91EDBFD6 /* Comet.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Comet/Comet-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Comet/Comet-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Comet/Comet.modulemap";
+				PRODUCT_MODULE_NAME = Comet;
+				PRODUCT_NAME = Comet;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A1962E6FF39BBAC201A2E5DDF99557DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -557,101 +760,99 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		8897B7DE8DFCACFC0DB9F74D02C9DAB0 /* Release */ = {
+		A964EBF779A4C021983A9E9636953650 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA36F4E943FA04AABC8F1E1100D7D0AD /* Comet.xcconfig */;
+			baseConfigurationReference = 1778E54BE8291912F9EADC6F91EDBFD6 /* Comet.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Comet/Comet-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Comet/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Comet/Comet-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Comet/Comet.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = Comet;
 				PRODUCT_NAME = Comet;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 5.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		A6EC4C1A60CF9114654E711484638FCE /* Release */ = {
+		EB882A906C05A458CA82CCFD48D9B380 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47664F4EBBD276AA9E7A58D1DC6E822B /* Pods-Comet_Example.release.xcconfig */;
+			baseConfigurationReference = 50E7E81A49B5855674501E016AF287A1 /* SwiftRandom.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Comet_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftRandom/SwiftRandom-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftRandom/SwiftRandom-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Comet_Example/Pods-Comet_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Comet_Example;
+				MODULEMAP_FILE = "Target Support Files/SwiftRandom/SwiftRandom.modulemap";
+				PRODUCT_MODULE_NAME = SwiftRandom;
+				PRODUCT_NAME = SwiftRandom;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -660,34 +861,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		0023F1B13FCA80CF3ABEF75112A5217D /* Build configuration list for PBXNativeTarget "Pods-Comet_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
-				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+				252DFF8EA5DC64D71DE3D8D5478DDFB2 /* Debug */,
+				6AC32D25EC6797780D25F9C605371BD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72F5597EC4043989E6F68F9276972387 /* Build configuration list for PBXNativeTarget "Pods-Comet_Example" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3D2A9CFE8353CAAC825D7A298E1605E0 /* Debug */,
-				A6EC4C1A60CF9114654E711484638FCE /* Release */,
+				07488D4657FB0A78086563621D425F8A /* Debug */,
+				A1962E6FF39BBAC201A2E5DDF99557DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73068BF52D3EE5F901D5A237942F8631 /* Build configuration list for PBXNativeTarget "Comet" */ = {
+		62CD1E534B56A768B75B6C0C5517F39E /* Build configuration list for PBXNativeTarget "Comet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				41E43F5E5DA57F08AE62D5E7C17214A8 /* Debug */,
-				8897B7DE8DFCACFC0DB9F74D02C9DAB0 /* Release */,
+				6C59ACD163CDC4EA5EA9F099D06659BE /* Debug */,
+				A964EBF779A4C021983A9E9636953650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F621D087F6ACF3B74FC8FE4D60A8767F /* Build configuration list for PBXNativeTarget "SwiftRandom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56004E0126D6CB20A70485611D1F676D /* Debug */,
+				EB882A906C05A458CA82CCFD48D9B380 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

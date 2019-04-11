@@ -3,4 +3,6 @@ use_frameworks!
 target 'Comet_Example' do
   pod 'Comet', :path => '../'
 
+  pod  'SwiftRandom'
+  
 end

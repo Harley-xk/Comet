@@ -1,0 +1,6 @@
+framework module SwiftRandom {
+  umbrella header "SwiftRandom-umbrella.h"
+
+  export *
+  module * { export * }
+}

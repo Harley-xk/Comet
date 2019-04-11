@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Grouper Sample View Controller-->
+        <scene sceneID="19z-do-xNE">
+            <objects>
+                <viewController storyboardIdentifier="GrouperSampleViewController" id="vNC-4S-EMm" customClass="GrouperSampleViewController" customModule="Comet_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CVg-DT-hKg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KD2-w4-fYF">
+                                <rect key="frame" x="20" y="52" width="374" height="29"/>
+                                <segments>
+                                    <segment title="宿舍"/>
+                                    <segment title="年龄"/>
+                                    <segment title="成绩"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeGroupType:" destination="vNC-4S-EMm" eventType="valueChanged" id="jv8-hN-R1X"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HzF-kX-rnK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StudentInfoCell" rowHeight="84" id="SWl-QY-2xL" customClass="StudentInfoCell" customModule="Comet_Example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SWl-QY-2xL" id="zu9-Jf-1ph">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="83.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="张三李四" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de7-no-dfK">
+                                                    <rect key="frame" x="20" y="11" width="61.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="年龄：16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXx-4C-5kY">
+                                                    <rect key="frame" x="20" y="37" width="50" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="宿舍：305" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYg-Yc-5yB">
+                                                    <rect key="frame" x="100" y="37" width="60" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.018834407936729507" green="0.66906207623740133" blue="0.61799057370599531" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="成绩：98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXF-cP-wVL">
+                                                    <rect key="frame" x="190" y="37" width="53" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.36337925105696356" green="0.71024126342951965" blue="0.016517238684407465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="de7-no-dfK" firstAttribute="top" secondItem="zu9-Jf-1ph" secondAttribute="top" constant="11" id="1xP-gB-dTk"/>
+                                                <constraint firstItem="qXx-4C-5kY" firstAttribute="top" secondItem="de7-no-dfK" secondAttribute="bottom" constant="8" id="5K6-SD-naT"/>
+                                                <constraint firstItem="cXF-cP-wVL" firstAttribute="leading" secondItem="jYg-Yc-5yB" secondAttribute="trailing" constant="30" id="9lB-8O-AfS"/>
+                                                <constraint firstAttribute="bottom" secondItem="qXx-4C-5kY" secondAttribute="bottom" priority="750" constant="11" id="DG4-5h-S5B"/>
+                                                <constraint firstItem="qXx-4C-5kY" firstAttribute="leading" secondItem="zu9-Jf-1ph" secondAttribute="leading" constant="20" id="F6b-P6-1cI"/>
+                                                <constraint firstItem="de7-no-dfK" firstAttribute="leading" secondItem="zu9-Jf-1ph" secondAttribute="leading" constant="20" id="O6f-oz-0rE"/>
+                                                <constraint firstItem="jYg-Yc-5yB" firstAttribute="centerY" secondItem="qXx-4C-5kY" secondAttribute="centerY" id="k3x-HU-KWj"/>
+                                                <constraint firstItem="jYg-Yc-5yB" firstAttribute="leading" secondItem="qXx-4C-5kY" secondAttribute="trailing" constant="30" id="q3q-wO-Ocl"/>
+                                                <constraint firstItem="cXF-cP-wVL" firstAttribute="centerY" secondItem="jYg-Yc-5yB" secondAttribute="centerY" id="roo-6k-YPC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ageLabel" destination="qXx-4C-5kY" id="KRa-77-3PP"/>
+                                            <outlet property="gradeLabel" destination="cXF-cP-wVL" id="98z-06-L8N"/>
+                                            <outlet property="nameLabel" destination="de7-no-dfK" id="2ye-5X-CtB"/>
+                                            <outlet property="roomLabel" destination="jYg-Yc-5yB" id="iuQ-mT-Euy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vNC-4S-EMm" id="5kx-28-4aB"/>
+                                    <outlet property="delegate" destination="vNC-4S-EMm" id="kza-i4-oGI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e08-sz-5ud" firstAttribute="trailing" secondItem="KD2-w4-fYF" secondAttribute="trailing" constant="20" id="0CS-cr-5b8"/>
+                            <constraint firstItem="KD2-w4-fYF" firstAttribute="top" secondItem="e08-sz-5ud" secondAttribute="top" constant="8" id="6oL-ep-12i"/>
+                            <constraint firstAttribute="bottom" secondItem="HzF-kX-rnK" secondAttribute="bottom" id="Ajq-TF-p5V"/>
+                            <constraint firstAttribute="trailing" secondItem="HzF-kX-rnK" secondAttribute="trailing" id="LR3-rv-Oey"/>
+                            <constraint firstItem="KD2-w4-fYF" firstAttribute="leading" secondItem="e08-sz-5ud" secondAttribute="leading" constant="20" id="l1A-bL-EJj"/>
+                            <constraint firstItem="HzF-kX-rnK" firstAttribute="leading" secondItem="CVg-DT-hKg" secondAttribute="leading" id="nbF-VI-oad"/>
+                            <constraint firstItem="HzF-kX-rnK" firstAttribute="top" secondItem="KD2-w4-fYF" secondAttribute="bottom" constant="8" id="vks-B4-xsb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e08-sz-5ud"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="HzF-kX-rnK" id="o8g-Lo-N8O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IaT-ii-5ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="95.758928571428569"/>
+        </scene>
+    </scenes>
+</document>

@@ -15,6 +15,8 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		B64C03711E3456FA00600128 /* ScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C03701E3456FA00600128 /* ScrollViewExtension.swift */; };
 		B6D8E93A1DD078B000425493 /* Comet.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D8E9391DD078B000425493 /* Comet.podspec.json */; };
+		C35C2F83225F1607005FECA0 /* CoreSample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35C2F82225F1607005FECA0 /* CoreSample.storyboard */; };
+		C35C2F85225F161C005FECA0 /* GrouperSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C2F84225F161C005FECA0 /* GrouperSampleViewController.swift */; };
 		C37C1CE21F46C97E00E1889C /* KeyPathObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C1CE11F46C97E00E1889C /* KeyPathObserverViewController.swift */; };
 		C37D12201E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D121F1E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift */; };
 		C3873A001F46CEB60077CB72 /* Exttensions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38739FF1F46CEB60077CB72 /* Exttensions.storyboard */; };
@@ -37,6 +39,8 @@
 		B64C03701E3456FA00600128 /* ScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewExtension.swift; sourceTree = "<group>"; };
 		B6D8E9391DD078B000425493 /* Comet.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Comet.podspec.json; path = ../Comet.podspec.json; sourceTree = "<group>"; };
 		B6D8E9441DD07BC200425493 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C35C2F82225F1607005FECA0 /* CoreSample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoreSample.storyboard; sourceTree = "<group>"; };
+		C35C2F84225F161C005FECA0 /* GrouperSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrouperSampleViewController.swift; sourceTree = "<group>"; };
 		C37C1CE11F46C97E00E1889C /* KeyPathObserverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPathObserverViewController.swift; sourceTree = "<group>"; };
 		C37D121F1E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarbuttonItemClosureSample.swift; sourceTree = "<group>"; };
 		C38739FF1F46CEB60077CB72 /* Exttensions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exttensions.storyboard; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		B64C036E1E3456AF00600128 /* Samples-Core */ = {
 			isa = PBXGroup;
 			children = (
+				C35C2F82225F1607005FECA0 /* CoreSample.storyboard */,
+				C35C2F84225F161C005FECA0 /* GrouperSampleViewController.swift */,
 			);
 			name = "Samples-Core";
 			sourceTree = "<group>";
@@ -160,7 +166,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				D406FCB6FEC86A1061C3EC53 /* [CP] Embed Pods Frameworks */,
-				F22D3AB1723C0BE7B1778D82 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +219,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				B6D8E93A1DD078B000425493 /* Comet.podspec.json in Resources */,
+				C35C2F83225F1607005FECA0 /* CoreSample.storyboard in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				C3873A001F46CEB60077CB72 /* Exttensions.storyboard in Resources */,
 			);
@@ -228,13 +234,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Comet_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D406FCB6FEC86A1061C3EC53 /* [CP] Embed Pods Frameworks */ = {
@@ -243,28 +252,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Comet_Example/Pods-Comet_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Comet/Comet.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftRandom/SwiftRandom.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Comet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRandom.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comet_Example/Pods-Comet_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F22D3AB1723C0BE7B1778D82 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comet_Example/Pods-Comet_Example-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Comet_Example/Pods-Comet_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -275,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C37C1CE21F46C97E00E1889C /* KeyPathObserverViewController.swift in Sources */,
+				C35C2F85225F161C005FECA0 /* GrouperSampleViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				B64C03711E3456FA00600128 /* ScrollViewExtension.swift in Sources */,
@@ -356,7 +356,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -404,7 +404,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -422,7 +422,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.harley.comet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -439,7 +439,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.harley.comet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

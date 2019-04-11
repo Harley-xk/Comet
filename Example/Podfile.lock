@@ -1,16 +1,23 @@
 PODS:
-  - Comet (0.3.1)
+  - Comet (1.5.4)
+  - SwiftRandom (1.0.0)
 
 DEPENDENCIES:
   - Comet (from `../`)
+  - SwiftRandom
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftRandom
 
 EXTERNAL SOURCES:
   Comet:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Comet: df5a678a4a4d21d65fc6b18b02a84347be127d6a
+  Comet: d07c626066b00c0b0ec90f78908a196b45252c52
+  SwiftRandom: 437275c63500ddf5a565cbd56996fb23f12cfc3d
 
-PODFILE CHECKSUM: 3b39828ed5dc212344e3a11d86a1aa5cb071e1bc
+PODFILE CHECKSUM: 82b2419d04e06a2fbdd9a9dac50dde02e6a48b78
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.6.1
