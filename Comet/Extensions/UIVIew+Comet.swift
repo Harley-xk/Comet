@@ -75,13 +75,15 @@ public extension UIView {
     /// - Attention:
     ///   - 常规截图方式无法截取到特殊层级的图像数据，比如 AVSampleBufferDisplayLayer
     func snapshotImage(afterScreenUpdates: Bool = false) -> UIImage? {
+        let size = bounds.size
+        let frame = CGRect(origin: .zero, size: size)
         if #available(iOS 10.0, *) {
-            return UIGraphicsImageRenderer(size: bounds.size).image { (context) in
-                drawHierarchy(in: bounds, afterScreenUpdates: afterScreenUpdates)
+            return UIGraphicsImageRenderer(size: size).image { (context) in
+                drawHierarchy(in: frame, afterScreenUpdates: afterScreenUpdates)
             }
         } else {
-            UIGraphicsBeginImageContextWithOptions(bounds.size, true, contentScaleFactor)
-            drawHierarchy(in: bounds, afterScreenUpdates: afterScreenUpdates)
+            UIGraphicsBeginImageContextWithOptions(size, true, contentScaleFactor)
+            drawHierarchy(in: frame, afterScreenUpdates: afterScreenUpdates)
             let image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             return image
