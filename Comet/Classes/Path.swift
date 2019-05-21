@@ -25,7 +25,7 @@ open class Path {
     
     /// 完整路径字符串
     open var string: String {
-        return url.relativeString
+        return url.relativePath
     }
     
     /// URL 实例
@@ -105,7 +105,7 @@ open class Path {
     }
     
     /// 创建路径
-    open func createDirectory() {
+    open func createDirectory() throws {
         try? fileManager.createDirectory(atPath: string, withIntermediateDirectories: true, attributes: nil)
     }
     
