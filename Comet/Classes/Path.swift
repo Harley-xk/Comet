@@ -25,7 +25,7 @@ open class Path {
     
     /// 完整路径字符串
     open var string: String {
-        return url.absoluteString
+        return url.relativeString
     }
     
     /// URL 实例
@@ -67,7 +67,6 @@ open class Path {
         return Bundle(identifier: name!)
     }
     
-    
     /// 获取当前目录下的资源文件路径
     ///
     /// - Parameter name: 资源文件名（含扩展名）
@@ -75,7 +74,6 @@ open class Path {
         let directory = string as NSString
         return directory.appendingPathComponent(name).path
     }
-    
     
     // MARK: - Path Utils
     /// 文件管理器
@@ -123,6 +121,13 @@ open class Path {
         let contents = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: options)
         return contents.map { Path($0) }
     }
+    
+    open lazy var attributes: FileAttribute? = {
+        if let attributes = try? fileManager.attributesOfItem(atPath: string) {
+            return FileAttribute(attributes: attributes)
+        }
+        return nil
+    }()
     
     /// 获取文件 mime type
     open var mimeType: String? {
