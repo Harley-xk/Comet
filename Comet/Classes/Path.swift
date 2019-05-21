@@ -12,19 +12,24 @@ import MobileCoreServices
 // MARK: - 文件路径，快速获取各种文件路径
 
 open class Path {
-
+    
     /// 使用路径字符串构建实例
     public init(_ path: String) {
-        string = path
+        url = URL(fileURLWithPath: path)
     }
-
+    
+    /// 包装 URL 路径
+    public init(_ path: URL) {
+        url = path
+    }
+    
     /// 完整路径字符串
-    open var string: String
+    open var string: String {
+        return url.absoluteString
+    }
     
     /// URL 实例
-    open var url: URL {
-        return URL(fileURLWithPath: string)
-    }
+    open var url: URL
     
     /// 获取沙盒 Documents 路径
     open class func documents() -> Path {
@@ -47,12 +52,9 @@ open class Path {
     }
     
     /// 获取沙盒 Application Support 路径，不存在时会自动创建
-    open class func applicationSupport() -> Path {
-        let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0].path
-        if !path.exist {
-            path.createDirectory()
-        }
-        return path
+    open class func applicationSupport(autoCreate: Bool = true) throws -> Path {
+        let path = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: autoCreate)
+        return Path(path)
     }
     
     /// 根据名称获取Bundle
@@ -93,6 +95,11 @@ open class Path {
         return (exist, !isDirectory.boolValue)
     }
     
+    /// 文件夹是否存在, 返回是否存在，(以及必须是文件夹)
+    open var folderExist: Bool {
+        return !fileExist.isFile
+    }
+    
     /// 文件扩展名
     open var pathExtension: String? {
         let path = string as NSString
@@ -102,6 +109,19 @@ open class Path {
     /// 创建路径
     open func createDirectory() {
         try? fileManager.createDirectory(atPath: string, withIntermediateDirectories: true, attributes: nil)
+    }
+    
+    /// 获取文件夹子目录
+    open func getChildren(skipsHiddenFiles: Bool = true) throws -> [Path] {
+        guard folderExist else {
+            return []
+        }
+        var options = FileManager.DirectoryEnumerationOptions()
+        if skipsHiddenFiles {
+            options = options.union(.skipsHiddenFiles)
+        }
+        let contents = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: options)
+        return contents.map { Path($0) }
     }
     
     /// 获取文件 mime type
@@ -201,8 +221,7 @@ open class Path {
     }
 }
 
-public extension Bundle
-{
+public extension Bundle {
     /// 获取应用程序资源包下的路径
     ///
     /// - Parameters:
@@ -220,11 +239,8 @@ public extension Bundle
     }
 }
 
-public extension String
-{
+public extension String {
     var path: Path {
         return Path(self)
     }
 }
-
-
