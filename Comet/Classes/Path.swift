@@ -107,7 +107,7 @@ open class Path {
     /// 创建路径
     /// - overrides: 是否覆盖已经存在的文件夹，默认 false
     open func createDirectory(overrides: Bool = false) throws {
-        if overrides {
+        if overrides && folderExist {
             try? removeFromDisk()
         }
         try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
@@ -199,6 +199,11 @@ open class Path {
         } else {
             return String(format: "%.1fT", tb)
         }
+    }
+    
+    // MARK: - Datas
+    open func readData(options: Data.ReadingOptions = []) throws -> Data {
+        return try Data(contentsOf: url, options: options)
     }
     
     // MARK: - Private
