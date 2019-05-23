@@ -105,8 +105,17 @@ open class Path {
     }
     
     /// 创建路径
-    open func createDirectory() throws {
-        try? fileManager.createDirectory(atPath: string, withIntermediateDirectories: true, attributes: nil)
+    /// - overrides: 是否覆盖已经存在的文件夹，默认 false
+    open func createDirectory(overrides: Bool = false) throws {
+        if overrides {
+            try? removeFromDisk()
+        }
+        try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+    }
+    
+    /// 删除当前路径指向的物理文件(夹)
+    open func removeFromDisk() throws {
+        try fileManager.removeItem(at: url)
     }
     
     /// 获取文件夹子目录
