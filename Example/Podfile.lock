@@ -1,5 +1,5 @@
 PODS:
-  - Comet (1.5.4)
+  - Comet (1.6.2)
   - SwiftRandom (1.0.0)
 
 DEPENDENCIES:
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Comet: d07c626066b00c0b0ec90f78908a196b45252c52
+  Comet: 8bcbfd06ae31740d55f3b254317ab180b8e2110f
   SwiftRandom: 437275c63500ddf5a565cbd56996fb23f12cfc3d
 
 PODFILE CHECKSUM: 82b2419d04e06a2fbdd9a9dac50dde02e6a48b78
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.3

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "249802A81BEB496BC296B9E6130D7A9D"
+               BlueprintIdentifier = "1649FBA23FB2629C4588CCD889379F15"
                BuildableName = "Comet.framework"
                BlueprintName = "Comet"
                ReferencedContainer = "container:Pods.xcodeproj">
