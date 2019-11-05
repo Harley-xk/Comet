@@ -11,7 +11,7 @@ import Foundation
 public class Group<Element, T: Equatable> {
     public var index: T
     public var elements: [Element]
-    init(index: T, elements: [Element]) {
+    public init(index: T, elements: [Element]) {
         self.index = index
         self.elements = elements
     }
