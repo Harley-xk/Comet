@@ -23,13 +23,13 @@ open class Path {
         url = path
     }
     
-    init(directory: FileManager.SearchPathDirectory, create: Bool = false) throws {
+    public init(directory: FileManager.SearchPathDirectory, create: Bool = false) throws {
         url = try FileManager.default.url(for: directory, in: .userDomainMask, appropriateFor: nil, create: create)
     }
     
     /// 完整路径字符串
     open var string: String {
-        return url.relativeString
+        return url.absoluteString
     }
     
     /// URL 实例
