@@ -23,32 +23,36 @@ open class Path {
         url = path
     }
     
+    init(directory: FileManager.SearchPathDirectory, create: Bool = false) throws {
+        url = try FileManager.default.url(for: directory, in: .userDomainMask, appropriateFor: nil, create: create)
+    }
+    
     /// 完整路径字符串
     open var string: String {
-        return url.relativePath
+        return url.relativeString
     }
     
     /// URL 实例
     open var url: URL
     
-    /// 获取沙盒 Documents 路径
+    /// 获取沙盒 Documents 路
     open class func documents() -> Path {
-        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0].path
+        return try! Path(directory: .documentDirectory)
     }
     
     /// 获取沙盒 Library 路径
     open class func library() -> Path {
-        return NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0].path
+        return try! Path(directory: .libraryDirectory)
     }
     
     /// 获取沙盒 Cache 路径
     open class func cache() -> Path {
-        return NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0].path
+        return try! Path(directory: .cachesDirectory)
     }
     
     /// 获取沙盒 Temp 路径
     open class func temp() -> Path {
-        return NSTemporaryDirectory().path
+        return Path(NSTemporaryDirectory())
     }
     
     /// 获取沙盒 Application Support 路径，不存在时会自动创建
@@ -71,8 +75,16 @@ open class Path {
     ///
     /// - Parameter name: 资源文件名（含扩展名）
     open func resource(_ name: String) -> Path {
-        let directory = string as NSString
-        return directory.appendingPathComponent(name).path
+        let res = url.appendingPathComponent(name, isDirectory: false)
+        return Path(res)
+    }
+    
+    /// 获取当前目录下的子目录
+    ///
+    /// - Parameter name: 资源文件名（含扩展名）
+    open func folder(_ name: String) -> Path {
+        let res = url.appendingPathComponent(name, isDirectory: true)
+        return Path(res)
     }
     
     // MARK: - Path Utils
@@ -95,27 +107,17 @@ open class Path {
     
     /// 文件夹是否存在, 返回是否存在，(以及必须是文件夹)
     open var folderExist: Bool {
-        return !fileExist.isFile
+        return fileExist.exist && !fileExist.isFile
     }
     
     /// 文件扩展名
     open var pathExtension: String? {
-        let path = string as NSString
-        return path.pathExtension
+        return url.pathExtension
     }
     
     /// 创建路径
-    /// - overrides: 是否覆盖已经存在的文件夹，默认 false
-    open func createDirectory(overrides: Bool = false) throws {
-        if overrides && folderExist {
-            try? removeFromDisk()
-        }
+    open func createDirectory() throws {
         try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
-    }
-    
-    /// 删除当前路径指向的物理文件(夹)
-    open func removeFromDisk() throws {
-        try fileManager.removeItem(at: url)
     }
     
     /// 获取文件夹子目录
@@ -201,11 +203,6 @@ open class Path {
         }
     }
     
-    // MARK: - Datas
-    open func readData(options: Data.ReadingOptions = []) throws -> Data {
-        return try Data(contentsOf: url, options: options)
-    }
-    
     // MARK: - Private
     internal func fileSize() -> UInt64 {
         let fileExist = self.fileExist
@@ -255,11 +252,5 @@ public extension Bundle {
         }
         let string = self.path(forResource: nameWithoutExtension, ofType: pathExtension)
         return string == nil ? nil : Path(string!)
-    }
-}
-
-public extension String {
-    var path: Path {
-        return Path(self)
     }
 }
