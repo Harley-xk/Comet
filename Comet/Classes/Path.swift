@@ -29,7 +29,7 @@ open class Path {
     
     /// 完整路径字符串
     open var string: String {
-        return url.absoluteString
+        return url.relativePath
     }
     
     /// URL 实例
