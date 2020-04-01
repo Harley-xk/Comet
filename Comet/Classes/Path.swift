@@ -107,7 +107,8 @@ open class Path {
     
     /// 文件夹是否存在, 返回是否存在，(以及必须是文件夹)
     open var folderExist: Bool {
-        return fileExist.exist && !fileExist.isFile
+        let info = fileExist
+        return info.exist && !info.isFile
     }
     
     /// 文件扩展名
@@ -118,6 +119,11 @@ open class Path {
     /// 创建路径
     open func createDirectory() throws {
         try fileManager.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+    }
+    
+    /// 删除当前路径指向的物理文件(夹)
+    open func removeFromDisk() throws {
+        try fileManager.removeItem(at: url)
     }
     
     /// 获取文件夹子目录
@@ -201,6 +207,11 @@ open class Path {
         } else {
             return String(format: "%.1fT", tb)
         }
+    }
+    
+    // MARK: - Datas
+    open func readData(options: Data.ReadingOptions = []) throws -> Data {
+        return try Data(contentsOf: url, options: options)
     }
     
     // MARK: - Private
