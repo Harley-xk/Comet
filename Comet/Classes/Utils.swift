@@ -72,6 +72,34 @@ open class Utils {
         return false
     }
 
+    /// 检测设备是否越狱
+    open class func isJailbroken() -> Bool {
+        
+        // 存在 cydia 应用
+        if let cydiaURL = URL(string: "cydia://package/com.example.package"),
+            UIApplication.shared.canOpenURL(cydiaURL) {
+            return true
+        }
+
+        // 越狱后可能存在或者访问到的路径
+        let jailbrokenAccessable = [
+            "/Applications/Cydia.app",
+            "/Library/MobileSubstrate/MobileSubstrate.dylib",
+            "/var/lib/cydia",
+            "/User/Applications/",
+            "/bin/bash",
+            "/usr/sbin/sshd",
+            "/etc/apt"
+        ]
+        
+        for path in jailbrokenAccessable {
+            if FileManager.default.fileExists(atPath: path) {
+                return true
+            }
+        }
+        
+        return false
+    }
 }
 
 
