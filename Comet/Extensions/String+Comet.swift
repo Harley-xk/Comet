@@ -172,7 +172,12 @@ public extension String {
     
     func size(limitToSize size: CGSize, font: UIFont) -> CGSize {
         let string = self as NSString
-        let rect = string.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [.font:font], context: nil)
+        let rect = string.boundingRect(
+            with: size,
+            options: [.usesLineFragmentOrigin, .usesDeviceMetrics, .usesFontLeading],
+            attributes: [.font: font],
+            context: nil
+        )
         return rect.size
     }
 }
