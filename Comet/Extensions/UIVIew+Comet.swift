@@ -10,7 +10,7 @@ import Foundation
 
 public extension UIView {
     /// 快速扩展，获得在 IB 中直接编辑圆角的能力
-    @IBInspectable var cornerRadius: CGFloat {
+    @IBInspectable var ct_cornerRadius: CGFloat {
         get {
             return self.layer.cornerRadius
         }
@@ -20,7 +20,7 @@ public extension UIView {
     }
     
     /// 快速扩展，获得在 IB 中直接编辑边框宽度的能力
-    @IBInspectable var borderWidth: CGFloat {
+    @IBInspectable var ct_borderWidth: CGFloat {
         get {
             return self.layer.borderWidth
         }
@@ -30,7 +30,7 @@ public extension UIView {
     }
     
     /// 快速扩展，获得在 IB 中直接编辑边框颜色的能力
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable var ct_borderColor: UIColor? {
         get {
             if let color = self.layer.borderColor {
                 return UIColor(cgColor: color)

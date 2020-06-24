@@ -66,7 +66,7 @@ open class Utils {
         let typeString = immediately ? "tel" : "telprompt"
         if let callURL = URL(string: typeString + "://" + phone),
             UIApplication.shared.canOpenURL(callURL) {
-            UIApplication.shared.openURL(callURL)
+            UIApplication.shared.open(callURL)
             return true
         }
         return false
