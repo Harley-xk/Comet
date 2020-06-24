@@ -21,7 +21,7 @@ struct Student {
     static func random() -> Student {
         let student = Student(name: Randoms.randomFakeNameAndEnglishHonorific(),
                               grade: Int.random(10, 100),
-                              room: Rooms.randomItem()!,
+                              room: Rooms.randomElement()!,
                               age: "\(Int.random(12, 15))岁")
         return student
     }

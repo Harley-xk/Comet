@@ -54,8 +54,8 @@ class ViewController: UITableViewController {
         let image = navigationController?.view.snapshotImage()
         let imageView = UIImageView(image: image)
         view.addSubview(imageView)
-        imageView.borderColor = .black
-        imageView.borderWidth = 1
+        imageView.ct_borderColor = .black
+        imageView.ct_borderWidth = 1
         imageView.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
         
         UIView.animate(withDuration: 1, delay: 1, animations: {

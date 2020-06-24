@@ -1,8 +1,9 @@
 use_frameworks!
+platform :ios, '10.0'
 
 target 'Comet_Example' do
   pod 'Comet', :path => '../'
 
-  pod  'SwiftRandom'
+  pod  'SwiftRandom', :git => 'https://github.com/thellimist/SwiftRandom.git'
   
 end
