@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension UIView {
     /// 快速扩展，获得在 IB 中直接编辑圆角的能力

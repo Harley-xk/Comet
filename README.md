@@ -13,7 +13,7 @@ iOS 项目的 Swift 基础库，提供大量常用组件、便利方法等。支
 
 ## 安装
 
-支持 CocoaPods 安装：
+### 支持 CocoaPods 安装：
 
 ```ruby
 # for swift 4.2
@@ -22,6 +22,18 @@ pod 'Comet'
 pod 'Comet', :git => 'https://github.com/Harley-xk/Comet.git, :tag=>1.4.1'
 # for swift 3.1/3.2
 pod 'Comet', :git => 'https://github.com/Harley-xk/Comet.git, :tag=>0.7.5'
+```
+
+### 支持 Swift Package Manager
+
+将 Comet 添加到 Package.swift 的 dependencies 中：
+
+```swift
+dependencies: [
+   // ...
+   .package(url: "https://github.com/Harley-xk/Comet.git", .upToNextMinor(from: "1.6.0")),
+   // ...
+],
 ```
 
 ## API 清单
