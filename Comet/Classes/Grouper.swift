@@ -8,7 +8,7 @@
 import Foundation
 
 /// 集合分组后的数据实体
-public class Group<Element, T: Equatable> {
+public class Group<Element, T: Hashable> {
     public var index: T
     public var elements: [Element]
     public init(index: T, elements: [Element]) {
@@ -28,36 +28,25 @@ open class CollectionGrouper<C: Collection> {
     }
 
     /// 对集合按照制定的属性进行分组
-    open func grouped<T: Equatable>(by property: KeyPath<C.Element, T>) -> [Group<C.Element, T>] {
+    open func grouped<T: Hashable>(by property: KeyPath<C.Element, T>) -> [Group<C.Element, T>] {
         return grouped { $0[keyPath: property] }
     }
     
     /// 通过自定义分组规则进行分组
     /// - rule: 自定义的规则，对每一个 Element 进行计算，返回一个可以判等的数据实体作为分组索引
-    open func grouped<T: Equatable>(by rule: (C.Element) -> T) -> [Group<C.Element, T>] {
-        var groups: [Group<C.Element, T>] = []
-        collection.forEach { (element) in
-            let index = rule(element)
-            if let group = groups.first(where: { (g) -> Bool in
-                g.index == index
-            }) {
-                group.elements.append(element)
-            } else {
-                let group = Group(index: index, elements: [element])
-                groups.append(group)
-            }
-        }
-        return groups
+    open func grouped<T: Hashable>(by rule: (C.Element) -> T) -> [Group<C.Element, T>] {
+        return Dictionary(grouping: collection, by: rule)
+            .map { Group(index: $0, elements: $1) }
     }
 }
 
 public extension Array {
     
-    func grouped<T: Equatable>(by property: KeyPath<Element, T>) -> [Group<Element, T>] {
+    func grouped<T: Hashable>(by property: KeyPath<Element, T>) -> [Group<Element, T>] {
         return CollectionGrouper(self).grouped(by: property)
     }
     
-    func grouped<T: Equatable>(by rule: (Element) -> T) -> [Group<Element, T>] {
+    func grouped<T: Hashable>(by rule: (Element) -> T) -> [Group<Element, T>] {
         return CollectionGrouper(self).grouped(by: rule)
     }
 }
