@@ -143,12 +143,14 @@ public extension String {
 public extension String {
     
     /// URL 编码
+    @available(*, deprecated, message: "Use addingPercentEncoding(withAllowedCharacters:) directly")
     var URLEncode: String? {
         let characterSet = CharacterSet(charactersIn: ":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`")
         return self.addingPercentEncoding(withAllowedCharacters: characterSet)
     }
     
     /// URL 解码
+    @available(*, deprecated, message: "Use addingPercentEncoding(withAllowedCharacters:) directly")
     var URLDecode: String? {
         return self.removingPercentEncoding
     }
