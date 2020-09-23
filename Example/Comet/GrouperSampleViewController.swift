@@ -16,13 +16,13 @@ struct Student {
     var name: String
     var grade: Int
     var room: String
-    var age: String
+    var age: Int
     
     static func random() -> Student {
         let student = Student(name: Randoms.randomFakeNameAndEnglishHonorific(),
                               grade: Int.random(in: 0 ... 100),
                               room: Rooms.randomElement()!,
-                              age: "\(Int.random(in: 0 ... 100))岁")
+                              age: Int.random(in: 1 ... 100))
         return student
     }
 }
@@ -34,7 +34,7 @@ class GrouperSampleViewController: UIViewController {
     
     var students: [Student] = []
     
-    var groups: [Group<Student, String>] = []
+    var studentGroups: CollectionGroups<[Student], String>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,15 +61,15 @@ class GrouperSampleViewController: UIViewController {
     }
     
     private func groupByRoom() {
-        groups = students.sorted{$0.room < $1.room}.grouped(by: \.room)
+        studentGroups = CollectionGroups(group: students, by: \.room, sorted: {$0.room < $1.room})
     }
     
     private func groupByAge() {
-        groups = students.sorted{$0.age < $1.age}.grouped(by: \.age)
+        studentGroups = CollectionGroups(group: students, by: { "\($0.age)岁" }, sorted: {$0.age < $1.age})
     }
     
     private func groupByGrade() {
-        groups = students.sorted{$0.grade > $1.grade}.grouped(by: { (student) -> String in
+        studentGroups = CollectionGroups(group: students, by: { (student) -> String in
             if student.grade < 60 {
                 return "60分以下 - 不及格"
             } else if student.grade < 70 {
@@ -78,10 +78,16 @@ class GrouperSampleViewController: UIViewController {
                 return "70~79分 - 中等"
             } else if student.grade < 90 {
                 return "80~89分 - 良好"
-            } else {
+            } else if student.grade <= 100 {
                 return "90分以上 - 优秀"
+            } else {
+                return "作弊"
             }
-        })
+        }, sorted: {$0.grade < $1.grade})
+    }
+    
+    var groups: [Group<Student, String>] {
+        return studentGroups?.sortedGroups ?? []
     }
 }
 

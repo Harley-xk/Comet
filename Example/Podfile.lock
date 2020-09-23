@@ -1,5 +1,5 @@
 PODS:
-  - Comet (1.6.3)
+  - Comet (2.0.0)
   - SwiftRandom (1.0.0)
 
 DEPENDENCIES:
@@ -18,9 +18,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/thellimist/SwiftRandom.git
 
 SPEC CHECKSUMS:
-  Comet: a721f6697f8e59e6e3a0d01ed120316ec9188e05
+  Comet: 244cf0f6a5620b30dcb3a7bbf194eaeb1fbc1648
   SwiftRandom: 437275c63500ddf5a565cbd56996fb23f12cfc3d
 
 PODFILE CHECKSUM: 2d6064e85fa381db6da8c3cfe1734833d792dd7a
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.9.3
