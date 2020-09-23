@@ -141,28 +141,62 @@ public extension String {
 
 // MARK: - Bounding Rect
 public extension String {
-    
-    /**
-     *  计算字符串的大小，根据限定的高或者宽度，计算另一项的值
-     */
-    func width(limitToHeight height: CGFloat, font: UIFont) -> CGFloat {
+        
+    /// 计算字符串在指定高度下的宽度值
+    /// - Parameters:
+    ///   - height: 指定的字符串高度
+    ///   - font: 字符串使用的字体
+    ///   - options: 字符串绘制选项
+    ///   - attributes: 字符串富文本属性，如果 attributes 中指定了 font，则忽略前面的 font 参数
+    func limitedWidth(
+        to height: CGFloat,
+        font: UIFont,
+        options: NSStringDrawingOptions = .preset,
+        attributes: [NSAttributedString.Key : Any]? = nil
+    ) -> CGFloat {
         let size = CGSize(width: CGFloat.greatestFiniteMagnitude, height: height)
-        return self.size(limitToSize: size, font: font).width
+        return self.limitedSize(to: size, font: font, options: options, attributes: attributes).width
     }
     
-    func height(limitToWidth width: CGFloat, font: UIFont) -> CGFloat {
+    /// 计算字符串在指定宽度下的高度值
+    /// - Parameters:
+    ///   - width: 指定的字符串宽度
+    ///   - font: 字符串使用的字体
+    ///   - options: 字符串绘制选项
+    ///   - attributes: 字符串富文本属性，如果 attributes 中指定了 font，则忽略前面的 font 参数
+    func limitedHeight(
+        to width: CGFloat,
+        font: UIFont,
+        options: NSStringDrawingOptions = .preset,
+        attributes: [NSAttributedString.Key : Any]? = nil
+    ) -> CGFloat {
         let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        return self.size(limitToSize: size, font: font).height
+        return self.limitedSize(to: size, font: font, options: options, attributes: attributes).height
     }
     
-    func size(limitToSize size: CGSize, font: UIFont) -> CGSize {
+    // 字符串尺寸计算，封装了 boundingRect 方法
+    private func limitedSize(
+        to size: CGSize,
+        font: UIFont,
+        options: NSStringDrawingOptions,
+        attributes: [NSAttributedString.Key : Any]? = nil
+    ) -> CGSize {
         let string = self as NSString
+        var attributes = attributes ?? [:]
+        if attributes[.font] == nil {
+            attributes[.font] = font
+        }
         let rect = string.boundingRect(
             with: size,
-            options: [.usesLineFragmentOrigin, .usesDeviceMetrics, .usesFontLeading],
-            attributes: [.font: font],
+            options: options,
+            attributes: attributes,
             context: nil
         )
         return rect.size
     }
+}
+
+public extension NSStringDrawingOptions {
+    // 预设选项
+    static let preset: NSStringDrawingOptions = [.usesLineFragmentOrigin, .usesDeviceMetrics, .usesFontLeading]
 }

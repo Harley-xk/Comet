@@ -177,7 +177,7 @@ public extension TimeZone {
     }
     
     // UTC 0 时区
-    static var zero: TimeZone {
+    static var utc: TimeZone {
         return TimeZone(abbreviation: "UTC")!
     }
     

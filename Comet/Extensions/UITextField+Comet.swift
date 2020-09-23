@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 public extension UITextField {
-    
+        
+    /// 设置 UITextField 的 placeholder 颜色
     func setPlaceholderColor(_ color: UIColor) {
         
         if let string = self.placeholder {

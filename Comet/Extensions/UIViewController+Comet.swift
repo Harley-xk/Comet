@@ -32,31 +32,10 @@ public extension UIStoryboard {
     func createInitial<T: UIViewController>() -> T {
         return instantiateInitialViewController() as! T
     }
-    
-    /// 创建当前 sb 入口视图控制器的实例
-    @available(*, deprecated, message: "请使用 createInitial 方法以获得类型转换及错误检查支持支持。")
-    var initial: UIViewController? {
-        return instantiateInitialViewController()
-    }
 }
 
 public extension UIViewController {
-    
-    /// 从 Storyboard 实例化视图控制器
-    ///
-    /// - Parameters:
-    ///   - name: Storyboard 名称，不传默认为Main
-    ///   - bunlde: Storyboard 所在的 Bundle 不传默认为 main bundle
-    ///   - id: 视图控制器在 Storyboard 中的id，不传默认为类名
-    @available(*, deprecated, message: "请避免使用 String 来指定 Stroyboard，建议通过扩展 UIStoryboard 来获得代码高亮和语法检查支持，请使用 createFromStoryboard 方法。")
-    class func fromSB(_ name: String? = nil, bunlde: Bundle? = nil, id: String? = nil) -> Self {
-        let bundle = bunlde ?? Bundle.main
-        let sbName = name ?? "Main"
-        let sb = UIStoryboard(name: sbName, bundle: bundle)
-        let identifier = id ?? typeName
-        return sb.create(identifier: identifier)
-    }
-    
+
     /// 从 Storyboard 实例化视图控制器
     ///
     /// - Parameters:
@@ -80,60 +59,10 @@ public extension UIViewController {
 
 public extension UIViewController {
     
-    @available(*, unavailable, renamed: "createFrom")
-    class func fromXib(_ nibName: String? = nil, bundle: Bundle? = nil) -> Self {
-        let name = nibName ?? typeName
-        return self.init(nibName: name, bundle: bundle)
-    }
-    
     /// 从 Xib 文件创建视图控制器，nibName 为空时默认使用类名
     class func createFromXib(_ nibName: String? = nil, bundle: Bundle? = nil) -> Self {
         let name = nibName ?? typeName
         return self.init(nibName: name, bundle: bundle)
-    }
-}
-
-public extension UIViewController {
-
-    /**
-     *  设置当前视图的导航条返回按钮标题
-     *  @attention 只有使用默认返回按钮时有效
-     */
-    var navigationBackTitle: String? {
-        get {
-            if let previous = self.previousNavigationContent {
-                return previous.navigationItem.backBarButtonItem?.title
-            }
-            return nil
-        }
-        set {
-            if let previous = self.previousNavigationContent {
-                previous.navigationItem.backBarButtonItem = UIBarButtonItem(title: newValue, style: .plain, target: nil, action: nil)
-            }
-        }
-    }
-    
-    /// 获取导航控制器栈中前一个视图控制器，不存在时返回空
-    var previousNavigationContent: UIViewController? {
-        if let viewControllers = self.navigationController?.viewControllers,
-            viewControllers.count >= 2 {
-            let index = viewControllers.count - 2
-            return viewControllers[index]
-        }
-        return nil
-    }
-    
-    /**
-     *  设置导航控制器栈中下一个视图的返回按钮标题
-     *  @attention 不会改变当前返回按钮的标题
-     */
-    var nextNavigationBackTitle: String? {
-        get {
-            return self.navigationItem.backBarButtonItem?.title
-        }
-        set {
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: newValue, style: .plain, target: nil, action: nil)
-        }
     }
 }
 

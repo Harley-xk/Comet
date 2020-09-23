@@ -9,23 +9,29 @@ import Foundation
 
 // Convert String to Numbers
 public extension String {
-    
-    // convert string to int
-    // returns 0 if failed
-    var intValue: Int {
+
+    /// convert string to int
+    /// - Returns: returns 0 if failed
+    func toInt() -> Int {
         return Int(self) ?? 0
     }
     
-    // convert string to double
-    // returns 0 if failed
-    var doubleValue: Double {
+    /// convert string to double
+    /// - Returns: 0 if failed
+    func toDouble() -> Double {
         return Double(self) ?? 0
     }
     
-    // convert string to float
-    // returns 0 if failed
-    var floatValue: Float {
+    /// convert string to float
+    /// - Returns: 0 if failed
+    func toFloat() -> Float {
         return Float(self) ?? 0
+    }
+    
+    /// convert string to float
+    /// - Returns: 0 if failed
+    func toCGFloat() -> CGFloat {
+        return CGFloat(toDouble())
     }
 }
 
@@ -33,52 +39,37 @@ public extension String {
 public extension Float {
     
     // 返回指定小数位数的字符串
-    func string(decimals: Int = 0) -> String {
+    func toString(decimals: Int) -> String {
         return String(format: "%.\(decimals)f", self)
     }
     
     // 返回指定格式的字符串
-    func string(format: String?) -> String {
-        if let format = format {
-            return String(format: format, self)
-        } else {
-            return string(decimals: 0)
-        }
+    func toString(format: String) -> String {
+        return String(format: format, self)
     }
 }
 
 // Convert Double to String
 public extension Double {
     // 返回指定小数位数的字符串
-    func string(decimals: Int = 0) -> String {
+    func toString(decimals: Int) -> String {
         return String(format: "%.\(decimals)f", self)
     }
     // 返回指定格式的字符串
-    func string(format: String?) -> String {
-        if let format = format {
-            return String(format: format, self)
-        } else {
-            return string(decimals: 0)
-        }
+    func toString(format: String) -> String {
+        return String(format: format, self)
     }
 }
 
 public extension Int {
     
     // 返回指定格式的字符串
-    func string(format: String? = nil) -> String {
+    func toString(format: String? = nil) -> String {
         if let format = format {
             return String(format: format, self)
         } else {
             return "\(self)"
         }
-    }
-    
-    // random number from min to max
-    static func random(min: Int = 0, max: Int) -> Int {
-        let random = Int(arc4random())
-        let number = random % (max + 1 - min) + min
-        return number
     }
     
     /// 返回当前值是否是偶数

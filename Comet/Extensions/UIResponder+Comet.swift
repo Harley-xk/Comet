@@ -29,7 +29,7 @@ public extension UIResponder {
 
 extension UIViewController {
     
-    // 检查当前视图控制器是否包含第一响应者，会遍历响应链以及子视图检查
+    /// 检查当前视图控制器是否包含第一响应者，会遍历响应链以及子视图检查
     public var containsFirstResponder: Bool {
         // 从子视图中找到第一响应者的概率较大，所以先检查子视图
         if view.containsFirstResponder {
@@ -49,7 +49,7 @@ extension UIViewController {
 
 extension UIView {
     
-    // 检查当前视图是否包含第一响应者，会遍历所有子视图检查
+    /// 检查当前视图是否包含第一响应者，会遍历所有子视图检查
     public var containsFirstResponder: Bool {
         if isFirstResponder {
             return true

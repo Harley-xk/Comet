@@ -61,16 +61,6 @@ open class Path {
         return Path(path)
     }
     
-    /// 根据名称获取Bundle
-    ///
-    /// - Parameter name: Bundle 名称，默认为 nil，表示 main bundle
-    open class func bundle(_ name: String? = nil) -> Bundle? {
-        if name == nil {
-            return Bundle.main
-        }
-        return Bundle(identifier: name!)
-    }
-    
     /// 获取当前目录下的资源文件路径
     ///
     /// - Parameter name: 资源文件名（含扩展名）
@@ -139,12 +129,12 @@ open class Path {
         return contents.map { Path($0) }
     }
     
-    open lazy var attributes: FileAttribute? = {
+    open var attributes: FileAttribute? {
         if let attributes = try? fileManager.attributesOfItem(atPath: string) {
             return FileAttribute(attributes: attributes)
         }
         return nil
-    }()
+    }
     
     /// 获取文件 mime type
     open var mimeType: String? {
@@ -245,23 +235,5 @@ open class Path {
             }
         }
         return folderSize
-    }
-}
-
-public extension Bundle {
-    /// 获取应用程序资源包下的路径
-    ///
-    /// - Parameters:
-    ///   - name: 资源名称
-    /// - Returns: 返回资源路径
-    func resource(_ name: String) -> Path? {
-        let path = name as NSString
-        let pathExtension = path.pathExtension
-        var nameWithoutExtension = name
-        if !pathExtension.isEmpty {
-            nameWithoutExtension = path.deletingPathExtension
-        }
-        let string = self.path(forResource: nameWithoutExtension, ofType: pathExtension)
-        return string == nil ? nil : Path(string!)
     }
 }
