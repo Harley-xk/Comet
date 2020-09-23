@@ -34,7 +34,7 @@ extension UIButton {
 }
 
 extension UITextField {
-    @IBInspectable var localizedKey: String? {
+    @IBInspectable var localizedPlaceholderKey: String? {
         set {
             guard let newValue = newValue else { return }
             placeholder = NSLocalizedString(newValue, comment: "")
@@ -44,7 +44,7 @@ extension UITextField {
 }
 
 extension UINavigationItem {
-    @IBInspectable var localizedKey: String? {
+    @IBInspectable var localizedTitleKey: String? {
         set {
             guard let newValue = newValue else { return }
             title = NSLocalizedString(newValue, comment: "")
@@ -54,7 +54,7 @@ extension UINavigationItem {
 }
 
 extension UIBarItem {
-    @IBInspectable var localizedKey: String? {
+    @IBInspectable var localizedTitleKey: String? {
         set {
             guard let newValue = newValue else { return }
             title = NSLocalizedString(newValue, comment: "")
