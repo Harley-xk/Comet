@@ -17,8 +17,6 @@
 		B6D8E93A1DD078B000425493 /* Comet.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = B6D8E9391DD078B000425493 /* Comet.podspec.json */; };
 		C35C2F83225F1607005FECA0 /* CoreSample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35C2F82225F1607005FECA0 /* CoreSample.storyboard */; };
 		C35C2F85225F161C005FECA0 /* GrouperSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C2F84225F161C005FECA0 /* GrouperSampleViewController.swift */; };
-		C37C1CE21F46C97E00E1889C /* KeyPathObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C1CE11F46C97E00E1889C /* KeyPathObserverViewController.swift */; };
-		C37D12201E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D121F1E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift */; };
 		C3873A001F46CEB60077CB72 /* Exttensions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38739FF1F46CEB60077CB72 /* Exttensions.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +39,6 @@
 		B6D8E9441DD07BC200425493 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C35C2F82225F1607005FECA0 /* CoreSample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoreSample.storyboard; sourceTree = "<group>"; };
 		C35C2F84225F161C005FECA0 /* GrouperSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrouperSampleViewController.swift; sourceTree = "<group>"; };
-		C37C1CE11F46C97E00E1889C /* KeyPathObserverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPathObserverViewController.swift; sourceTree = "<group>"; };
-		C37D121F1E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarbuttonItemClosureSample.swift; sourceTree = "<group>"; };
 		C38739FF1F46CEB60077CB72 /* Exttensions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exttensions.storyboard; sourceTree = "<group>"; };
 		C39298EE24D8DF4400A1577E /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		D8646B27D22A17EF1FC332F7 /* Pods-Comet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comet_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comet_Tests/Pods-Comet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,8 +135,6 @@
 			children = (
 				C38739FF1F46CEB60077CB72 /* Exttensions.storyboard */,
 				B64C03701E3456FA00600128 /* ScrollViewExtension.swift */,
-				C37D121F1E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift */,
-				C37C1CE11F46C97E00E1889C /* KeyPathObserverViewController.swift */,
 			);
 			name = "Samples-Extensions";
 			sourceTree = "<group>";
@@ -275,12 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C37C1CE21F46C97E00E1889C /* KeyPathObserverViewController.swift in Sources */,
 				C35C2F85225F161C005FECA0 /* GrouperSampleViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				B64C03711E3456FA00600128 /* ScrollViewExtension.swift in Sources */,
-				C37D12201E83C9CD00D83B91 /* UIBarbuttonItemClosureSample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
