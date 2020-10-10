@@ -1,6 +1,6 @@
 {
     "name": "Comet",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "summary": "iOS 项目的 Swift 基础库，提供一些常用组件、便利方法等。",
     "description": "iOS 项目的 Swift 基础库，提供一些常用组件、便利方法等。支持 Swift 5.3",
     "homepage": "https://github.com/Harley-xk/Comet",
@@ -13,7 +13,7 @@
     },
     "source": {
         "git": "https://github.com/Harley-xk/Comet.git",
-        "tag": "2.0.0"
+        "tag": "2.0.1"
     },
     "platforms": {
         "ios": "10.0"
