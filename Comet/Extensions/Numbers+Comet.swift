@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 // Convert String to Numbers
 public extension String {
